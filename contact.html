@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Jackal Tech Ltd.</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="images/logo.jpg" alt="Jackal Tech Ltd.">
+        </div>
+        <div class="search-container">
+          <input type="text" id="search-bar" placeholder="Search...">
+          <button onclick="searchSite()">🔍</button>
+          <ul id="search-results" class="search-results"></ul>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home 🏠</a></li>
+            <li><a href="about.html">About Us ℹ️</a></li>
+            <li><a href="services.html">Services 🛠️</a></li>
+            <li><a href="careers.html">Careers 💼</a></li>
+            <li><a href="faqs.html">FAQs ❓</a></li>
+            <li><a href="contact.html">Contact Us 📞</a></li>
+          </ul>
+        </nav>
+      </header>
+
+  <main>
+    <section class="contact-hero">
+      <div class="hero-content">
+        <h1>Contact Us</h1>
+        <p>We're here to help and answer any questions you might have. We look forward to hearing from you.</p>
+      </div>
+    </section>
+
+    <section class="contact-info animate-on-scroll">
+      <h2>Get In Touch 📞</h2>
+      <div class="content-grid">
+        <div class="contact-details">
+          <p><strong>Address:</strong> Kigali, Rwanda</p>
+          <p><strong>Email:</strong> <a href="mailto:info@jackaltechltd.com">info@jackaltechltd.com</a></p>
+          <p><strong>Phone:</strong> +250 123 456 789</p>
+        </div>
+        <div class="contact-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31771.218590694707!2d30.031752752249605!3d-1.9575437407161306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19d66c23204f88ab%3A0x1ff6322a3625e1d4!2sKigali%2C%20Rwanda!5e0!3m2!1sen!2s!4v1625476180875!5m2!1sen!2s" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-form animate-on-scroll">
+      <h2>Send Us a Message</h2>
+      <form action="send_mail.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-section">
+      <h4>Company Information 🏢</h4>
+      <p>Jackal Tech Ltd. - Innovating for a Better Future</p>
+      <p>Contact: <a href="mailto:info@jackaltechltd.com">info@jackaltechltd.com</a></p>
+      <p>Address: Kigali, Rwanda</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links 🔗</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us 🌐</h4>
+      <ul class="social-icons">
+        <li><a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a></li>
+        <li><a href="#"><img src="images/instagram.png" alt="Instagram"></a></li>
+        <li><a href="#"><img src="images/twitter.png" alt="Twitter"></a></li>
+        <li><a href="#"><img src="images/facebook.png" alt="Facebook"></a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Newsletter 📨</h4>
+      <form>
+        <input type="email" placeholder="Your email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-section">
+      <h4>Legal ⚖️</h4>
+      <ul>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Jackal Tech Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

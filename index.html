@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jackal Tech Ltd.</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/styles.css"> <!-- New CSS file -->
+<link rel="stylesheet" href="css/responsive.css"> <!-- New CSS file -->
+
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Jackal Tech Ltd.">
+    </div>
+    <div class="search-container">
+      <input type="text" id="search-bar" placeholder="Search...">
+      <button onclick="searchSite()">🔍</button>
+      <ul id="search-results" class="search-results"></ul>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home 🏠</a></li>
+        <li><a href="about.html">About Us ℹ️</a></li>
+        <li><a href="services.html">Services 🛠️</a></li>
+        <li><a href="careers.html">Careers 💼</a></li>
+        <li><a href="faqs.html">FAQs ❓</a></li>
+        <li><a href="contact.html">Contact Us 📞</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Welcome to Jackal Tech Ltd.</h1>
+        <p>Innovating for a Better Future</p>
+        <button onclick="navigate('about.html')">Learn More</button>
+        <button onclick="navigate('contact.html')">Get in Touch</button>
+      </div>
+    </section>
+
+    <section class="welcome-message animate-on-scroll">
+      <h2>Welcome Message</h2>
+      <p>Welcome to Jackal Tech Ltd., where we are committed to driving technological innovation that addresses global challenges. Our mission is to empower the next generation through education and skill-building, fostering a tech-savvy and solution-oriented community.</p>
+    </section>
+
+    <section class="latest-videos animate-on-scroll">
+      <h2>Latest Videos</h2>
+      <div class="video-container">
+        <video controls>
+          <source src="video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <section class="upcoming-events animate-on-scroll">
+      <h2>Upcoming Events</h2>
+      <div class="events-grid">
+        <div class="event-item">
+          <h3>Event 1</h3>
+          <p>Details about the first event.</p>
+        </div>
+        <div class="event-item">
+          <h3>Event 2</h3>
+          <p>Details about the second event.</p>
+        </div>
+        <div class="event-item">
+          <h3>Event 3</h3>
+          <p>Details about the third event.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-highlights animate-on-scroll">
+      <h2>Team Highlights</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="images/team1.jpg" alt="Team Member 1">
+          <p>Team Member 1</p>
+        </div>
+        <div class="team-member">
+          <img src="images/team2.jpg" alt="Team Member 2">
+          <p>Team Member 2</p>
+        </div>
+        <div class="team-member">
+          <img src="images/team3.jpg" alt="Team Member 3">
+          <p>Team Member 3</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="success-stories animate-on-scroll">
+      <h2>Success Stories</h2>
+      <blockquote>"Jackal Tech Ltd. helped us achieve our goals with innovative solutions." - Client Name</blockquote>
+    </section>
+
+    <section class="recent-news animate-on-scroll">
+      <h2>Recent News</h2>
+      <article>
+        <h3>News Title</h3>
+        <p>Latest updates and industry trends.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-section">
+      <h4>Company Information 🏢</h4>
+      <p>Jackal Tech Ltd. - Innovating for a Better Future</p>
+      <p>Contact: <a href="mailto:info@jackaltechltd.com">info@jackaltechltd.com</a></p>
+      <p>Address: Kigali, Rwanda</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links 🔗</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us 🌐</h4>
+      <ul class="social-icons">
+        <li><a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a></li>
+        <li><a href="#"><img src="images/instagram.png" alt="Instagram"></a></li>
+        <li><a href="#"><img src="images/twitter.png" alt="Twitter"></a></li>
+        <li><a href="#"><img src="images/facebook.png" alt="Facebook"></a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Newsletter 📨</h4>
+      <form>
+        <input type="email" placeholder="Your email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-section">
+      <h4>Legal ⚖️</h4>
+      <ul>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Jackal Tech Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
