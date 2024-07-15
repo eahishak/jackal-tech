@@ -1,0 +1,1470 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Jackal Tech Ltd</title>
+
+     <!-- Favicon -->
+     <link rel="icon" href="images/favicon.ico">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ 
+     <!-- Custom CSS -->
+     <link rel="stylesheet" href="css/style.css">
+     
+     <!-- FontAwesome CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+     <!-- Google Fonts -->
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+ 
+     <!-- Google Maps API -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>-->
+      <!-- Jackal Tech Logo Favicon-->
+
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAD9/f0AAAAAAAICAgD///8AMjIyAAQEBAD6+voA8/PzAPX19QABAQEAAwMDAEFBQQAFBQUAJSUlAAAAAAAAAAAAEREREREREREREXkBvEEREREREREREREREREwEzURERERERMRExERERERExMSMRERERETExExERERERMTETERERERExMRMRERERETExExERERETMTETERERERGDMxoREREREZER0RERERERERGRERERERERFhEREREREREREREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon">
+
+
+
+    <style>
+        /* Services Section */
+        
+        
+        .services-section {
+            padding: 60px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        
+        .services-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #28a745;
+        }
+        div #service-box img{
+            width: 100%;
+            height: auto;
+            max-height: 75%!important;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .service-box {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-image {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .service-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #28a745;
+        }
+        
+        .service-box p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            flex-grow: 1;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .service-box {
+                flex: 0 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-box {
+                flex: 0 1 calc(100% - 20px);
+                max-width: calc(100% - 20px);
+            }
+        }
+        
+        /* Education Section */
+        .education-section {
+            background: #f9f9f9;
+            padding: 60px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .education-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .education-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .education-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .education-box h3 {
+            color: #6f42c1;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .education-box p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        /* Healthcare Section */
+        .healthcare-section {
+            background: #f0f0f0;
+            padding: 60px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .healthcare-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .healthcare-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .healthcare-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .healthcare-box h3 {
+            color: #28a745;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .healthcare-box p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        /* Finance Section */
+        .finance-section {
+            background: #fff;
+            padding: 60px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .finance-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .finance-box {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .finance-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .finance-box h3 {
+            color: #6f42c1;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .finance-box p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        /* Manufacturing Section */
+        .manufacturing-section {
+            background: #f0f0f0;
+            padding: 60px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .manufacturing-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .manufacturing-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .manufacturing-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .manufacturing-box h3 {
+            color: #28a745;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .manufacturing-box p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        /* Agriculture Section */
+        .agriculture-section {
+            background: #fff;
+            padding: 60px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .agriculture-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .agriculture-box {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .agriculture-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .agriculture-box h3 {
+            color: #6f42c1;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .agriculture-box p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        /* Retail Section */
+        .retail-section {
+            background: #f0f0f0;
+            padding: 60px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .retail-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .retail-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .retail-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .retail-box h3 {
+            color: #28a745;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .retail-box p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        /* Smart Solutions Section */
+        .smart-solutions-section {
+            background: #fff;
+            padding: 60px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .smart-solutions-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .smart-solutions-box {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .smart-solutions-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .smart-solutions-box h3 {
+            color: #6f42c1;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .smart-solutions-box p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        /* Consulting Section */
+        .consulting-section {
+            background: #f0f0f0;
+            padding: 60px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .consulting-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .consulting-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .consulting-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .consulting-box h3 {
+            color: #28a745;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .consulting-box p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        /* Technology Solutions Section */
+        .technology-solutions-section {
+            background: #fff;
+            padding: 60px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .technology-solutions-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .technology-solutions-box {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .technology-solutions-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .technology-solutions-box h3 {
+            color: #6f42c1;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .technology-solutions-box p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #28a745, #218838);
+            padding: 60px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-section h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .contact-box h3 {
+            color: #28a745;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .contact-box p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info i {
+            color: #28a745;
+            margin-right: 10px;
+        }
+        
+        .contact-form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form h3 {
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        
+        .contact-form .form-control {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-form .btn {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .contact-form .btn:hover {
+            background: #218838;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .service-box, .education-box, .healthcare-box, .finance-box, .manufacturing-box, .agriculture-box, .retail-box, .smart-solutions-box, .consulting-box, .technology-solutions-box, .contact-box, .contact-form {
+                margin-bottom: 20px;
+            }
+        
+            .service-image, .education-image, .healthcare-image, .finance-image, .manufacturing-image, .agriculture-image, .retail-image, .smart-solutions-image, .consulting-image, .technology-solutions-image, .contact-image {
+                width: 100%;
+                height: auto;
+            }
+        
+            .services-section, .education-section, .healthcare-section, .finance-section, .manufacturing-section, .agriculture-section, .retail-section, .smart-solutions-section, .consulting-section, .technology-solutions-section, .contact-section {
+                padding: 30px 0;
+            }
+        
+            .services-section h1, .education-section h2, .healthcare-section h2, .finance-section h2, .manufacturing-section h2, .agriculture-section h2, .retail-section h2, .smart-solutions-section h2, .consulting-section h2, .technology-solutions-section h2, .contact-section h2 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+        
+            .service-box h2, .education-box h3, .healthcare-box h3, .finance-box h3, .manufacturing-box h3, .agriculture-box h3, .retail-box h3, .smart-solutions-box h3, .consulting-box h3, .technology-solutions-box h3, .contact-box h3 {
+                font-size: 1.2em;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        
+            .service-box p, .education-box p, .healthcare-box p, .finance-box p, .manufacturing-box p, .agriculture-box p, .retail-box p, .smart-solutions-box p, .consulting-box p, .technology-solutions-box p, .contact-box p, .contact-form p {
+                font-size: 0.9em;
+                line-height: 1.4;
+            }
+        
+            .contact-info {
+                flex-direction: column;
+            }
+        
+            .contact-info li {
+                margin-bottom: 15px;
+            }
+        }
+        
+        /* Additional Section Styles */
+        section {
+            padding: 60px 0;
+        }
+        
+        h2.section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2em;
+            color: #333;
+        }
+        
+        p.section-description {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+            color: #666;
+        }
+        
+        .section-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .section-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section-box img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .section-box:hover img {
+            transform: scale(1.05);
+        }
+        
+        .section-box h3 {
+            color: #28a745;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        
+        .section-box p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        /* Custom Grid Styles */
+        .custom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        /* Custom Flex Styles */
+        .custom-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .custom-flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Box Shadow Utility Classes */
+        .box-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .box-shadow-lg {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Active Link */
+        .navbar-nav .nav-item a.active {
+            background-color: green;
+            color: #fff;
+        }
+        
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .loading::before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            border: 5px solid #007bff;
+            border-top: 5px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Fade In Animation */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.6s ease-out;
+        }
+        
+        .fade-in.appear {
+            opacity: 1;
+        }
+        
+        /* Custom Alert */
+        .custom-alert {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.6s ease-out;
+        }
+        
+        .custom-alert.show {
+            opacity: 1;
+        }
+        
+        /* Service Box Hover */
+        .service-box.hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        
+        
+        
+        /* Banner Section */
+        
+        .banner {
+            position: relative;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .carousel-item img {
+            height: 95vh!important;
+            object-fit: cover;
+        }
+        
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 2px 2px 5px #000;
+            z-index: 1;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            width: 70%;
+        }
+        
+        .banner-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+            font-family: 'Product Sans', 'San Francisco', 'Roboto', sans-serif;
+        }
+        
+        .banner-content p {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            color: #fff;
+            font-family: 'Product Sans', 'San Francisco', 'Roboto', sans-serif;
+        }
+        
+        .banner-content .btn {
+            margin: 5px;
+            font-family: 'Product Sans', 'San Francisco', 'Roboto', sans-serif;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #28a745, #155724);
+            border: none;
+            color: #fff;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #155724, #28a745);
+            transform: scale(1.05);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #6c757d, #565e64);
+            border: none;
+            color: #fff;
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #565e64, #6c757d);
+            transform: scale(1.05);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .banner-content h1 {
+                font-size: 1.75rem;
+            }
+        
+            .banner-content p {
+                font-size: 1rem;
+            }
+        
+            .banner-content {
+                padding: 15px;
+                width: 80%;
+            }
+        
+            .btn {
+                padding: 8px 15px;
+                font-size: 0.875rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .banner-content h1 {
+                font-size: 1.5rem;
+            }
+        
+            .banner-content p {
+                font-size: 0.875rem;
+            }
+        
+            .banner-content {
+                padding: 10px;
+                width: 90%;
+            }
+        
+            .btn {
+                padding: 8px 10px;
+                font-size: 0.75rem;
+            }
+        }
+        
+    
+        </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/logo.jpg" alt="Jackal Tech Ltd."></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Policies</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="policies.html" onclick="showContent('faqs')">FAQs</a>
+                                <a class="dropdown-item" href="policies.html"
+                                    onclick="showContent('terms-of-use')">Privacy Policy</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="auth-buttons ml-auto">
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#signinModal">Sign In</button>
+                        <button class="btn btn-secondary" data-toggle="modal" data-target="#signupModal">Join</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="subnav bg-light d-flex justify-content-between align-items-center">
+            <div class="container d-flex justify-content-between align-items-center">
+                <form class="search-form form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <!-- Banner Section -->
+        <section class="banner">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/banner-service1.jpg" class="d-block w-100" alt="Our Services">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/banner-service2.jpg" class="d-block w-100" alt="Innovative Solutions">
+                    </div>
+                </div>
+            </div>
+            <div class="banner-content">
+                <h1>Our Services</h1>
+                <p>Delivering Cutting-Edge Solutions to Transform Your Business</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+                <h1>Our Services</h1>
+                <p>At Jackal Tech, we are dedicated to creating solutions that not only meet the immediate needs of our clients but also have a lasting positive impact on the world. Our approach involves leveraging cutting-edge technologies to develop innovative products and services that solve complex problems in various sectors, including <b>healthcare, education, finance, manufacturing, agriculture, and retail</b>. By fostering a culture of continuous improvement and excellence, we aim to stay ahead of the technological curve and deliver exceptional value to our clients and communities. Our commitment to sustainability and social responsibility ensures that our innovations contribute to a better, more equitable future for all.</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="service-box">
+                            <img src="images/healthcare.jpeg" alt="Healthcare" class="service-image img-fluid">
+                            <h2>Healthcare</h2>
+                            <p>Developing solutions to improve service delivery through enhanced data storage and retrieval systems. Our healthcare solutions aim to streamline operations and improve patient care through innovative technologies.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-box">
+                            <img src="images/banner3.jpg" alt="Education" class="service-image img-fluid">
+                            <h2>Education</h2>
+                            <p>Implementing STEM education through partnerships like Afribot Robotics to train teachers on Robotics, Coding, and AI. We aim to equip the next generation with the skills needed to thrive in a tech-driven world.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="service-box">
+                            <img src="images/finance.jpeg" alt="Finance" class="service-image img-fluid">
+                            <h2>Finance</h2>
+                            <p>Developing advanced financial solutions to enhance transaction efficiency, accuracy, and security. Our expertise includes fintech innovations, blockchain technologies, and AI-driven financial analytics.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-box">
+                            <img src="images/manufacturing.jpg" alt="Manufacturing" class="service-image img-fluid">
+                            <h2>Manufacturing</h2>
+                            <p>Enhancing manufacturing processes with advanced technology solutions. Our services aim to optimize production lines, reduce costs, and improve product quality.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="service-box">
+                            <img src="images/agriculture.webp" alt="Agriculture" class="service-image img-fluid">
+                            <h2>Agriculture</h2>
+                            <p>Leveraging technology to improve agricultural productivity and sustainability. Our solutions help farmers increase yields, reduce waste, and promote sustainable farming practices.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-box">
+                            <img src="images/retail.jpg" alt="Retail" class="service-image img-fluid">
+                            <h2>Retail</h2>
+                            <p>Developing e-commerce platforms and retail management systems to enhance the shopping experience. Our services help retailers streamline operations, manage inventory, and improve customer satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="service-box">
+                            <img src="images/consulting.jpg" alt="Consulting" class="service-image img-fluid">
+                            <h2>Consulting</h2>
+                            <p>Providing expert consulting services in various sectors including healthcare, education, finance, and technology. Our consultants work closely with clients to deliver tailored solutions that meet their unique needs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-box">
+                            <img src="images/technology.jpg" alt="Technology Solutions" class="service-image img-fluid">
+                            <h2>Technology Solutions</h2>
+                            <p>Offering cutting-edge technology solutions to businesses of all sizes. From software development to IT infrastructure, our technology solutions help businesses stay ahead of the competition.</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education-section">
+            <div class="container">
+                <h2>Education Sector</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="education-box">
+                            <h3>Teacher Training</h3>
+                            <p>We provide extensive training programs for teachers in the fields of Robotics, Coding, and AI. Our goal is to ensure that teachers are well-equipped to educate the next generation of tech leaders.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="education-box">
+                            <h3>Student Programs</h3>
+                            <p>Our student programs are designed to foster a love for technology and innovation. We offer workshops, hackathons, and other events that encourage students to explore and develop their tech skills.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Healthcare Section -->
+        <section class="healthcare-section">
+            <div class="container">
+                <h2>Healthcare Sector</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="healthcare-box">
+                            <h3>Data Management</h3>
+                            <p>Our healthcare data management solutions streamline patient data storage and retrieval, ensuring that healthcare providers have quick access to critical information.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="healthcare-box">
+                            <h3>Patient Care</h3>
+                            <p>We offer innovative patient care solutions that improve the quality of care through better data management and advanced healthcare technologies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Finance Section -->
+        <section class="finance-section">
+            <div class="container">
+                <h2>Finance Sector</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="finance-box">
+                            <h3>Financial Tools</h3>
+                            <p>Our financial tools, such as the Lobo Counting Coin Machine, help streamline financial transactions and improve accuracy and efficiency in the financial sector.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="finance-box">
+                            <h3>Investment Solutions</h3>
+                            <p>We provide innovative investment solutions that help businesses and individuals make informed financial decisions and maximize their returns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manufacturing Section -->
+        <section class="manufacturing-section">
+            <div class="container">
+                <h2>Manufacturing Sector</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="manufacturing-box">
+                            <h3>Process Optimization</h3>
+                            <p>We offer advanced manufacturing solutions that optimize production lines, reduce costs, and improve product quality through the use of cutting-edge technologies.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="manufacturing-box">
+                            <h3>Automation</h3>
+                            <p>Our automation solutions help manufacturers streamline their operations, increase efficiency, and reduce human error in the production process.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agriculture Section -->
+        <section class="agriculture-section">
+            <div class="container">
+                <h2>Agriculture Sector</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="agriculture-box">
+                            <h3>Smart Farming</h3>
+                            <p>We leverage technology to improve agricultural productivity and sustainability. Our smart farming solutions help farmers increase yields, reduce waste, and promote sustainable farming practices.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="agriculture-box">
+                            <h3>AgriTech Innovations</h3>
+                            <p>Our AgriTech innovations provide farmers with the tools and technologies they need to modernize their operations and stay competitive in the global market.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Retail Section -->
+        <section class="retail-section">
+            <div class="container">
+                <h2>Retail Sector</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="retail-box">
+                            <h3>E-Commerce Platforms</h3>
+                            <p>We develop e-commerce platforms that enhance the shopping experience for customers and help retailers streamline their operations and manage inventory effectively.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="retail-box">
+                            <h3>Retail Management</h3>
+                            <p>Our retail management systems provide retailers with the tools they need to improve customer satisfaction, manage inventory, and optimize their sales processes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consulting Section -->
+        <section class="consulting-section">
+            <div class="container">
+                <h2>Consulting Services</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="consulting-box">
+                            <h3>Expert Consulting</h3>
+                            <p>We provide expert consulting services in various sectors including healthcare, education, finance, and technology. Our consultants work closely with clients to deliver tailored solutions that meet their unique needs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="consulting-box">
+                            <h3>Business Strategy</h3>
+                            <p>Our business strategy consulting services help organizations develop effective strategies for growth and success in their respective industries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Solutions Section -->
+        <section class="technology-solutions-section">
+            <div class="container">
+                <h2>Technology Solutions</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="technology-solutions-box">
+                            <h3>Software Development</h3>
+                            <p>We offer custom software development services that help businesses streamline their operations and stay ahead of the competition with cutting-edge technology solutions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="technology-solutions-box">
+                            <h3>IT Infrastructure</h3>
+                            <p>Our IT infrastructure services provide businesses with the support they need to manage their IT systems effectively and ensure smooth operation of their technology resources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-box">
+                            <h3>Get in Touch</h3>
+                            <p>If you have any questions or would like to learn more about our services, please feel free to contact us. We're here to help you find the right solutions for your business needs.</p>
+                            <ul class="contact-info">
+                                <li><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</li>
+                                <li><i class="fas fa-phone-alt"></i> +250 782323272</li><p>
+                                <li><i class="fas fa-envelope"></i> info@jackaltechltd.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact-form">
+                            <h3>Send Us a Message</h3>
+                            <form action="https://formspree.io/f/xdknkejz" method="POST">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="Full Name" placeholder="Your Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="Email" placeholder="Your Email">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="5" name="Message" placeholder="Your Message" style="resize:none"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section id="partners" class="partners-section">
+            <div class="container">
+                <h2>Our Partners</h2>
+                <div class="partner-logos">
+                    <div class="logo"><img src="images/afribot.png" alt="Partner 1"></div>
+                    <!--<div class="logo"><img src="images/street-bridge.webp" alt="Partner 2"></div>-->
+                    <div class="logo"><img src="images/agahozo.png" alt="Partner 3"></div>
+                    <div class="logo"><img src="images/dhpp.jpeg" alt="Partner 1"></div>
+                    <!--<div class="logo"><img src="images/im-bank.png" alt="Partner 4"></div>-->
+                    <!--<div class="logo"><img src="images/mastercard.svg" alt="Partner 5"></div>-->
+                    <!--<div class="logo"><img src="images/bridge2rwanda.jpeg" alt="Partner 3"></div>-->
+                    <!--<div class="logo"><img src="images/stem-inspires.jpeg" alt="Partner 4"></div>-->
+                    <!--<div class="logo"><img src="images/gashora.jpeg" alt="Partner 5"></div>-->
+                   
+                </div>
+            </div>
+        </section>
+
+<!-- Chatbot section-->
+<section id="chatbot" class="chatbot-section">
+            <div class="chatbot-toggle" onclick="toggleChatbot()">Chat with us</div>
+            <div class="chatbot-window">
+                <div class="chatbot-header">
+                    <h3>Chat with us</h3>
+                    <button class="close-btn" onclick="toggleChatbot()">×</button>
+                </div>
+                <div class="chatbot-messages" id="chatbotMessages">
+                    <div class="chatbot-message bot-message">
+                        <div class="message-content">Hi, how can I help you today?</div>
+                    </div>
+                </div>
+                <div class="chatbot-input">
+                    <input type="text" id="chatbotInput" placeholder="Type a message...">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 footer-column">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 footer-column">
+                        <h5>Contact Information</h5>
+                        <p>Address: KG 11 Ave, Kigali, Rwanda</p>
+                        Phone: +250 782323272</p>
+                        <p>Email: info@jackaltechltd.com</p>
+                    </div>
+                    <div class="col-md-3 footer-column">
+                        <h5>Follow Us</h5>
+                        <div class="social-media">
+                            <a href="https://www.x.com/jackaltechltd" target="_blank" rel="noopener noreferrer" class="social-icon twitter">
+                                <svg class="niftybutton-twitterx" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                                    <title>Twitter X social icon</title>
+                                    <path d="M 304.757 216.824 L 495.394 0 L 450.238 0 L 284.636 188.227 L 152.475 0 L 0 0 L 199.902 284.656 L 0 512 L 45.16 512 L 219.923 313.186 L 359.525 512 L 512 512 M 61.456 33.322 L 130.835 33.322 L 450.203 480.317 L 380.811 480.317 "></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/jackal_tech/" target="_blank" rel="noopener noreferrer" class="social-icon instagram">
+                                <svg class="niftybutton-instagram" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                                    <title>Instagram social icon</title>
+                                    <path d="M256 109.3c47.8 0 53.4 0.2 72.3 1 17.4 0.8 26.9 3.7 33.2 6.2 8.4 3.2 14.3 7.1 20.6 13.4 6.3 6.3 10.1 12.2 13.4 20.6 2.5 6.3 5.4 15.8 6.2 33.2 0.9 18.9 1 24.5 1 72.3s-0.2 53.4-1 72.3c-0.8 17.4-3.7 26.9-6.2 33.2 -3.2 8.4-7.1 14.3-13.4 20.6 -6.3 6.3-12.2 10.1-20.6 13.4 -6.3 2.5-15.8 5.4-33.2 6.2 -18.9 0.9-24.5 1-72.3 1s-53.4-0.2-72.3-1c-17.4-0.8-26.9-3.7-33.2-6.2 -8.4-3.2-14.3-7.1-20.6-13.4 -6.3-6.3-10.1-12.2-13.4-20.6 -2.5-6.3-5.4-15.8-6.2-33.2 -0.9-18.9-1-24.5-1-72.3s0.2-53.4 1-72.3c0.8-17.4 3.7-26.9 6.2-33.2 3.2-8.4 7.1-14.3 13.4-20.6 6.3-6.3 12.2-10.1 20.6-13.4 6.3-2.5 15.8-5.4 33.2-6.2C202.6 109.5 208.2 109.3 256 109.3M256 77.1c-48.6 0-54.7 0.2-73.8 1.1 -19 0.9-32.1 3.9-43.4 8.3 -11.8 4.6-21.7 10.7-31.7 20.6 -9.9 9.9-16.1 19.9-20.6 31.7 -4.4 11.4-7.4 24.4-8.3 43.4 -0.9 19.1-1.1 25.2-1.1 73.8 0 48.6 0.2 54.7 1.1 73.8 0.9 19 3.9 32.1 8.3 43.4 4.6 11.8 10.7 21.7 20.6 31.7 9.9 9.9 19.9 16.1 31.7 20.6 11.4 4.4 24.4 7.4 43.4 8.3 19.1 0.9 25.2 1.1 73.8 1.1s54.7-0.2 73.8-1.1c19-0.9 32.1-3.9 43.4-8.3 11.8-4.6 21.7-10.7 31.7-20.6 9.9-9.9 16.1-19.9 20.6-31.7 4.4-11.4 7.4-24.4 8.3-43.4 0.9-19.1 1.1-25.2 1.1-73.8s-0.2-54.7-1.1-73.8c-0.9-19-3.9-32.1-8.3-43.4 -4.6-11.8-10.7-21.7-20.6-31.7 -9.9-9.9-19.9-16.1-31.7-20.6 -11.4-4.4-24.4-7.4-43.4-8.3C310.7 77.3 304.6 77.1 256 77.1L256 77.1z"></path>
+                                    <path d="M256 164.1c-50.7 0-91.9 41.1-91.9 91.9s41.1 91.9 91.9 91.9 91.9-41.1 91.9-91.9S306.7 164.1 256 164.1zM256 315.6c-32.9 0-59.6-26.7-59.6-59.6s26.7-59.6 59.6-59.6 59.6 26.7 59.6 59.6S288.9 315.6 256 315.6z"></path>
+                                    <circle cx="351.5" cy="160.5" r="21.5"></circle>
+                                </svg>
+                            </a>
+                            <a href="https://www.rw.linkedin.com/company/jackal-tech" target="_blank" rel="noopener noreferrer" class="social-icon linkedin">
+                                <svg class="niftybutton-linkedin" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                                    <title>LinkedIn social icon</title>
+                                    <path d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.youtube.com/@jackaltechltd" target="_blank" rel="noopener noreferrer" class="social-icon youtube">
+                                <svg class="niftybutton-youtube" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                                    <title>YouTube social icon</title>
+                                    <path d="M422.6 193.6c-5.3-45.3-23.3-51.6-59-54 -50.8-3.5-164.3-3.5-215.1 0 -35.7 2.4-53.7 8.7-59 54 -4 33.6-4 91.1 0 124.8 5.3 45.3 23.3 51.6 59 54 50.9 3.5 164.3 3.5 215.1 0 35.7-2.4 53.7-8.7 59-54C426.6 284.8 426.6 227.3 422.6 193.6zM222.2 303.4v-94.6l90.7 47.3L222.2 303.4z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.github.com/Jackal-Tech-Dev" target="_blank" rel="noopener noreferrer" class="social-icon github">
+                                <svg class="niftybutton-github" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                                    <title>Github social icon</title>
+                                    <path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 footer-column">
+                        <h5>Newsletter</h5>
+                        <form action="https://formspree.io/f/mnnanqvz" method="POST">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="full_name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5160918255415!2d30.12565187616407!3d-1.9465078980358401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca71759b7aa45%3A0x2cde50a29ad17c85!2sKG%2011%20Ave%2C%20Kigali%2C%20Rwanda!5e0!3m2!1sen!2sus!4v1721028689521!5m2!1sen!2sus"  id="map"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <ul class="footer-links">
+                    <li><a class="nav-link" href="policies.html" onclick="showContent('faqs')">FAQs</a></li>
+                    <li><a class="nav-link" href="policies.html" onclick="showContent('terms-of-use')">Terms of Use</a></li>
+                    <li><a class="nav-link" href="policies.html" onclick="showContent('cookie-settings')">Your Privacy Choices/Cookie Settings</a></li>
+                    <li><a class="nav-link" href="policies.html" onclick="showContent('ca-notice')">RW Notice of Collection</a></li>
+                    <li><a class="nav-link" href="policies.html" onclick="showContent('accessibility')">Accessibility Statement</a></li>
+                    <li><a class="nav-link" href="policies.html" onclick="showContent('copyright-policy')">Copyright Policy</a></li>
+                </ul>
+                <p>&copy; 2024 Jackal Tech Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sign-Up Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="backend/form-handler.php" method="POST">
+                        <input type="hidden" name="signup" value="1">
+                        <div class="form-group">
+                            <label for="signup-email">Email address</label>
+                            <input type="email" class="form-control" id="signup-email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password">Password</label>
+                            <input type="password" class="form-control" id="signup-password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-confirm-password">Confirm Password</label>
+                            <input type="password" class="form-control" id="signup-confirm-password" placeholder="Confirm Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sign-In Modal -->
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signinModalLabel">Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="signin-email">Email address</label>
+                            <input type="email" class="form-control" id="signin-email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="signin-password">Password</label>
+                            <input type="password" class="form-control" id="signin-password" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    
+            // Dynamic Content Loading (mock example)
+            const caseStudies = [
+                {
+                    title: "Healthcare Solution Implementation",
+                    description: "Details about healthcare solution implementation.",
+                    video: "videos/case-study1.mp4"
+                },
+                {
+                    title: "STEM Education Initiative",
+                    description: "Details about STEM education initiative.",
+                    video: "videos/case-study2.mp4"
+                },
+                {
+                    title: "Financial Technology Development",
+                    description: "Details about financial technology development.",
+                    video: "videos/case-study3.mp4"
+                }
+            ];
+    
+            const caseStudiesList = document.querySelector(".list-unstyled");
+            caseStudiesList.addEventListener("click", function (e) {
+                if (e.target.tagName === "A") {
+                    e.preventDefault();
+                    const index = Array.from(caseStudiesList.children).indexOf(e.target.parentElement);
+                    const caseStudy = caseStudies[index];
+                    showCaseStudyModal(caseStudy);
+                }
+            });
+    
+            function showCaseStudyModal(caseStudy) {
+                const modal = document.createElement("div");
+                modal.classList.add("modal");
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <span class="close-btn">&times;</span>
+                        <h2>${caseStudy.title}</h2>
+                        <p>${caseStudy.description}</p>
+                        <video controls>
+                            <source src="${caseStudy.video}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+    
+                const closeBtn = modal.querySelector(".close-btn");
+                closeBtn.addEventListener("click", function () {
+                    document.body.removeChild(modal);
+                });
+    
+                modal.addEventListener("click", function (e) {
+                    if (e.target === modal) {
+                        document.body.removeChild(modal);
+                    }
+                });
+            }
+
+    </script>
+
+
+
+      <!-- JavaScript -->
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="js/script.js"></script>
+      <script src="js/main.js"></script>
+    </body>
+    
+    </html>
+    

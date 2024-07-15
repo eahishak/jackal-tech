@@ -1,0 +1,805 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About-Jackal Tech Ltd</title>
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Google Maps API -->
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>-->
+    
+     <!-- Jackal Tech Logo Favicon-->
+
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAD9/f0AAAAAAAICAgD///8AMjIyAAQEBAD6+voA8/PzAPX19QABAQEAAwMDAEFBQQAFBQUAJSUlAAAAAAAAAAAAEREREREREREREXkBvEEREREREREREREREREwEzURERERERMRExERERERExMSMRERERETExExERERERMTETERERERExMRMRERERETExExERERETMTETERERERGDMxoREREREZER0RERERERERGRERERERERFhEREREREREREREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon">
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f0f0;
+        }
+        
+        .jackal-container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .jackal-story-section {
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+            padding: 40px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .jackal-story-section h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .jackal-story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .jackal-story-text {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+        
+        .jackal-story-text p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .jackal-story-images {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .jackal-image-box {
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+            position: relative;
+        }
+        
+        .jackal-image-box img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+            display: block;
+            border-radius: 10px;
+        }
+        
+        .jackal-image-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .jackal-image-box:hover img {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .jackal-story-content {
+                grid-template-columns: 1fr;
+            }
+        
+            .jackal-story-text,
+            .jackal-story-images {
+                width: 100%;
+            }
+        }
+        
+            
+    
+    /* Statistics Section */
+    .statistics-section {
+    padding: 60px 0;
+    background-color: #f9f9f9 !important;
+    }
+    
+    .statistics-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333 !important;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    }
+    
+    .statistics-description {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.2em;
+    color: #666 !important;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-style: italic !important;
+    max-width: 800px;
+    margin: 0 auto 40px !important;
+    }
+    
+    .statistics-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-around !important;
+    gap: 20px !important;
+    }
+    
+    .chart-container {
+    flex: 1 1 300px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    background-color: #fff !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 10px !important;
+    transition: transform 0.3s ease !important;
+    }
+    
+    .chart-container:hover {
+    transform: translateY(-10px) !important;
+    }
+    
+    .chart-container h3 {
+    font-size: 1.1em !important;
+    color: #333 !important;
+    margin-bottom: 15px !important;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    }
+    
+    .chart-box {
+    width: 100% !important;
+    height: 400px !important;
+    padding: 20px !important;
+    max-width: 900px !important;
+    transition: transform 0.3s ease !important;
+    }
+    
+    .chart-box:hover {
+    transform: translateY(-10px) !important;
+    }
+    
+    .chart-box canvas {
+    width: 100% !important;
+    height: 100% !important;
+    }
+    
+    .chart-caption {
+    color: #999 !important;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+    .statistics-section h2 {
+        font-size: 2rem !important;
+    }
+    
+    .statistics-description {
+        font-size: 1.1em !important;
+    }
+    
+    .chart-container h3 {
+        font-size: 1.25rem !important;
+    }
+    
+    .chart-box {
+        height: 300px !important;
+    }
+    }
+    
+    @media (max-width: 576px) {
+    .statistics-section h2 {
+        font-size: 1.75rem !important;
+    }
+    
+    .statistics-description {
+        font-size: 1em !important;
+    }
+    
+    .chart-container h3 {
+        font-size: 1rem !important;
+    }
+    
+    .chart-box {
+        height: 250px !important;
+    }
+    }
+    
+    
+    </style>
+
+
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/logo.jpg" alt="Jackal Tech Ltd."></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Policies</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="policies.html" onclick="showContent('faqs')">FAQs</a>
+                                <a class="dropdown-item" href="policies.html" onclick="showContent('terms-of-use')">Privacy Policies </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="auth-buttons ml-auto">
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#signinModal">Sign In</button>
+                        <button class="btn btn-secondary" data-toggle="modal" data-target="#signupModal">Join</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="subnav bg-light d-flex justify-content-between align-items-center">
+            <div class="container d-flex justify-content-between align-items-center">
+                <form class="search-form form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="banner">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/banner-about1.jpg" class="d-block w-100" alt="Jackal Tech Innovation">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/banner-about2.jpg" class="d-block w-100" alt="Jackal Tech Team">
+                    </div>
+                </div>
+            </div>
+            <div class="banner-content">
+                <h1>About Jackal Tech Ltd</h1>
+                <p>Driving Technological Innovation to Solve Global Challenges</p>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>At Jackal Tech, our mission is to drive technological innovation that addresses global challenges.</p>
+                <div class="learn-more-content" style="display: block;">
+                    <p>We are dedicated to creating impactful innovations that shape the future.</p>
+                    <div class="additional-info">
+                        <p>Founded in late 2019 and rebranded in 2021 in Kigali, Rwanda, Jackal Tech has grown into a leader in technology solutions, with a focus on healthcare, education, finance, manufacturing, agriculture, and retail sectors.</p>
+                        <p>Our dedicated team of experts works tirelessly to deliver cutting-edge solutions that empower businesses and communities to thrive in the digital age.</p>
+                        <h3>Our Vision</h3>
+                        <p>To be a global leader in technological innovation, driving sustainable growth and improving lives worldwide.</p>
+                        <h3>Our Mission</h3>
+                        <ul>
+                            <li>To develop and implement innovative solutions that meet the evolving needs of our clients.</li>
+                            <li>To foster a culture of continuous improvement and excellence.</li>
+                            <li>To promote sustainable practices and social responsibility in all our endeavors.</li>
+                        </ul>
+                        <h3>Our Values</h3>
+                        <div class="values-section">
+                            <div class="value-item">
+                                <h4>Integrity</h4>
+                                <p>We adhere to the highest standards of ethical conduct in all our actions.</p>
+                            </div>
+                            <div class="value-item">
+                                <h4>Innovation</h4>
+                                <p>We embrace change and encourage creativity to deliver top-notch solutions.</p>
+                            </div>
+                            <div class="value-item">
+                                <h4>Excellence</h4>
+                                <p>We strive for excellence in everything we do, ensuring high quality and continuous improvement.</p>
+                            </div>
+                            <div class="value-item">
+                                <h4>Customer Focus</h4>
+                                <p>We prioritize our customers' needs and work to exceed their expectations.</p>
+                            </div>
+                            <div class="value-item">
+                                <h4>Social Responsibility</h4>
+                                <p>We are committed to making a positive impact on society and the environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="team-section">
+                <h2>Our Team</h2>
+
+                <!-- Executive Team -->
+                <div class="team-category">
+                    <h3>Executive Team</h3>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/Ignace.jpg" alt="Ignace Kwizera">
+                                <h4>Ignace Kwizera</h4>
+                                <p> Founder & CEO</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/Emmanuel.jpg" alt="Emmanuel Ahishakiye">
+                                <h4>Emmanuel Ahishakiye</h4>
+                                <p>Founder, Spokesperson & CTO</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/Placide.jpg" alt="Placide Shema">
+                                <h4>Placide Shema</h4>
+                                <p>Founder & General Manager</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/Fifi.jpg" alt="Team Member">
+                                <h4>Fifi Gisele Nyampinga</h4>
+                                <p>CFO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advisory Board -->
+                <div class="team-category">
+                    <h3>Advisory Board</h3>
+                    <div class="row">
+                        <!-- Add 12 members here, example with 3 members -->
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/ian.jpeg" alt="Ian Mukasa">
+                                <h4>Ian Mukasa</h4>
+                                <p>Technology Advisor</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/lise.jpeg" alt="Tuyisenge-Lise-Eugenie">
+                                <h4>Tuyisenge Lise Eugenie</h4>
+                                <p>Financial Advisor</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/josiane.jpeg" alt="Josiane Ishimwe">
+                                <h4>Josiane Ishimwe</h4>
+                                <p>Strategic Partnerships Associate</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/schadrack.jpg" alt="Schadrack NIYONZIMA">
+                                <h4>Schadrack NIYONZIMA</h4>
+                                <p>Operations Advisor</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/beth.jpg" alt="Beth SCHOLZ">
+                                <h4>Beth SCHOLZ</h4>
+                                <p>Recruitment Associate</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/chris.png" alt="GIRANEZA UWANTEGE">
+                                <h4>Dr. Christelle GIRANEZA UWANTEGE</h4>
+                                <p>Customer Experience Advisor</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/Deo.png" alt="Deo Kabirigi">
+                                <h4>Deo Kabirigi</h4>
+                                <p>Corporate Governance Advisor</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/francis.jpeg" alt="Francis-Pellegrino">
+                                <h4>Francis Pellegrino</h4>
+                                <p>Sustainability Advisor</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/allan.jpeg" alt="Allan SHYAKA">
+                                <h4>Allan SHYAKA</h4>
+                                <p>Human Resources Advisor</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/lily.jpg" alt="Lily Conroy">
+                                <h4>Lily Conroy</h4>
+                                <p>Recruitment Associate</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/bosco.png" alt="Bosco-Rutikanga">
+                                <h4>Bosco Rutikanga</h4>
+                                <p>Product Development Advisor</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="team-member">
+                                <img src="images/Graham.jpg" alt="Graham Dilworth">
+                                <h4>Graham Dilworth</h4>
+                                <p>Recruitment Associate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section id="jackal-story" class="jackal-story-section">
+            <div class="jackal-container">
+                <h2>Our Story</h2>
+                <div class="jackal-story-content">
+                    <div class="jackal-story-text">
+                        <p>Jackal Tech Ltd. began with a vision to create a tech-savvy and solution-oriented community. Since our founding in late 2019 in Kigali, Rwanda, we have grown into a company known for its innovative solutions and impactful projects.</p>
+                        <p>Our mission is to drive technological innovation that addresses global challenges. We empower the next generation through education and skill-building, fostering a community dedicated to finding practical solutions to critical global issues.</p>
+                        <p>At Jackal Tech Ltd., our vision is to be a leader in technology, consistently creating impactful innovations that elevate scientific understanding, transform societies, and improve lives worldwide.</p>
+                    </div>
+                    <div class="jackal-story-images">
+                        <div class="jackal-image-box">
+                            <img src="images/benjamin-typing.jpg" alt="Jackal Typing Master Competition">
+                        </div>
+                        <div class="jackal-image-box">
+                            <img src="images/emmanuel-placide.jpg" alt="Team Collaboration">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="statistics" class="statistics-section">
+                <h2>Our Staff Growth Rate</h2>
+                <div class="statistics-grid">
+                    <div class="chart-box">
+                        <canvas id="staffGrowthChart"></canvas>
+                    </div>
+                </div>
+        </section>
+
+      <!--  
+        <section id="partners" class="partners-section">
+            <div class="container">
+                <h2>Our Partners</h2>
+                <div class="partner-logos">
+                    <div class="logo"><img src="images/afribot.png" alt="Partner 1"></div>
+                    <!--<div class="logo"><img src="images/street-bridge.webp" alt="Partner 2"></div>-->
+                   <!-- <div class="logo"><img src="images/agahozo.png" alt="Partner 3"></div>
+                   <!-- <div class="logo"><img src="images/dhpp.jpeg" alt="Partner 1"></div>
+                    <!--<div class="logo"><img src="images/im-bank.png" alt="Partner 4"></div>-->
+                    <!--<div class="logo"><img src="images/mastercard.svg" alt="Partner 5"></div>-->
+                    <!--<div class="logo"><img src="images/bridge2rwanda.jpeg" alt="Partner 3"></div>-->
+                    <!--<div class="logo"><img src="images/stem-inspires.jpeg" alt="Partner 4"></div>-->
+                    <!--<div class="logo"><img src="images/gashora.jpeg" alt="Partner 5"></div>-->
+                   
+             <!--   </div>
+            </div>
+        </section>
+        -->
+
+        <section id="chatbot" class="chatbot-section">
+            <div class="chatbot-toggle" onclick="toggleChatbot()">Chat with us</div>
+            <div class="chatbot-window">
+                <div class="chatbot-header">
+                    <h3>Chat with us</h3>
+                    <button class="close-btn" onclick="toggleChatbot()">×</button>
+                </div>
+                <div class="chatbot-messages" id="chatbotMessages">
+                    <div class="chatbot-message bot-message">
+                        <div class="message-content">Hi, how can I help you today?</div>
+                    </div>
+                </div>
+                <div class="chatbot-input">
+                    <input type="text" id="chatbotInput" placeholder="Type a message...">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 footer-column">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 footer-column">
+                        <h5>Contact Information</h5>
+                        <p>Address: KG 11 Ave, Kigali, Rwanda</p>
+                        <p>Phone: +250 782323272</p>
+                        <p>Email: info@jackaltechltd.com</p>
+                    </div>
+                    <div class="col-md-3 footer-column">
+                        <h5>Follow Us</h5>
+                        <div class="social-media">
+                            <a href="https://www.x.com/jackaltechltd" target="_blank" rel="noopener noreferrer" class="social-icon twitter">
+                                <svg class="niftybutton-twitterx" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                                    <title>Twitter X social icon</title>
+                                    <path d="M 304.757 216.824 L 495.394 0 L 450.238 0 L 284.636 188.227 L 152.475 0 L 0 0 L 199.902 284.656 L 0 512 L 45.16 512 L 219.923 313.186 L 359.525 512 L 512 512 M 61.456 33.322 L 130.835 33.322 L 450.203 480.317 L 380.811 480.317 "></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/jackal_tech/" target="_blank" rel="noopener noreferrer" class="social-icon instagram">
+                                <svg class="niftybutton-instagram" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                                    <title>Instagram social icon</title>
+                                    <path d="M256 109.3c47.8 0 53.4 0.2 72.3 1 17.4 0.8 26.9 3.7 33.2 6.2 8.4 3.2 14.3 7.1 20.6 13.4 6.3 6.3 10.1 12.2 13.4 20.6 2.5 6.3 5.4 15.8 6.2 33.2 0.9 18.9 1 24.5 1 72.3s-0.2 53.4-1 72.3c-0.8 17.4-3.7 26.9-6.2 33.2 -3.2 8.4-7.1 14.3-13.4 20.6 -6.3 6.3-12.2 10.1-20.6 13.4 -6.3 2.5-15.8 5.4-33.2 6.2 -18.9 0.9-24.5 1-72.3 1s-53.4-0.2-72.3-1c-17.4-0.8-26.9-3.7-33.2-6.2 -8.4-3.2-14.3-7.1-20.6-13.4 -6.3-6.3-10.1-12.2-13.4-20.6 -2.5-6.3-5.4-15.8-6.2-33.2 -0.9-18.9-1-24.5-1-72.3s0.2-53.4 1-72.3c0.8-17.4 3.7-26.9 6.2-33.2 3.2-8.4 7.1-14.3 13.4-20.6 6.3-6.3 12.2-10.1 20.6-13.4 6.3-2.5 15.8-5.4 33.2-6.2C202.6 109.5 208.2 109.3 256 109.3M256 77.1c-48.6 0-54.7 0.2-73.8 1.1 -19 0.9-32.1 3.9-43.4 8.3 -11.8 4.6-21.7 10.7-31.7 20.6 -9.9 9.9-16.1 19.9-20.6 31.7 -4.4 11.4-7.4 24.4-8.3 43.4 -0.9 19.1-1.1 25.2-1.1 73.8 0 48.6 0.2 54.7 1.1 73.8 0.9 19 3.9 32.1 8.3 43.4 4.6 11.8 10.7 21.7 20.6 31.7 9.9 9.9 19.9 16.1 31.7 20.6 11.4 4.4 24.4 7.4 43.4 8.3 19.1 0.9 25.2 1.1 73.8 1.1s54.7-0.2 73.8-1.1c19-0.9 32.1-3.9 43.4-8.3 11.8-4.6 21.7-10.7 31.7-20.6 9.9-9.9 16.1-19.9 20.6-31.7 4.4-11.4 7.4-24.4 8.3-43.4 0.9-19.1 1.1-25.2 1.1-73.8s-0.2-54.7-1.1-73.8c-0.9-19-3.9-32.1-8.3-43.4 -4.6-11.8-10.7-21.7-20.6-31.7 -9.9-9.9-19.9-16.1-31.7-20.6 -11.4-4.4-24.4-7.4-43.4-8.3C310.7 77.3 304.6 77.1 256 77.1L256 77.1z"></path>
+                                    <path d="M256 164.1c-50.7 0-91.9 41.1-91.9 91.9s41.1 91.9 91.9 91.9 91.9-41.1 91.9-91.9S306.7 164.1 256 164.1zM256 315.6c-32.9 0-59.6-26.7-59.6-59.6s26.7-59.6 59.6-59.6 59.6 26.7 59.6 59.6S288.9 315.6 256 315.6z"></path>
+                                    <circle cx="351.5" cy="160.5" r="21.5"></circle>
+                                </svg>
+                            </a>
+                            <a href="https://www.rw.linkedin.com/company/jackal-tech" target="_blank" rel="noopener noreferrer" class="social-icon linkedin">
+                                <svg class="niftybutton-linkedin" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                                    <title>LinkedIn social icon</title>
+                                    <path d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.youtube.com/@jackaltechltd" target="_blank" rel="noopener noreferrer" class="social-icon youtube">
+                                <svg class="niftybutton-youtube" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                                    <title>YouTube social icon</title>
+                                    <path d="M422.6 193.6c-5.3-45.3-23.3-51.6-59-54 -50.8-3.5-164.3-3.5-215.1 0 -35.7 2.4-53.7 8.7-59 54 -4 33.6-4 91.1 0 124.8 5.3 45.3 23.3 51.6 59 54 50.9 3.5 164.3 3.5 215.1 0 35.7-2.4 53.7-8.7 59-54C426.6 284.8 426.6 227.3 422.6 193.6zM222.2 303.4v-94.6l90.7 47.3L222.2 303.4z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.github.com/Jackal-Tech-Dev" target="_blank" rel="noopener noreferrer" class="social-icon github">
+                                <svg class="niftybutton-github" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                                    <title>Github social icon</title>
+                                    <path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 footer-column">
+                        <h5>Newsletter</h5>
+                        <form action="https://formspree.io/f/mnnanqvz" method="POST">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="full_name" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
+                    </div>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5160918255415!2d30.12565187616407!3d-1.9465078980358401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca71759b7aa45%3A0x2cde50a29ad17c85!2sKG%2011%20Ave%2C%20Kigali%2C%20Rwanda!5e0!3m2!1sen!2sus!4v1721028689521!5m2!1sen!2sus"  id="map"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <ul class="footer-links">
+                    <li><a class="nav-link" href="policies.html" onclick="showContent('faqs')">FAQs</a></li>
+                    <li><a class="nav-link" href="policies.html" onclick="showContent('terms-of-use')">Terms of Use</a></li>
+                    <li><a class="nav-link" href="policies.html" onclick="showContent('cookie-settings')">Your Privacy Choices/Cookie Settings</a></li>
+                    <li><a class="nav-link" href="policies.html" onclick="showContent('ca-notice')">RW Notice of Collection</a></li>
+                    <li><a class="nav-link" href="policies.html" onclick="showContent('accessibility')">Accessibility Statement</a></li>
+                    <li><a class="nav-link" href="policies.html" onclick="showContent('copyright-policy')">Copyright Policy</a></li>
+                </ul>
+                <p>&copy; 2024 Jackal Tech Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sign-Up Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="backend/form-handler.php" method="POST">
+                        <input type="hidden" name="signup" value="1">
+                        <div class="form-group">
+                            <label for="signup-email">Email address</label>
+                            <input type="email" class="form-control" id="signup-email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password">Password</label>
+                            <input type="password" class="form-control" id="signup-password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-confirm-password">Confirm Password</label>
+                            <input type="password" class="form-control" id="signup-confirm-password" placeholder="Confirm Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign-In Modal -->
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signinModalLabel">Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="signin-email">Email address</label>
+                            <input type="email" class="form-control" id="signin-email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="signin-password">Password</label>
+                            <input type="password" class="form-control" id="signin-password" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+        <script>
+      // Staff growth chart
+            var ctx = document.getElementById('staffGrowthChart').getContext('2d');
+            var staffGrowthChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Q4-2023', 'Q1-2024', 'Q2-2024/Baseline'],
+                    datasets: [
+                        {
+                            label: 'Staff',
+                            data: [44, 61, 100],
+                            backgroundColor: 'rgba(0, 123, 255, 0.7)',
+                            borderColor: 'rgba(0, 123, 255, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Growth Rate',
+                            data: [0, 21, 39],
+                            backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {return value + "%";}
+                            }
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+
+
+        <script>
+            //Staff Growth Rate
+            document.addEventListener('DOMContentLoaded', function () {
+                var staffGrowthChartCtx = document.getElementById('staffGrowthChart').getContext('2d');
+                new Chart(staffGrowthChartCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Q4-2023', 'Q1-2024', 'Q2-2024/Baseline'],
+                        datasets: [{
+                            label: 'Staff',
+                            data: [44, 61, 100],
+                            backgroundColor: '#007bff'
+                        }, {
+                            label: 'Growth Rate',
+                            data: [0, 21, 39],
+                            backgroundColor: '#dc3545'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        title: {
+                            display: true,
+                            text: 'Jackal Tech Staff Growth Metrics 2023-24 Term'
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+
+
+      <!-- JavaScript -->
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="js/script.js"></script>
+      <script src="js/main.js"></script>
+
+    </body>
+    
+    </html>
+    
