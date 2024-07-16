@@ -2841,3 +2841,336 @@ class ChatWidget {
 document.addEventListener('DOMContentLoaded', () => {
     const chatWidget = new ChatWidget();
 });
+
+
+
+//Utility Functions (Extended)
+
+// Utility Functions
+const Utils = {
+    fetchData: async (url) => {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Error fetching ${url}`);
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    },
+
+    fetchText: async (url) => {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Error fetching ${url}`);
+            return await response.text();
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    },
+
+    sanitizeHTML: (str) => {
+        const temp = document.createElement('div');
+        temp.textContent = str;
+        return temp.innerHTML;
+    },
+
+    debounce: (func, wait) => {
+        let timeout;
+        return (...args) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func(...args), wait);
+        };
+    },
+
+    throttle: (func, limit) => {
+        let lastFunc;
+        let lastRan;
+        return (...args) => {
+            if (!lastRan) {
+                func(...args);
+                lastRan = Date.now();
+            } else {
+                clearTimeout(lastFunc);
+                lastFunc = setTimeout(() => {
+                    if ((Date.now() - lastRan) >= limit) {
+                        func(...args);
+                        lastRan = Date.now();
+                    }
+                }, limit - (Date.now() - lastRan));
+            }
+        };
+    },
+
+    fetchIPAddress: async (apiKey) => {
+        try {
+            const data = await Utils.fetchData(`https://ipinfo.io/json?token=${apiKey}`);
+            console.log('User IP Information:', data);
+            alert(`Your IP address is: ${data.ip}`);
+        } catch (error) {
+            console.error('Error fetching IP address:', error);
+        }
+    },
+
+    encryptData: (data, key) => {
+        return CryptoJS.AES.encrypt(JSON.stringify(data), key).toString();
+    },
+
+    decryptData: (ciphertext, key) => {
+        const bytes = CryptoJS.AES.decrypt(ciphertext, key);
+        return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    },
+
+    saveToLocalStorage: (key, data) => {
+        localStorage.setItem(key, JSON.stringify(data));
+    },
+
+    loadFromLocalStorage: (key) => {
+        const data = localStorage.getItem(key);
+        return data ? JSON.parse(data) : null;
+    },
+
+    clearLocalStorage: (key) => {
+        localStorage.removeItem(key);
+    }
+};
+
+
+
+
+//Real-Time Updates with WebSockets
+
+class WebSocketManager {
+    constructor(url) {
+        this.url = url;
+        this.ws = null;
+    }
+
+    connect() {
+        this.ws = new WebSocket(this.url);
+        this.ws.onopen = () => {
+            console.log('WebSocket connected');
+        };
+
+        this.ws.onmessage = (event) => {
+            const message = JSON.parse(event.data);
+            this.handleMessage(message);
+        };
+
+        this.ws.onclose = () => {
+            console.log('WebSocket disconnected. Reconnecting...');
+            setTimeout(() => this.connect(), 5000);
+        };
+
+        this.ws.onerror = (error) => {
+            console.error('WebSocket error:', error);
+        };
+    }
+
+    handleMessage(message) {
+        switch (message.type) {
+            case 'update':
+                this.handleUpdate(message.data);
+                break;
+            default:
+                console.warn('Unknown message type:', message.type);
+        }
+    }
+
+    handleUpdate(data) {
+        console.log('Received update:', data);
+        // Update the content on the page based on the received data
+        // For example, refresh certain parts of the content
+    }
+
+    sendMessage(data) {
+        if (this.ws && this.ws.readyState === WebSocket.OPEN) {
+            this.ws.send(JSON.stringify(data));
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const wsManager = new WebSocketManager('wss://your-websocket-server-url');
+    wsManager.connect();
+});
+
+
+
+//Advanced Analytics (Extended)
+
+class Analytics {
+    static trackPageView() {
+        // Placeholder for page view tracking logic
+        console.log('Page view tracked:', window.location.pathname);
+        // Send data to your analytics server
+        Analytics.sendData({
+            type: 'pageview',
+            path: window.location.pathname,
+            timestamp: new Date().toISOString()
+        });
+    }
+
+    static trackEvent(category, action, label) {
+        // Placeholder for event tracking logic
+        console.log(`Event tracked: ${category} - ${action} - ${label}`);
+        // Send data to your analytics server
+        Analytics.sendData({
+            type: 'event',
+            category,
+            action,
+            label,
+            timestamp: new Date().toISOString()
+        });
+    }
+
+    static sendData(data) {
+        navigator.sendBeacon('/analytics', JSON.stringify(data));
+    }
+
+    static trackError(message, source, lineno, colno, error) {
+        // Placeholder for error tracking logic
+        console.error(`Error tracked: ${message} at ${source}:${lineno}:${colno}`);
+        // Send error data to your analytics server
+        Analytics.sendData({
+            type: 'error',
+            message,
+            source,
+            lineno,
+            colno,
+            error: error ? error.stack : null,
+            timestamp: new Date().toISOString()
+        });
+    }
+}
+
+window.addEventListener('error', (event) => {
+    Analytics.trackError(event.message, event.filename, event.lineno, event.colno, event.error);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const app = new App();
+    app.init();
+    Analytics.trackPageView();
+    document.querySelectorAll('.trackable').forEach(element => {
+        element.addEventListener('click', (event) => {
+            const category = event.target.dataset.category || 'default';
+            const action = event.target.dataset.action || 'click';
+            const label = event.target.dataset.label || event.target.textContent;
+            Analytics.trackEvent(category, action, label);
+        });
+    });
+});
+
+
+//Progressive Web App Features
+
+class PWA {
+    static installPromptEvent = null;
+
+    static setupInstallPrompt() {
+        window.addEventListener('beforeinstallprompt', (event) => {
+            event.preventDefault();
+            PWA.installPromptEvent = event;
+            document.getElementById('installPWA').style.display = 'block';
+        });
+
+        document.getElementById('installPWA').addEventListener('click', () => {
+            if (PWA.installPromptEvent) {
+                PWA.installPromptEvent.prompt();
+                PWA.installPromptEvent.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('PWA installation accepted');
+                    } else {
+                        console.log('PWA installation dismissed');
+                    }
+                    PWA.installPromptEvent = null;
+                });
+            }
+        });
+    }
+
+    static setupUpdateNotification() {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                const updateNotification = document.createElement('div');
+                updateNotification.id = 'updateNotification';
+                updateNotification.textContent = 'New version available. Refresh to update.';
+                updateNotification.style.position = 'fixed';
+                updateNotification.style.bottom = '10px';
+                updateNotification.style.left = '50%';
+                updateNotification.style.transform = 'translateX(-50%)';
+                updateNotification.style.backgroundColor = '#333';
+                updateNotification.style.color = '#fff';
+                updateNotification.style.padding = '10px';
+                updateNotification.style.borderRadius = '5px';
+                updateNotification.style.cursor = 'pointer';
+                updateNotification.style.zIndex = '1000';
+                updateNotification.addEventListener('click', () => {
+                    window.location.reload();
+                });
+                document.body.appendChild(updateNotification);
+            });
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    PWA.setupInstallPrompt();
+    PWA.setupUpdateNotification();
+});
+
+
+//Enhanced Error Handling
+
+class ErrorHandler {
+    static logError(error, info) {
+        console.error('Error:', error, 'Info:', info);
+        Analytics.trackError(error.message, error.source, error.lineno, error.colno, error.error);
+    }
+
+    static handlePromiseRejection(event) {
+        event.preventDefault();
+        const error = event.reason;
+        ErrorHandler.logError(error, 'Unhandled Promise Rejection');
+    }
+}
+
+window.addEventListener('error', (event) => {
+    ErrorHandler.logError(event.error, 'Global Error');
+});
+
+window.addEventListener('unhandledrejection', ErrorHandler.handlePromiseRejection);
+
+
+
+//Modularization for Maintainability
+
+// File: utils.js
+export const Utils = {
+    // Utility functions as defined above
+};
+
+// File: app.js
+import { Analytics } from './analytics.js';
+import { ErrorHandler } from './error-handler.js';
+import { PWA } from './pwa.js';
+import { Utils } from './utils.js';
+import { WebSocketManager } from './websocket.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const app = new App();
+    app.init();
+    Analytics.trackPageView();
+    const wsManager = new WebSocketManager('wss://your-websocket-server-url');
+    wsManager.connect();
+    PWA.setupInstallPrompt();
+    PWA.setupUpdateNotification();
+    ErrorHandler.setupGlobalErrorHandling();
+});
+
+
+
+
+
