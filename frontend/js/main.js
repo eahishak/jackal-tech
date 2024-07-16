@@ -3147,29 +3147,6 @@ window.addEventListener('unhandledrejection', ErrorHandler.handlePromiseRejectio
 
 //Modularization for Maintainability
 
-// File: utils.js
-export const Utils = {
-    // Utility functions as defined above
-};
-
-// File: app.js
-import { Analytics } from './analytics.js';
-import { ErrorHandler } from './error-handler.js';
-import { PWA } from './pwa.js';
-import { Utils } from './utils.js';
-import { WebSocketManager } from './websocket.js';
-
-document.addEventListener('DOMContentLoaded', () => {
-    const app = new App();
-    app.init();
-    Analytics.trackPageView();
-    const wsManager = new WebSocketManager('wss://your-websocket-server-url');
-    wsManager.connect();
-    PWA.setupInstallPrompt();
-    PWA.setupUpdateNotification();
-    ErrorHandler.setupGlobalErrorHandling();
-});
-
 
 
 
