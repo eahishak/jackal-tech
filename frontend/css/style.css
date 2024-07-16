@@ -1665,8 +1665,6 @@ main {
 
 
 
-
-
 /* Chatbot Section */
 .chatbot-section {
     position: fixed;
@@ -2069,14 +2067,6 @@ main {
         height: 34px;
     }
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -3758,3 +3748,1142 @@ form[action="https://formspree.io/f/mrbzbpvb"] .btn {
 form[action="https://formspree.io/f/mrbzbpvb"] .btn:hover {
     background-color: #155724;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dark Mode Backgrounds and Text Colors */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0; /* Default text color */
+}
+
+/* Headers and Footers */
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+/* Section and Div Backgrounds */
+body.dark-mode .section,
+body.dark-mode .div {
+    background-color: #222;
+    color: #e0e0e0; /* Default text color */
+}
+
+/* Heading Colors */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6 {
+    color: #03dac6; /* Green */
+}
+
+/* Paragraph Colors */
+body.dark-mode p {
+    color: #e0e0e0; /* White */
+}
+
+/* List Colors */
+body.dark-mode ul,
+body.dark-mode ol,
+body.dark-mode li {
+    color: #e0e0e0; /* White */
+}
+
+/* Link Colors */
+body.dark-mode a {
+    color: #bb86fc; /* Purple */
+}
+
+body.dark-mode a:hover {
+    color: #03dac6; /* Green */
+}
+
+/* Navbar */
+body.dark-mode .navbar {
+    background-color: #333;
+}
+
+body.dark-mode .nav-link {
+    color: #e0e0e0;
+}
+
+body.dark-mode .nav-link:hover {
+    background: #1e1e1e;
+    color: #bb86fc;
+}
+
+body.dark-mode .navbar-brand img {
+    filter: brightness(0.8);
+}
+
+/* Buttons */
+body.dark-mode .btn-primary,
+body.dark-mode .btn-secondary {
+    background: #bb86fc;
+    border: none;
+    color: #121212;
+}
+
+body.dark-mode .btn-primary:hover,
+body.dark-mode .btn-secondary:hover {
+    background: #03dac6;
+    color: #121212;
+}
+
+/* Forms and Inputs */
+body.dark-mode .form-control {
+    background-color: #222;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+body.dark-mode .form-control:focus {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #bb86fc;
+}
+
+body.dark-mode .form-check-input {
+    background-color: #333;
+    border-color: #444;
+}
+
+body.dark-mode .form-check-input:checked {
+    background-color: #bb86fc;
+    border-color: #bb86fc;
+}
+
+body.dark-mode .form-check-label {
+    color: #e0e0e0;
+}
+
+/* Modals */
+body.dark-mode .modal-content {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+/* Dropdown Menus */
+body.dark-mode .dropdown-menu {
+    background-color: #333;
+    border-color: #444;
+}
+
+body.dark-mode .dropdown-item {
+    color: #e0e0e0;
+}
+
+body.dark-mode .dropdown-item:hover,
+body.dark-mode .dropdown-item:focus {
+    background-color: #1e1e1e;
+    color: #bb86fc;
+}
+
+/* Tables */
+body.dark-mode .table {
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .table th,
+body.dark-mode .table td {
+    border-color: #444;
+}
+
+/* Cards */
+body.dark-mode .card {
+    background-color: #333;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+/* Alerts */
+body.dark-mode .alert {
+    background-color: #333;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+/* Breadcrumbs */
+body.dark-mode .breadcrumb {
+    background-color: #333;
+}
+
+body.dark-mode .breadcrumb-item,
+body.dark-mode .breadcrumb-item a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .breadcrumb-item a:hover {
+    color: #bb86fc;
+}
+
+/* Pagination */
+body.dark-mode .page-link {
+    background-color: #333;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .page-link:hover {
+    background-color: #03dac6;
+    color: #121212;
+}
+
+body.dark-mode .page-item.active .page-link {
+    background-color: #bb86fc;
+    border-color: #bb86fc;
+    color: #121212;
+}
+
+/* List Groups */
+body.dark-mode .list-group-item {
+    background-color: #222;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .list-group-item:hover {
+    background-color: #03dac6;
+    color: #121212;
+}
+
+/* Tooltips */
+body.dark-mode .tooltip-inner {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+/* Popovers */
+body.dark-mode .popover {
+    background-color: #333;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .popover-header {
+    background-color: #444;
+    border-color: #444;
+}
+
+body.dark-mode .popover-body {
+    color: #e0e0e0;
+}
+
+/* Chatbot */
+body.dark-mode .chatbot-header,
+body.dark-mode .chatbot-messages,
+body.dark-mode .chatbot-input {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .chatbot-toggle {
+    background: linear-gradient(135deg, #333, #444);
+    color: #bb86fc;
+}
+
+body.dark-mode .chatbot-toggle:hover {
+    background: linear-gradient(135deg, #444, #555);
+}
+
+body.dark-mode .chatbot-message {
+    background: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .chatbot-message .message-content {
+    background: #555;
+}
+
+body.dark-mode .typing-indicator span {
+    background: #bb86fc;
+}
+
+body.dark-mode .send-btn {
+    background: linear-gradient(135deg, #bb86fc, #03dac6);
+    color: #121212;
+}
+
+body.dark-mode .send-btn:hover {
+    background: linear-gradient(135deg, #03dac6, #bb86fc);
+}
+
+body.dark-mode .upload-buttons button,
+body.dark-mode .voice-btn,
+body.dark-mode .emoji-btn {
+    color: #e0e0e0;
+}
+
+
+
+
+/* Banner Section */
+body.dark-mode .banner-content {
+    background: rgba(0, 0, 0, 0.7);
+    color: #e0e0e0;
+}
+
+body.dark-mode .banner-content h1 {
+    color: #03dac6; /* Green */
+}
+
+body.dark-mode .banner-content p {
+    color: #e0e0e0; /* White */
+}
+
+/* About Section */
+body.dark-mode .about-section {
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .about-section h2 {
+    color: #03dac6; /* Green */
+}
+
+body.dark-mode .about-section p {
+    color: #e0e0e0; /* White */
+}
+
+/* Values Section */
+body.dark-mode .values-section {
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .values-section h2 {
+    color: #03dac6; /* Green */
+}
+
+body.dark-mode .value-item {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .value-item:hover {
+    background: #444;
+}
+
+body.dark-mode .value-item h4 {
+    color: #03dac6; /* Green */
+}
+
+body.dark-mode .value-item p {
+    color: #e0e0e0; /* White */
+}
+
+/* Videos Section */
+body.dark-mode .videos-section {
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .video-card {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .video-card:hover {
+    background: #444;
+}
+
+body.dark-mode .video-card h3 {
+    color: #03dac6; /* Green */
+}
+
+body.dark-mode .video-card p {
+    color: #e0e0e0; /* White */
+}
+
+/* Events Section */
+body.dark-mode .events-section {
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .event-card {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .event-card:hover {
+    background: #444;
+}
+
+body.dark-mode .event-card h3 {
+    color: #03dac6; /* Green */
+}
+
+body.dark-mode .event-card p {
+    color: #e0e0e0; /* White */
+}
+
+/* Team Section */
+body.dark-mode .team-section {
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .team-member {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .team-member:hover {
+    background: #444;
+}
+
+body.dark-mode .team-member h3,
+body.dark-mode .team-member p {
+    color: #e0e0e0; /* White */
+}
+
+body.dark-mode .team-member img {
+    filter: brightness(0.8);
+}
+
+/* Statistics Section */
+body.dark-mode .statistics-section {
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .chart-container {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .chart-container:hover {
+    background: #444;
+}
+
+body.dark-mode .chart-caption {
+    color: #03dac6; /* Green */
+}
+
+body.dark-mode .chart-container p {
+    color: #e0e0e0; /* White */
+}
+
+/* Interns Section */
+body.dark-mode .interns-section {
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .intern-profile {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .intern-profile:hover {
+    background: #444;
+}
+
+body.dark-mode .intern-profile h3 {
+    color: #03dac6; /* Green */
+}
+
+body.dark-mode .intern-profile p {
+    color: #e0e0e0; /* White */
+}
+
+/* Partners Section */
+body.dark-mode .partners-section {
+    background-color: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .logo {
+    background: #333;
+}
+
+body.dark-mode .logo img {
+    filter: brightness(0.8);
+}
+
+body.dark-mode .logo:hover {
+    background: #444;
+}
+
+/* Career Details Section */
+body.dark-mode .career-details-section {
+    background: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .career-details-section h2 {
+    color: #03dac6; /* Green */
+}
+
+body.dark-mode .career-details-section p,
+body.dark-mode .career-details-section ol li,
+body.dark-mode .career-details-section ul li {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .career-details-section ol li:hover,
+body.dark-mode .career-details-section ul li:hover {
+    background: #444;
+}
+
+/* Employee Benefits Section */
+body.dark-mode .employee-benefits {
+    background: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .employee-benefits ul li {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .employee-benefits ul li:hover {
+    background: #444;
+}
+
+/* Life at Jackal Tech Section */
+body.dark-mode .life-at-jackal-tech {
+    background: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .photo-gallery img {
+    filter: brightness(0.8);
+}
+
+/* Professional Development Section */
+body.dark-mode .professional-development {
+    background: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .professional-development ul li {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .professional-development ul li:hover {
+    background: #444;
+}
+
+/* FAQ Section */
+body.dark-mode .faq-section {
+    background: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .faq-section h3 {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .faq-section h3:hover {
+    background: #444;
+}
+
+body.dark-mode .faq-section p {
+    background: #333;
+    color: #e0e0e0;
+}
+
+/* Testimonials Section */
+body.dark-mode .testimonials {
+    background: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .testimonial-item {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .testimonial-item:hover {
+    background: #444;
+}
+
+/* Contact HR Section */
+body.dark-mode .contact-hr {
+    background: #222;
+    color: #e0e0e0;
+}
+
+body.dark-mode .contact-hr ul li {
+    background: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .contact-hr ul li:hover {
+    background: #444;
+}
+
+/* Footer Adjustments */
+body.dark-mode footer h5,
+body.dark-mode footer p {
+    color: #03dac6; /* Green */
+}
+
+body.dark-mode footer a {
+    color: #03dac6; /* Green */
+}
+
+body.dark-mode footer a:hover {
+    color: #e0e0e0; /* White */
+}
+
+body.dark-mode footer .footer-links a:hover {
+    color: #03dac6;
+    background: #444;
+}
+
+/* General Container Adjustments */
+body.dark-mode .container {
+    background-color: #222;
+    color: #e0e0e0; /* Default text color */
+}
+
+/* Specific Adjustments for Headers within Containers */
+body.dark-mode .container h2,
+body.dark-mode .container h3 {
+    color: #03dac6; /* Green */
+}
+
+body.dark-mode .container p {
+    color: #e0e0e0; /* White */
+}
+
+/* Additional Adjustments for Lists within Containers */
+body.dark-mode .container ul,
+body.dark-mode .container ol,
+body.dark-mode .container li {
+    color: #e0e0e0; /* White */
+}
+
+/* Footer Social Media Icons */
+body.dark-mode .footer-column .social-media .social-icon {
+    color: #bb86fc;
+}
+
+body.dark-mode .footer-column .social-media a:hover {
+    background: rgba(187, 134, 252, 0.1);
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    body.dark-mode .banner-content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    body.dark-mode .banner-content {
+        padding: 10px;
+    }
+}
+
+
+
+
+
+/* About Section */
+body.dark-mode .about-section {
+    background-color: #222 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .about-section h2 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .about-section p {
+    color: #bb86fc !important; /* Button Color */
+}
+
+/* Services Section */
+body.dark-mode .services-section {
+    background-color: #222 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .services-section h1,
+body.dark-mode .services-section h2 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .services-section p,
+body.dark-mode .services-section ul,
+body.dark-mode .services-section li {
+    color: #bb86fc !important; /* Button Color */
+}
+
+/* Learn More Content */
+body.dark-mode .learn-more-content {
+    background: #333 !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #444 !important;
+}
+
+body.dark-mode .learn-more-content h3 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .learn-more-content p,
+body.dark-mode .learn-more-content ul,
+body.dark-mode .learn-more-content li {
+    color: #bb86fc !important; /* Button Color */
+}
+
+/* Active Applications Section */
+body.dark-mode .active-applications {
+    background-color: #222 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .active-applications h2,
+body.dark-mode .active-applications h3 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .active-applications p,
+body.dark-mode .active-applications ul,
+body.dark-mode .active-applications li {
+    color: #bb86fc !important; /* Button Color */
+}
+
+/* Contact Section */
+body.dark-mode .contact-section {
+    background-color: #222 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .contact-section h1,
+body.dark-mode .contact-section h2 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .contact-section p,
+body.dark-mode .contact-section ul,
+body.dark-mode .contact-section li {
+    color: #bb86fc !important; /* Button Color */
+}
+
+/* Partners Section */
+body.dark-mode .partners-section {
+    background-color: #fff !important; /* White */
+    color: #000 !important; /* Black text for readability */
+}
+
+body.dark-mode .partners-section h2 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .partners-section p,
+body.dark-mode .partners-section ul,
+body.dark-mode .partners-section li {
+    color: #000 !important; /* Black */
+}
+
+
+/* Education Section */
+body.dark-mode .education-section {
+    background-color: #222 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .education-section h2,
+body.dark-mode .education-section h3 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .education-section p,
+body.dark-mode .education-section ul,
+body.dark-mode .education-section li {
+    color: #bb86fc !important; /* Button Color */
+}
+
+/* Healthcare Section */
+body.dark-mode .healthcare-section {
+    background-color: #222 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .healthcare-section h2,
+body.dark-mode .healthcare-section h3 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .healthcare-section p,
+body.dark-mode .healthcare-section ul,
+body.dark-mode .healthcare-section li {
+    color: #bb86fc !important; /* Button Color */
+}
+
+/* Finance Section */
+body.dark-mode .finance-section {
+    background-color: #222 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .finance-section h2,
+body.dark-mode .finance-section h3 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .finance-section p,
+body.dark-mode .finance-section ul,
+body.dark-mode .finance-section li {
+    color: #bb86fc !important; /* Button Color */
+}
+
+/* Manufacturing Section */
+body.dark-mode .manufacturing-section {
+    background-color: #222 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .manufacturing-section h2,
+body.dark-mode .manufacturing-section h3 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .manufacturing-section p,
+body.dark-mode .manufacturing-section ul,
+body.dark-mode .manufacturing-section li {
+    color: #bb86fc !important; /* Button Color */
+}
+
+/* Agriculture Section */
+body.dark-mode .agriculture-section {
+    background-color: #222 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .agriculture-section h2,
+body.dark-mode .agriculture-section h3 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .agriculture-section p,
+body.dark-mode .agriculture-section ul,
+body.dark-mode .agriculture-section li {
+    color: #bb86fc !important; /* Button Color */
+}
+
+/* Retail Section */
+body.dark-mode .retail-section {
+    background-color: #222 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .retail-section h2,
+body.dark-mode .retail-section h3 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .retail-section p,
+body.dark-mode .retail-section ul,
+body.dark-mode .retail-section li {
+    color: #bb86fc !important; /* Button Color */
+}
+
+/* Consulting Section */
+body.dark-mode .consulting-section {
+    background-color: #222 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .consulting-section h2,
+body.dark-mode .consulting-section h3 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .consulting-section p,
+body.dark-mode .consulting-section ul,
+body.dark-mode .consulting-section li {
+    color: #bb86fc !important; /* Button Color */
+}
+
+/* Technology Solutions Section */
+body.dark-mode .technology-solutions-section {
+    background-color: #222 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .technology-solutions-section h2,
+body.dark-mode .technology-solutions-section h3 {
+    color: #03dac6 !important; /* Green */
+}
+
+body.dark-mode .technology-solutions-section p,
+body.dark-mode .technology-solutions-section ul,
+body.dark-mode .technology-solutions-section li {
+    color: #bb86fc !important; /* Button Color */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+/* Advanced Responsive Design */
+@media (max-width: 1200px) {
+    .section {
+        min-width: 300px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        min-width: 200px;
+        max-width: 100%;
+        margin: 5px 0;
+    }
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.grid-item {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Fixed Elements */
+.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.fixed-left {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+}
+
+.fixed-right {
+    position: fixed;
+    right: 0;
+    height: 100%;
+    z-index: 1000;
+}
+
+/* Scrollbar Styling */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Ensuring Fixed Positions */
+.section {
+    position: relative;
+}
+
+/* Preserving Layout in Small Screens */
+@media (max-width: 576px) {
+    .banner-content {
+        padding: 10px;
+    }
+
+    .section {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/*Chatbot smaller screens*/
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .chatbot-window {
+        width: 100% !important;
+        height: 70vh !important;
+        bottom: 20px !important;
+        right: 0 !important;
+    }
+    
+    .chatbot-header, .chatbot-input, .recording-controls {
+        padding: 5px !important;
+        font-size: 0.9em !important; /* Reduced font size */
+    }
+    
+    .chatbot-messages {
+        padding: 7px !important;
+        font-size: 0.9em !important; /* Reduced font size */
+    }
+    
+    .chatbot-toggle {
+        padding: 10px 20px !important;
+        font-size: 0.9em !important; /* Reduced font size */
+    }
+    
+    .chatbot-message .message-content {
+        font-size: 0.9em !important; /* Reduced font size */
+        padding: 5px !important; /* Reduced padding */
+    }
+    
+    .send-btn, .upload-buttons button, .voice-btn, .emoji-btn {
+        padding: 5px 10px !important;
+        font-size: 0.9em !important; /* Reduced font size */
+        margin: 2px !important; /* Small gap between buttons */
+    }
+    
+    .upload-buttons {
+        display: flex !important;
+        flex-wrap: nowrap !important; /* Ensure buttons stay horizontal */
+        justify-content: space-between !important;
+    }
+    
+    .upload-buttons button {
+        flex: 1 1 auto !important; /* Adjust buttons to fit within available space */
+        margin: 2px !important; /* Add margin for spacing */
+    }
+    
+    .chatbot-input input {
+        width: calc(100% - 70px) !important; /* Adjust width to fit within the reduced padding and space for buttons */
+        font-size: 0.9em !important; /* Reduced font size */
+    }
+    
+    .typing-indicator span {
+        width: 6px !important;
+        height: 6px !important;
+    }
+    
+    .chatbot-header, .chatbot-input, .recording-controls, .chatbot-messages, .chatbot-toggle {
+        line-height: 1.2 !important; /* Adjust line height for better readability */
+    }
+}
+

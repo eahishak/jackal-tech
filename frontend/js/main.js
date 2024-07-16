@@ -5,55 +5,60 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
-    const closeIcon = document.createElement('span');
     const content = document.querySelector('main'); // Assuming main contains the main content
 
-    // Create the close icon element
-    closeIcon.innerHTML = '&times;';
-    closeIcon.classList.add('close-icon');
-    closeIcon.style.display = 'none';
-    closeIcon.style.fontSize = '30px';
-    closeIcon.style.cursor = 'pointer';
-    closeIcon.style.color = '#fff';
+    // Create three lines for the hamburger icon
+    const line1 = document.createElement('span');
+    const line2 = document.createElement('span');
+    const line3 = document.createElement('span');
 
-    // Append the close icon to the navbar
-    navbarToggler.parentNode.insertBefore(closeIcon, navbarToggler.nextSibling);
+    // Style the lines
+    [line1, line2, line3].forEach(line => {
+        line.style.display = 'block';
+        line.style.width = '30px';
+        line.style.height = '4px';
+        line.style.margin = '5px auto';
+        line.style.backgroundColor = '#fff';
+    });
+
+    // Append lines to the navbar toggler
+    navbarToggler.appendChild(line1);
+    navbarToggler.appendChild(line2);
+    navbarToggler.appendChild(line3);
 
     // Apply initial styles to navbar items
     navbarCollapse.style.backgroundColor = '#343a40'; // Ensure the background color is set
+    navbarCollapse.style.display = 'none';
 
     // Toggle menu visibility on hamburger click
     navbarToggler.addEventListener('click', function() {
-        navbarCollapse.classList.toggle('show');
-        if (navbarCollapse.classList.contains('show')) {
-            navbarToggler.style.display = 'none';
-            closeIcon.style.display = 'block';
+        if (navbarCollapse.style.display === 'none') {
+            navbarCollapse.style.display = 'block';
+            line1.style.transform = 'rotate(45deg) translate(5px, 5px)';
+            line2.style.transform = 'rotate(-45deg) translate(5px, -5px)';
+            line3.style.display = 'none';
             content.style.paddingTop = '80px'; // Adjust this value to push the content down
         } else {
-            navbarToggler.style.display = 'block';
-            closeIcon.style.display = 'none';
+            navbarCollapse.style.display = 'none';
+            line1.style.transform = 'rotate(0) translate(0, 0)';
+            line2.style.transform = 'rotate(0) translate(0, 0)';
+            line3.style.display = 'block';
             content.style.paddingTop = '0'; // Reset the padding
         }
-    });
-
-    // Hide menu on close icon click
-    closeIcon.addEventListener('click', function() {
-        navbarCollapse.classList.remove('show');
-        navbarToggler.style.display = 'block';
-        closeIcon.style.display = 'none';
-        content.style.paddingTop = '0'; // Reset the padding
     });
 
     // Ensure the menu closes when clicking outside of it
     document.addEventListener('click', function(event) {
-        if (!navbarCollapse.contains(event.target) && !navbarToggler.contains(event.target) && navbarCollapse.classList.contains('show')) {
-            navbarCollapse.classList.remove('show');
-            navbarToggler.style.display = 'block';
-            closeIcon.style.display = 'none';
+        if (!navbarCollapse.contains(event.target) && !navbarToggler.contains(event.target) && navbarCollapse.style.display === 'block') {
+            navbarCollapse.style.display = 'none';
+            line1.style.transform = 'rotate(0) translate(0, 0)';
+            line2.style.transform = 'rotate(0) translate(0, 0)';
+            line3.style.display = 'block';
             content.style.paddingTop = '0'; // Reset the padding
         }
     });
     navbarCollapse.style.marginTop = '40px'; // Adjust this value to push the menu down
+
     // Apply responsive styles using JavaScript
     function applyResponsiveStyles() {
         if (window.innerWidth <= 992) {
@@ -62,8 +67,10 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             // Styles for larger screens
             navbarToggler.style.display = 'none';
-            closeIcon.style.display = 'none';
-            navbarCollapse.classList.remove('show');
+            navbarCollapse.style.display = 'none';
+            line1.style.transform = 'rotate(0) translate(0, 0)';
+            line2.style.transform = 'rotate(0) translate(0, 0)';
+            line3.style.display = 'block';
             content.style.paddingTop = '0'; // Reset the padding
         }
     }
@@ -74,8 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listener for window resize
     window.addEventListener('resize', applyResponsiveStyles);
 });
-
-
 
 
 
@@ -718,9 +723,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  
 
-//chatbot section
+
+  //chatbot section
 document.addEventListener('DOMContentLoaded', function () {
     // Sanitize user input to prevent XSS attacks
     function sanitizeInput(input) {
@@ -998,13 +1003,13 @@ document.addEventListener('DOMContentLoaded', function () {
             'what is your cancellation policy': 'Customers can cancel for an automatic full refund of their booking fee 24 hours prior to the start of the appointment. In the event of an emergency or the business not delivering the service at the set time, a refund request will require a review and approval process which could take a couple of days.',
             'how do i receive my booking fee refund': 'Refunds are rewarded as a balance in the customer’s account and can be used by the customer at the next appointment. We do not offer a cash refund at the moment.',
             'how long does it take to get booking fee refund': 'Instant refund is provided if cancellation happens 24 hours prior to the appointment time. In any other case, it could take a few days to review the refund request and approve it.',
-            "Estimate Emmanuel Ahishakiye net worth": "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
-            "Estimate the Emmanuel Ahishakiye net worth": "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
+            'Estimate Emmanuel Ahishakiye net worth': "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
+            'Estimate the Emmanuel Ahishakiye net worth': "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
             
-             "Emmanuel Ahishakiye net worth": "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
-              "Net worth of Emmanuel Ahishakiye": "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
-               "what's the net worth Emmanuel Ahishakiye": "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
-               "the net worth Emmanuel Ahishakiye": "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
+             'Emmanuel Ahishakiye net worth': "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
+              'Net worth of Emmanuel Ahishakiye': "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
+               'what is the net worth Emmanuel Ahishakiye': "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
+               'the net worth Emmanuel Ahishakiye': "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
             'what if the business cancels': 'The customer gets an automatic full refund of the booking fee regardless of the time the business cancelled.',
             'can i contact support via phone': 'Yes, you can call our support team at +250 123 456 789.',
             'how to track my order': 'You can track your order by logging into your account and checking the order status under "My Orders".',
@@ -1502,7 +1507,7 @@ document.addEventListener('DOMContentLoaded', function () {
     'office location': ['visit us', 'office address', 'where we are', 'office directions', 'location details'],
     'working hours': ['business hours', 'office hours', 'when we are open', 'opening hours', 'hours of operation'],
 
-};
+        };
 
 const normalizedMessage = normalizeMessage(message);
 let response = null;
@@ -1727,6 +1732,10 @@ return function (...args) {
 // Load chat history on page load
 loadChatHistory();
 });
+
+
+
+
 
 //Part 2: Advanced Features
 
@@ -2156,60 +2165,6 @@ async function getResponse(message) {
 
 
 
-//Emoji picking
-
-function toggleEmojiPicker() {
-    const emojiPicker = document.getElementById('emojiPicker');
-    if (emojiPicker.style.display === 'none' || emojiPicker.style.display === '') {
-        emojiPicker.style.display = 'flex';
-    } else {
-        emojiPicker.style.display = 'none';
-    }
-}
-
-document.querySelectorAll('.emoji-picker span').forEach(emoji => {
-    emoji.addEventListener('click', () => {
-        const input = document.getElementById('chatbotInput');
-        input.value += emoji.textContent;
-        document.getElementById('emojiPicker').style.display = 'none';
-    });
-});
-
-// Example recording logic (simplified for demonstration)
-document.querySelector('.voice-btn').addEventListener('click', () => {
-    document.querySelector('.recording-controls').style.display = 'flex';
-    startRecording();
-});
-
-document.querySelector('.stop-record-btn').addEventListener('click', () => {
-    stopRecording();
-    document.querySelector('.recording-controls').style.display = 'none';
-});
-
-function startRecording() {
-    const recordingIndicator = document.getElementById('recording-indicator');
-    const recordingTime = document.getElementById('recording-time');
-    let seconds = 0;
-    recordingIndicator.style.display = 'block';
-    const interval = setInterval(() => {
-        seconds += 1;
-        recordingTime.textContent = `00:${seconds < 10 ? '0' + seconds : seconds}`;
-    }, 1000);
-
-    // Placeholder function to simulate recording logic
-    function simulateRecordingStop() {
-        clearInterval(interval);
-        recordingIndicator.style.display = 'none';
-        document.querySelector('audio').style.display = 'block'; // Show audio control for demo
-        document.querySelector('.send-recording-btn').style.display = 'block'; // Show send button
-    }
-
-    setTimeout(simulateRecordingStop, 5000); // Stop recording after 5 seconds for demo
-}
-
-function stopRecording() {
-    // Placeholder function to stop recording logic
-}
 
 
 
@@ -2384,6 +2339,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+//Emoji picking
+
+function toggleEmojiPicker() {
+    const emojiPicker = document.getElementById('emojiPicker');
+    if (emojiPicker.style.display === 'none' || emojiPicker.style.display === '') {
+        emojiPicker.style.display = 'flex';
+    } else {
+        emojiPicker.style.display = 'none';
+    }
+}
+
+document.querySelectorAll('.emoji-picker span').forEach(emoji => {
+    emoji.addEventListener('click', () => {
+        const input = document.getElementById('chatbotInput');
+        input.value += emoji.textContent;
+        document.getElementById('emojiPicker').style.display = 'none';
+    });
+});
+
+// Example recording logic (simplified for demonstration)
+document.querySelector('.voice-btn').addEventListener('click', () => {
+    document.querySelector('.recording-controls').style.display = 'flex';
+    startRecording();
+});
+
+document.querySelector('.stop-record-btn').addEventListener('click', () => {
+    stopRecording();
+    document.querySelector('.recording-controls').style.display = 'none';
+});
+
+function startRecording() {
+    const recordingIndicator = document.getElementById('recording-indicator');
+    const recordingTime = document.getElementById('recording-time');
+    let seconds = 0;
+    recordingIndicator.style.display = 'block';
+    const interval = setInterval(() => {
+        seconds += 1;
+        recordingTime.textContent = `00:${seconds < 10 ? '0' + seconds : seconds}`;
+    }, 1000);
+
+    // Placeholder function to simulate recording logic
+    function simulateRecordingStop() {
+        clearInterval(interval);
+        recordingIndicator.style.display = 'none';
+        document.querySelector('audio').style.display = 'block'; // Show audio control for demo
+        document.querySelector('.send-recording-btn').style.display = 'block'; // Show send button
+    }
+
+    setTimeout(simulateRecordingStop, 5000); // Stop recording after 5 seconds for demo
+}
+
+function stopRecording() {
+    // Placeholder function to stop recording logic
+}
 
 
 
@@ -2391,6 +2400,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+//More advanced code for security
 
 
 
@@ -2773,215 +2788,351 @@ if ("Notification" in window && navigator.serviceWorker) {
 
 
 
-//Real-Time Updates with WebSockets
 
-class WebSocketManager {
-    constructor(url) {
-        this.url = url;
-        this.ws = null;
-    }
 
-    connect() {
-        this.ws = new WebSocket(this.url);
-        this.ws.onopen = () => {
-            console.log('WebSocket connected');
-        };
 
-        this.ws.onmessage = (event) => {
-            const message = JSON.parse(event.data);
-            this.handleMessage(message);
-        };
 
-        this.ws.onclose = () => {
-            console.log('WebSocket disconnected. Reconnecting...');
-            setTimeout(() => this.connect(), 5000);
-        };
 
-        this.ws.onerror = (error) => {
-            console.error('WebSocket error:', error);
-        };
-    }
 
-    handleMessage(message) {
-        switch (message.type) {
-            case 'update':
-                this.handleUpdate(message.data);
-                break;
-            default:
-                console.warn('Unknown message type:', message.type);
-        }
-    }
 
-    handleUpdate(data) {
-        console.log('Received update:', data);
-        // Update the content on the page based on the received data
-        // For example, refresh certain parts of the content
-    }
 
-    sendMessage(data) {
-        if (this.ws && this.ws.readyState === WebSocket.OPEN) {
-            this.ws.send(JSON.stringify(data));
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//for updates
+
+
+
+let showAlertsEnabled = true;
+let askInterval = 30000; // Initial interval for asking if the user wants to continue seeing updates
+let alertTimeouts = []; // Store timeout IDs to clear them if needed
+
+// Utility function to create an alert box
+function createAlert(id, message, arrow = false, link = null, position = 'bottom-center', backgroundColor = '#444', textColor = '#fff') {
+    const alertBox = document.createElement('div');
+    alertBox.id = id;
+    alertBox.className = 'custom-alert';
+    alertBox.style.backgroundColor = backgroundColor;
+    alertBox.style.color = textColor;
+    alertBox.style.position = 'fixed';
+    alertBox.innerHTML = `
+        <div class="alert-content">
+            <p>${message}</p>
+            ${link ? `<a href="${link}" target="_blank" class="alert-link">Learn more</a>` : ''}
+            ${arrow ? '<div class="arrow"></div>' : ''}
+        </div>
+        <button class="close-btn">Close</button>
+    `;
+    document.body.appendChild(alertBox);
+
+    // Position and animate the alert
+    setAlertPosition(alertBox, position);
+    animateAlert(alertBox);
+
+    setTimeout(() => {
+        alertBox.classList.add('show');
+    }, 100);
+    setTimeout(() => {
+        closeAlert(id);
+    }, 20000); // Auto close after 20 seconds
+}
+
+// Utility function to set alert position
+function setAlertPosition(alertBox, position) {
+    switch(position) {
+        case 'bottom-left':
+            alertBox.style.bottom = '10px';
+            alertBox.style.left = '10px';
+            break;
+        case 'bottom-right':
+            alertBox.style.bottom = '10px';
+            alertBox.style.right = '10px';
+            break;
+        case 'bottom-center':
+        default:
+            alertBox.style.bottom = '10px';
+            alertBox.style.left = '50%';
+            alertBox.style.transform = 'translateX(-50%)';
+            break;
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const wsManager = new WebSocketManager('wss://your-websocket-server-url');
-    wsManager.connect();
-});
-
-
-
-//Advanced Analytics (Extended)
-
-class Analytics {
-    static trackPageView() {
-        // Placeholder for page view tracking logic
-        console.log('Page view tracked:', window.location.pathname);
-        // Send data to your analytics server
-        Analytics.sendData({
-            type: 'pageview',
-            path: window.location.pathname,
-            timestamp: new Date().toISOString()
-        });
-    }
-
-    static trackEvent(category, action, label) {
-        // Placeholder for event tracking logic
-        console.log(`Event tracked: ${category} - ${action} - ${label}`);
-        // Send data to your analytics server
-        Analytics.sendData({
-            type: 'event',
-            category,
-            action,
-            label,
-            timestamp: new Date().toISOString()
-        });
-    }
-
-    static sendData(data) {
-        navigator.sendBeacon('/analytics', JSON.stringify(data));
-    }
-
-    static trackError(message, source, lineno, colno, error) {
-        // Placeholder for error tracking logic
-        console.error(`Error tracked: ${message} at ${source}:${lineno}:${colno}`);
-        // Send error data to your analytics server
-        Analytics.sendData({
-            type: 'error',
-            message,
-            source,
-            lineno,
-            colno,
-            error: error ? error.stack : null,
-            timestamp: new Date().toISOString()
-        });
-    }
+// Utility function to animate alerts
+function animateAlert(alertBox) {
+    alertBox.style.transition = 'transform 15s ease-in-out, background-color 15s ease-in-out';
+    alertBox.style.transform = 'translateX(100vw)';
+    alertBox.style.backgroundColor = getRandomColor();
+    setTimeout(() => {
+        alertBox.style.transform = 'translateX(0)';
+        alertBox.style.backgroundColor = getRandomColor();
+    }, 1000);
 }
 
-window.addEventListener('error', (event) => {
-    Analytics.trackError(event.message, event.filename, event.lineno, event.colno, event.error);
-});
+// Utility function to get a random color
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    const app = new App();
-    app.init();
-    Analytics.trackPageView();
-    document.querySelectorAll('.trackable').forEach(element => {
-        element.addEventListener('click', (event) => {
-            const category = event.target.dataset.category || 'default';
-            const action = event.target.dataset.action || 'click';
-            const label = event.target.dataset.label || event.target.textContent;
-            Analytics.trackEvent(category, action, label);
-        });
-    });
-});
-
-
-//Progressive Web App Features
-
-class PWA {
-    static installPromptEvent = null;
-
-    static setupInstallPrompt() {
-        window.addEventListener('beforeinstallprompt', (event) => {
-            event.preventDefault();
-            PWA.installPromptEvent = event;
-            document.getElementById('installPWA').style.display = 'block';
-        });
-
-        document.getElementById('installPWA').addEventListener('click', () => {
-            if (PWA.installPromptEvent) {
-                PWA.installPromptEvent.prompt();
-                PWA.installPromptEvent.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('PWA installation accepted');
-                    } else {
-                        console.log('PWA installation dismissed');
-                    }
-                    PWA.installPromptEvent = null;
-                });
+// Utility function to close an alert box
+function closeAlert(id) {
+    const alertBox = document.getElementById(id);
+    if (alertBox) {
+        alertBox.classList.remove('show');
+        setTimeout(() => {
+            if (alertBox.parentNode) {
+                alertBox.parentNode.removeChild(alertBox);
             }
-        });
+        }, 1000);
     }
+}
 
-    static setupUpdateNotification() {
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.addEventListener('controllerchange', () => {
-                const updateNotification = document.createElement('div');
-                updateNotification.id = 'updateNotification';
-                updateNotification.textContent = 'New version available. Refresh to update.';
-                updateNotification.style.position = 'fixed';
-                updateNotification.style.bottom = '10px';
-                updateNotification.style.left = '50%';
-                updateNotification.style.transform = 'translateX(-50%)';
-                updateNotification.style.backgroundColor = '#333';
-                updateNotification.style.color = '#fff';
-                updateNotification.style.padding = '10px';
-                updateNotification.style.borderRadius = '5px';
-                updateNotification.style.cursor = 'pointer';
-                updateNotification.style.zIndex = '1000';
-                updateNotification.addEventListener('click', () => {
-                    window.location.reload();
-                });
-                document.body.appendChild(updateNotification);
-            });
+// Event delegation for close buttons and continue alert buttons
+document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('close-btn')) {
+        const alertBox = event.target.closest('.custom-alert');
+        if (alertBox) {
+            closeAlert(alertBox.id);
         }
+    } else if (event.target.classList.contains('yes-btn')) {
+        continueAlerts(true);
+    } else if (event.target.classList.contains('no-btn')) {
+        continueAlerts(false);
+    }
+});
+
+// Create multiple alerts with different messages and positions
+function showAlerts() {
+    if (showAlertsEnabled) {
+        alertTimeouts.push(setTimeout(() => createAlert('alert1', 'Remember to use our chatbot for assistance!', true, 'https://www.jackaltechltd.com/services.html', 'bottom-left', '#333', '#fff'), 0));
+        alertTimeouts.push(setTimeout(() => createAlert('alert2', 'Check out our latest blog post on AI advancements!', false, 'https://www.jackaltechltd.com/about.html', 'bottom-right', '#444', '#fff'), 20000));
+        alertTimeouts.push(setTimeout(() => createAlert('alert3', 'Sign up for our newsletter to stay updated!', false, 'https://www.jackaltechltd.com/contact.html', 'bottom-center', '#555', '#fff'), 40000));
+        alertTimeouts.push(setTimeout(() => createAlert('alert4', 'Exclusive offer: 20% off on all services!', false, 'https://www.jackaltechltd.com/careers.html', 'bottom-left', '#666', '#fff'), 60000));
+        alertTimeouts.push(setTimeout(() => createAlert('alert5', 'Join our upcoming webinar on tech trends!', false, 'https://www.jackaltechltd.com/index.html/#events', 'bottom-right', '#777', '#fff'), 80000));
+        alertTimeouts.push(setTimeout(() => createAlert('alert6', 'Follow us on social media for more updates!', false, 'https://www.jackaltechltd.com/contact.html', 'bottom-center', '#888', '#fff'), 100000));
+        alertTimeouts.push(setTimeout(() => createAlert('alert7', 'New feature: Real-time data analytics available now!', false, 'https://www.jackaltechltd.com/search', 'bottom-left', '#999', '#000'), 120000));
+        alertTimeouts.push(setTimeout(() => createAlert('alert8', 'Read our latest case study on successful projects!', false, 'https://www.jackaltechltd.com/services.html', 'bottom-right', '#aaa', '#000'), 140000));
+        alertTimeouts.push(setTimeout(() => createAlert('alert9', 'Get in touch with our support team for help!', false, 'https://www.jackaltechltd.com/contact.html', 'bottom-center', '#bbb', '#000'), 160000));
+        alertTimeouts.push(setTimeout(() => createAlert('alert10', 'Explore our portfolio of innovative solutions!', false, 'https://www.jackaltechltd.com/about.html', 'bottom-left', '#ccc', '#000'), 180000));
+        alertTimeouts.push(setTimeout(() => askToContinue(), askInterval)); // Ask the user after all alerts
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    PWA.setupInstallPrompt();
-    PWA.setupUpdateNotification();
-});
+// Ask the user if they want to continue seeing alerts
+function askToContinue() {
+    const continueAlert = document.createElement('div');
+    continueAlert.id = 'continueAlert';
+    continueAlert.className = 'custom-alert';
+    continueAlert.style.backgroundColor = '#444';
+    continueAlert.style.color = '#fff';
+    continueAlert.style.position = 'fixed';
+    continueAlert.style.bottom = '10px';
+    continueAlert.style.left = '50%';
+    continueAlert.style.transform = 'translateX(-50%)';
+    continueAlert.innerHTML = `
+        <div class="alert-content">
+            <p>Do you want to continue seeing updates?</p>
+        </div>
+        <div class="alert-buttons">
+            <button class="yes-btn">Yes</button>
+            <button class="no-btn">No</button>
+        </div>
+    `;
+    document.body.appendChild(continueAlert);
 
+    setTimeout(() => {
+        continueAlert.classList.add('show');
+    }, 900);
+}
 
-//Enhanced Error Handling
-
-class ErrorHandler {
-    static logError(error, info) {
-        console.error('Error:', error, 'Info:', info);
-        Analytics.trackError(error.message, error.source, error.lineno, error.colno, error.error);
+// Handle user response for continuing alerts
+function continueAlerts(continueShowing) {
+    const continueAlert = document.getElementById('continueAlert');
+    if (continueAlert) {
+        continueAlert.classList.remove('show');
+        setTimeout(() => {
+            if (continueAlert.parentNode) {
+                continueAlert.parentNode.removeChild(continueAlert);
+            }
+        }, 700);
     }
 
-    static handlePromiseRejection(event) {
-        event.preventDefault();
-        const error = event.reason;
-        ErrorHandler.logError(error, 'Unhandled Promise Rejection');
+    if (continueShowing) {
+        showAlertsEnabled = true;
+        askInterval *= 1.5; // Increase the interval each time the user clicks "Yes"
+        showAlerts();
+        createAlert('continueYes', 'You will continue to receive updates.', false, null, 'bottom-center', '#444', '#fff');
+    } else {
+        showAlertsEnabled = false;
+        clearAllTimeouts(); // Clear all pending alert timeouts
+        createAlert('continueNo', 'You have opted out of updates.', false, null, 'bottom-center', '#444', '#fff');
     }
 }
 
-window.addEventListener('error', (event) => {
-    ErrorHandler.logError(event.error, 'Global Error');
-});
+// Utility function to clear all pending timeouts
+function clearAllTimeouts() {
+    alertTimeouts.forEach(timeoutId => clearTimeout(timeoutId));
+    alertTimeouts = [];
+}
 
-window.addEventListener('unhandledrejection', ErrorHandler.handlePromiseRejection);
+// Initialize the alerts
+showAlerts();
 
+// CSS styles for alert boxes
+const styles = `
+    .custom-alert {
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transition: opacity 2s, transform 2s, background-color 15s;
+        z-index: 1000;
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(135deg, #444, #666);
+    }
+    .custom-alert.show {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    .custom-alert p {
+        margin: 0;
+        font-size: 1.1em;
+    }
+    .custom-alert .arrow {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid currentColor;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .custom-alert button {
+        background: none;
+        border: none;
+        color: #03dac6;
+        margin-top: 10px;
+        cursor: pointer;
+        font-size: 0.9em;
+    }
+    .custom-alert button:hover {
+        text-decoration: underline;
+    }
+    .custom-alert .alert-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .custom-alert .alert-buttons {
+        display: flex;
+        gap: 10px;
+    }
+    .custom-alert .close-btn {
+        background: none;
+        border: none;
+        color: #03dac6;
+        margin-top: 10px;
+        cursor: pointer;
+        font-size: 0.9em;
+    }
+    .custom-alert .close-btn:hover {
+        text-decoration: underline;
+    }
+    .custom-alert .yes-btn,
+    .custom-alert .no-btn {
+        background: #03dac6;
+        color: #121212;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9em;
+    }
+    .custom-alert .yes-btn:hover,
+    .custom-alert .no-btn:hover {
+        background: #029b8a;
+    }
+    .custom-alert a.alert-link {
+        color: #03dac6;
+        text-decoration: underline;
+        margin-top: 5px;
+    }
+    .custom-alert a.alert-link:hover {
+        color: #e0e0e0;
+    }
+    /* Different styles for each alert */
+    #alert1 { background-color: #333; }
+    #alert2 { background-color: #444; }
+    #alert3 { background-color: #555; }
+    #alert4 { background-color: #666; }
+    #alert5 { background-color: #777; }
+    #alert6 { background-color: #888; }
+    #alert7 { background-color: #999; color: #000; }
+    #alert8 { background-color: #aaa; color: #000; }
+    #alert9 { background-color: #bbb; color: #000; }
+    #alert10 { background-color: #ccc; color: #000; }
+    #continueAlert { background-color: #444; }
+`;
 
-
-//Modularization for Maintainability
-
-
-
-
-
+// Append CSS styles to the document
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = styles;
+document.head.appendChild(styleSheet);
