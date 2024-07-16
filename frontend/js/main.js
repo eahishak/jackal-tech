@@ -718,17 +718,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-  //chatbot section
-
   
 
 //chatbot section
-
-  
-
-  document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     // Sanitize user input to prevent XSS attacks
     function sanitizeInput(input) {
         const temp = document.createElement('div');
@@ -741,20 +734,35 @@ document.addEventListener('DOMContentLoaded', function () {
     const chatbotWindow = document.querySelector('.chatbot-window');
     const chatbotInput = document.getElementById('chatbotInput');
     const chatbotMessages = document.getElementById('chatbotMessages');
-    const sendButton = document.querySelector('.chatbot-input button'); // Update this line
+    const sendButton = document.querySelector('.send-btn');
+    const voiceButton = document.querySelector('.voice-btn');
+    const fileButton = document.querySelector('.upload-file-btn');
+    const pictureButton = document.querySelector('.upload-picture-btn');
+    const takePictureButton = document.querySelector('.take-picture-btn');
+    const fileInput = document.getElementById('fileInput');
+    const recordingControls = document.querySelector('.recording-controls');
+    const stopRecordButton = document.querySelector('.stop-record-btn');
+    const audioElement = document.querySelector('audio');
+    const sendRecordingButton = document.querySelector('.send-recording-btn');
+    const recordingTime = document.getElementById('recording-time');
+    const recordingIndicator = document.getElementById('recording-indicator');
+
+    let mediaRecorder;
+    let audioChunks = [];
+    let recordingInterval;
 
     // Load chat history from localStorage
     function loadChatHistory() {
         const history = JSON.parse(localStorage.getItem('chatHistory')) || [];
         history.forEach(entry => {
-            addMessage(entry.sender, entry.message);
+            addMessage(entry.sender, entry.message, entry.type);
         });
     }
 
     // Save chat message to localStorage
-    function saveChatMessage(sender, message) {
+    function saveChatMessage(sender, message, type) {
         const history = JSON.parse(localStorage.getItem('chatHistory')) || [];
-        history.push({ sender, message });
+        history.push({ sender, message, type });
         localStorage.setItem('chatHistory', JSON.stringify(history));
     }
 
@@ -771,7 +779,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     chatbotToggle.addEventListener('mouseleave', function () {
         setTimeout(() => {
-            if (!chatbotWindow.matches(':hover')) {
+            if (!chatbotWindow.matches(':hover') && !isInteractionActive()) {
                 chatbotWindow.style.display = 'none';
             }
         }, 500);
@@ -779,7 +787,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     chatbotWindow.addEventListener('mouseleave', function () {
         setTimeout(() => {
-            if (!chatbotToggle.matches(':hover')) {
+            if (!chatbotToggle.matches(':hover') && !isInteractionActive()) {
                 chatbotWindow.style.display = 'none';
             }
         }, 500);
@@ -804,8 +812,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Add event listener for send button
-    sendButton.addEventListener('click', function () { // Add this block
+    sendButton.addEventListener('click', function () {
         sendMessage();
+    });
+
+    // Handle voice recording
+    voiceButton.addEventListener('click', function () {
+        startVoiceRecording();
+    });
+
+    stopRecordButton.addEventListener('click', function () {
+        stopVoiceRecording();
+    });
+
+    sendRecordingButton.addEventListener('click', function () {
+        sendVoiceRecording();
+    });
+
+    // Handle file upload
+    fileButton.addEventListener('click', function () {
+        fileInput.accept = '*/*';
+        fileInput.click();
+    });
+
+    fileInput.addEventListener('change', function () {
+        handleFileUpload(this.files[0]);
+    });
+
+    // Handle picture upload
+    pictureButton.addEventListener('click', function () {
+        fileInput.accept = 'image/*';
+        fileInput.click();
+    });
+
+    // Handle taking a picture
+    takePictureButton.addEventListener('click', function () {
+        takePicture();
     });
 
     // Send a message
@@ -813,8 +855,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const message = sanitizeInput(chatbotInput.value.trim());
         if (message === '') return;
 
-        addMessage('user', message);
-        saveChatMessage('user', message);
+        addMessage('user', message, 'text');
+        saveChatMessage('user', message, 'text');
         chatbotInput.value = '';
 
         showTypingIndicator();
@@ -826,12 +868,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Add a message to the chat
-    function addMessage(sender, message) {
+    function addMessage(sender, message, type) {
         const messageElement = document.createElement('div');
         messageElement.classList.add('chatbot-message', `${sender}-message`);
         const messageContent = document.createElement('div');
         messageContent.classList.add('message-content');
-        messageContent.textContent = message;
+
+        if (type === 'text') {
+            messageContent.textContent = message;
+        } else if (type === 'image') {
+            const img = document.createElement('img');
+            img.src = message;
+            img.alt = 'Uploaded image';
+            img.style.maxWidth = '100%';
+            messageContent.appendChild(img);
+        } else if (type === 'file') {
+            const link = document.createElement('a');
+            link.href = message;
+            link.textContent = 'Uploaded file';
+            link.target = '_blank';
+            messageContent.appendChild(link);
+        } else if (type === 'audio') {
+            const audio = document.createElement('audio');
+            audio.src = message;
+            audio.controls = true;
+            messageContent.appendChild(audio);
+        }
+
         messageElement.appendChild(messageContent);
         chatbotMessages.appendChild(messageElement);
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
@@ -855,16 +918,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function normalizeMessage(message) {
-        // Define a regex pattern for a wide range of punctuation and symbols
         const punctuationPattern = /[?.,!;:'"(){}\[\]<>@#$%^&*_\-+=|\\/~©®™¢§¶«»°±¿¡¤¥€₹฿₽₿]+/g;
-    
-        // Normalize the message
         return message
-            .replace(punctuationPattern, '') // Remove punctuation and symbols
-            .replace(/\s+/g, ' ')            // Normalize whitespace to single spaces
-            .trim()                          // Trim leading and trailing whitespace
-            .toLowerCase();                  // Convert to lowercase
+            .replace(punctuationPattern, '')
+            .replace(/\s+/g, ' ')
+            .trim()
+            .toLowerCase();
     }
+
     // Fetch response from predefined responses or online sources
     async function getResponse(message) {
         const responses = {
@@ -1441,85 +1502,231 @@ document.addEventListener('DOMContentLoaded', function () {
     'office location': ['visit us', 'office address', 'where we are', 'office directions', 'location details'],
     'working hours': ['business hours', 'office hours', 'when we are open', 'opening hours', 'hours of operation'],
 
-        };
+};
 
-        const normalizedMessage = normalizeMessage(message);
-        let response = null;
+const normalizedMessage = normalizeMessage(message);
+let response = null;
 
-        for (const [key, value] of Object.entries(responses)) {
-            if (normalizedMessage.includes(key)) {
-                response = value;
-                break;
-            }
-        }
-
-        for (const [key, value] of Object.entries(keywords)) {
-            if (normalizedMessage.includes(key)) {
-                normalizedMessage.replace(key, value);
-            }
-        }
-
-        if (!response) {
-            response = await fetchOnlineResponse(normalizedMessage);
-        }
-
-        addMessage('bot', response || 'I am not sure how to respond to that. Can you rephrase?');
-        saveChatMessage('bot', response || 'I am not sure how to respond to that. Can you rephrase?');
+for (const [key, value] of Object.entries(responses)) {
+    if (normalizedMessage.includes(key)) {
+        response = value;
+        break;
     }
+}
 
-    // Fetch response from online sources
-    async function fetchOnlineResponse(query) {
-        try {
-            const googleApiKey = 'YOUR_GOOGLE_API_KEY';
-            const googleCx = 'YOUR_GOOGLE_CUSTOM_SEARCH_ENGINE_ID';
-            const searchQuery = `https://www.googleapis.com/customsearch/v1?key=${googleApiKey}&cx=${googleCx}&q=${encodeURIComponent(query)}`;
-            const response = await fetch(searchQuery);
-            const data = await response.json();
-            const result = data.items && data.items.length ? data.items[0].snippet : 'I am not sure how to respond to that. Can you rephrase?';
-            return result;
-        } catch (error) {
-            return 'I am having trouble fetching information at the moment. Please try again later.';
-        }
-    }
+if (!response) {
+    response = await fetchOnlineResponse(normalizedMessage);
+}
 
-    chatbotToggle.style.display = 'block';
-    chatbotWindow.style.display = 'none';
+addMessage('bot', response || 'I am not sure how to respond to that. Can you rephrase?', 'text');
+saveChatMessage('bot', response || 'I am not sure how to respond to that. Can you rephrase?', 'text');
+}
 
-    // Apply animations
-    chatbotToggle.addEventListener('mouseover', () => {
-        chatbotWindow.style.animation = 'fadeIn 0.5s ease-in-out';
+// Fetch response from online sources
+async function fetchOnlineResponse(query) {
+try {
+    const googleApiKey = 'YOUR_GOOGLE_API_KEY';
+    const googleCx = 'YOUR_GOOGLE_CUSTOM_SEARCH_ENGINE_ID';
+    const searchQuery = `https://www.googleapis.com/customsearch/v1?key=${googleApiKey}&cx=${googleCx}&q=${encodeURIComponent(query)}`;
+    const response = await fetch(searchQuery);
+    const data = await response.json();
+    const result = data.items && data.items.length ? data.items[0].snippet : 'I am having trouble fetching information at the moment. Please try again later.';
+    return result;
+} catch (error) {
+    return 'I am having trouble fetching information at the moment. Please try again later.';
+}
+}
+
+// Voice recording functionality
+function startVoiceRecording() {
+if (!('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices)) {
+    alert('Voice recording is not supported in your browser.');
+    return;
+}
+
+const constraints = { audio: true };
+navigator.mediaDevices.getUserMedia(constraints)
+    .then(stream => {
+        mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.start();
+        audioChunks = [];
+        let startTime = Date.now();
+
+        recordingInterval = setInterval(() => {
+            let currentTime = Date.now();
+            let elapsedTime = currentTime - startTime;
+            let minutes = Math.floor(elapsedTime / 60000);
+            let seconds = Math.floor((elapsedTime % 60000) / 1000);
+            recordingTime.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            recordingIndicator.style.display = 'inline-block';
+        }, 1000);
+
+        mediaRecorder.addEventListener('dataavailable', event => {
+            audioChunks.push(event.data);
+        });
+
+        mediaRecorder.addEventListener('stop', () => {
+            clearInterval(recordingInterval);
+            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+            audioElement.src = audioUrl;
+            audioElement.style.display = 'block';
+            sendRecordingButton.style.display = 'block';
+            recordingIndicator.style.display = 'none';
+        });
+
+        recordingControls.style.display = 'flex';
+        voiceButton.style.display = 'none';
+    })
+    .catch(error => {
+        console.error('Error accessing media devices.', error);
     });
+}
 
-    chatbotWindow.addEventListener('mouseleave', () => {
-        chatbotWindow.style.animation = 'fadeOut 0.5s ease-in-out';
-        setTimeout(() => {
-            chatbotWindow.style.display = 'none';
-        }, 500);
+function stopVoiceRecording() {
+mediaRecorder.stop();
+stopRecordButton.style.display = 'none';
+}
+
+function sendVoiceRecording() {
+const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+const audioUrl = URL.createObjectURL(audioBlob);
+addMessage('user', audioUrl, 'audio');
+saveChatMessage('user', audioUrl, 'audio');
+
+recordingControls.style.display = 'none';
+voiceButton.style.display = 'block';
+audioElement.style.display = 'none';
+sendRecordingButton.style.display = 'none';
+recordingTime.textContent = '00:00';
+
+showTypingIndicator();
+
+setTimeout(() => {
+    hideTypingIndicator();
+    getResponse('Recording');
+}, 500);
+}
+
+// Handle file upload functionality
+function handleFileUpload(file) {
+if (!file) return;
+
+const reader = new FileReader();
+reader.onload = function (e) {
+    const fileUrl = e.target.result;
+    addMessage('user', fileUrl, 'file');
+    saveChatMessage('user', fileUrl, 'file');
+
+    showTypingIndicator();
+    addMessage('bot', 'Analyzing the uploaded file...', 'text');
+
+    setTimeout(() => {
+        hideTypingIndicator();
+        getResponse('Upload');
+    }, 2000);
+};
+reader.readAsDataURL(file);
+}
+
+// Handle taking a picture
+function takePicture() {
+if (!('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices)) {
+    alert('Taking picture is not supported in your browser.');
+    return;
+}
+
+const constraints = { video: true };
+navigator.mediaDevices.getUserMedia(constraints)
+    .then(stream => {
+        const video = document.createElement('video');
+        video.srcObject = stream;
+        video.play();
+
+        const captureButton = document.createElement('button');
+        captureButton.innerHTML = '📷';
+        captureButton.style.position = 'absolute';
+        captureButton.style.bottom = '20px';
+        captureButton.style.left = '50%';
+        captureButton.style.transform = 'translateX(-50%)';
+        captureButton.style.padding = '10px 20px';
+        captureButton.style.backgroundColor = '#007bff';
+        captureButton.style.color = '#fff';
+        captureButton.style.border = 'none';
+        captureButton.style.borderRadius = '5px';
+        captureButton.style.cursor = 'pointer';
+
+        captureButton.addEventListener('click', () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const imageUrl = canvas.toDataURL('image/png');
+            stream.getTracks().forEach(track => track.stop());
+            video.remove();
+            captureButton.remove();
+            addMessage('user', imageUrl, 'image');
+            saveChatMessage('user', imageUrl, 'image');
+
+            showTypingIndicator();
+            addMessage('bot', 'Analyzing the picture...', 'text');
+
+            setTimeout(() => {
+                hideTypingIndicator();
+                getResponse('Picture');
+            }, 2000);
+        });
+
+        chatbotWindow.appendChild(video);
+        chatbotWindow.appendChild(captureButton);
+    })
+    .catch(error => {
+        console.error('Error accessing media devices.', error);
     });
+}
 
-    // Ensure smooth performance
-    chatbotWindow.style.willChange = 'opacity, transform';
-    chatbotToggle.style.willChange = 'transform';
+function isInteractionActive() {
+return recordingControls.style.display === 'flex' || fileInput.style.display === 'block';
+}
 
-    // Debounce function to improve performance
-    function debounce(func, wait) {
-        let timeout;
-        return function (...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
+chatbotToggle.style.display = 'block';
+chatbotWindow.style.display = 'none';
 
-    // Load chat history on page load
-    loadChatHistory();
+// Apply animations
+chatbotToggle.addEventListener('mouseover', () => {
+chatbotWindow.style.animation = 'fadeIn 0.5s ease-in-out';
 });
 
+chatbotWindow.addEventListener('mouseleave', () => {
+chatbotWindow.style.animation = 'fadeOut 0.5s ease-in-out';
+setTimeout(() => {
+    if (!isInteractionActive()) {
+        chatbotWindow.style.display = 'none';
+    }
+}, 500);
+});
 
+// Ensure smooth performance
+chatbotWindow.style.willChange = 'opacity, transform';
+chatbotToggle.style.willChange = 'transform';
 
+// Debounce function to improve performance
+function debounce(func, wait) {
+let timeout;
+return function (...args) {
+    const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+};
+}
+
+// Load chat history on page load
+loadChatHistory();
+});
 
 //Part 2: Advanced Features
 
@@ -1949,6 +2156,60 @@ async function getResponse(message) {
 
 
 
+//Emoji picking
+
+function toggleEmojiPicker() {
+    const emojiPicker = document.getElementById('emojiPicker');
+    if (emojiPicker.style.display === 'none' || emojiPicker.style.display === '') {
+        emojiPicker.style.display = 'flex';
+    } else {
+        emojiPicker.style.display = 'none';
+    }
+}
+
+document.querySelectorAll('.emoji-picker span').forEach(emoji => {
+    emoji.addEventListener('click', () => {
+        const input = document.getElementById('chatbotInput');
+        input.value += emoji.textContent;
+        document.getElementById('emojiPicker').style.display = 'none';
+    });
+});
+
+// Example recording logic (simplified for demonstration)
+document.querySelector('.voice-btn').addEventListener('click', () => {
+    document.querySelector('.recording-controls').style.display = 'flex';
+    startRecording();
+});
+
+document.querySelector('.stop-record-btn').addEventListener('click', () => {
+    stopRecording();
+    document.querySelector('.recording-controls').style.display = 'none';
+});
+
+function startRecording() {
+    const recordingIndicator = document.getElementById('recording-indicator');
+    const recordingTime = document.getElementById('recording-time');
+    let seconds = 0;
+    recordingIndicator.style.display = 'block';
+    const interval = setInterval(() => {
+        seconds += 1;
+        recordingTime.textContent = `00:${seconds < 10 ? '0' + seconds : seconds}`;
+    }, 1000);
+
+    // Placeholder function to simulate recording logic
+    function simulateRecordingStop() {
+        clearInterval(interval);
+        recordingIndicator.style.display = 'none';
+        document.querySelector('audio').style.display = 'block'; // Show audio control for demo
+        document.querySelector('.send-recording-btn').style.display = 'block'; // Show send button
+    }
+
+    setTimeout(simulateRecordingStop, 5000); // Stop recording after 5 seconds for demo
+}
+
+function stopRecording() {
+    // Placeholder function to stop recording logic
+}
 
 
 

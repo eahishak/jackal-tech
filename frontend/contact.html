@@ -451,25 +451,50 @@
         </div>
     </div>
 </section>
-        
-<section id="chatbot" class="chatbot-section">
-<div class="chatbot-toggle" onclick="toggleChatbot()">Chat with us</div>
-<div class="chatbot-window">
-    <div class="chatbot-header">
-        <h3>Chat with us</h3>
-        <button class="close-btn" onclick="toggleChatbot()">×</button>
-    </div>
-    <div class="chatbot-messages" id="chatbotMessages">
-        <div class="chatbot-message bot-message">
-            <div class="message-content">Hi, how can I help you today?</div>
+<div class="chatbot-section">
+    <div class="chatbot-toggle">Chat with us!</div>
+    <div class="chatbot-window">
+        <div class="chatbot-header">
+            <div>Chatbot</div>
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages"></div>
+        <div class="chatbot-input">
+            <div class="upload-buttons" id="uploadButtons">
+                <button class="take-picture-btn">📷</button>
+                <button class="upload-picture-btn">🖼️</button>
+                <button class="upload-file-btn">📁</button>
+                <input type="file" id="fileInput" style="display: none;" accept="image/*, .pdf, .doc, .docx, .xlsx, .ppt, .pptx, .txt"/>
+            </div>
+            <input type="text" id="chatbotInput" placeholder="Aa" />
+            <button class="emoji-btn" onclick="toggleEmojiPicker()">😊</button>
+            <button class="voice-btn">🎤</button>
+            <button class="send-btn">⬆️</button>
+            <button class="typing-toggle-btn" style="display: none;">🔍</button>
+        </div>
+        <div class="recording-controls" style="display: none;">
+            <span id="recording-time">00:00</span>
+            <div id="recording-indicator" style="width: 10px; height: 10px; background: red; border-radius: 50%; margin-left: 10px;"></div>
+            <button class="stop-record-btn">Stop</button>
+            <audio controls style="display: none;"></audio>
+            <button class="send-recording-btn" style="display: none;">Send</button>
+        </div>
+        <div class="emoji-picker" id="emojiPicker" style="display: none;">
+            <!-- Emojis will be added here -->
+            <div class="emoji-grid">
+                <span>😀</span><span>😁</span><span>😂</span><span>🤣</span><span>😃</span><span>😄</span><span>😅</span><span>😆</span><span>😉</span><span>😊</span>
+                <span>😋</span><span>😎</span><span>😍</span><span>😘</span><span>😗</span><span>😙</span><span>😚</span><span>☺️</span><span>🙂</span><span>🤗</span>
+                <span>🤩</span><span>🤔</span><span>🤨</span><span>😐</span><span>😑</span><span>😶</span><span>🙄</span><span>😏</span><span>😣</span><span>😥</span>
+                <span>😮</span><span>🤐</span><span>😯</span><span>😪</span><span>😫</span><span>😴</span><span>😌</span><span>😛</span><span>😜</span><span>😝</span>
+                <span>🤤</span><span>😒</span><span>😓</span><span>😔</span><span>😕</span><span>🙃</span><span>🤑</span><span>😲</span><span>☹️</span><span>🙁</span>
+                <span>😖</span><span>😞</span><span>😟</span><span>😤</span><span>😢</span><span>😭</span><span>😦</span><span>😧</span><span>😨</span><span>😩</span>
+                <span>🤯</span><span>😬</span><span>😰</span><span>😱</span><span>😳</span><span>🤪</span><span>😵</span><span>😡</span><span>😠</span><span>🤬</span>
+                <span>😷</span><span>🤒</span><span>🤕</span><span>🤢</span><span>🤮</span><span>🤧</span><span>😇</span><span>🤠</span><span>🤡</span><span>🤥</span>
+                <span>🤫</span><span>🤭</span><span>🧐</span><span>🤓</span><span>😈</span><span>👿</span><span>👹</span><span>👺</span><span>💀</span><span>👻</span>
+            </div>
         </div>
     </div>
-    <div class="chatbot-input">
-        <input type="text" id="chatbotInput" placeholder="Type a message...">
-        <button onclick="sendMessage()">Send</button>
-    </div>
 </div>
-</section>
 </main>
 
     <!-- Footer -->
