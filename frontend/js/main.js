@@ -2377,3 +2377,467 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//manage routing, caching, service workers, dynamic content loading, accessibility, performance monitoring, security headers, notifications, and a live chat widget.
+
+// Utility Functions
+const Utils = {
+    fetchData: async (url) => {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Error fetching ${url}`);
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    },
+
+    fetchText: async (url) => {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Error fetching ${url}`);
+            return await response.text();
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    },
+
+    sanitizeHTML: (str) => {
+        const temp = document.createElement('div');
+        temp.textContent = str;
+        return temp.innerHTML;
+    },
+
+    debounce: (func, wait) => {
+        let timeout;
+        return (...args) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func(...args), wait);
+        };
+    },
+
+    throttle: (func, limit) => {
+        let lastFunc;
+        let lastRan;
+        return (...args) => {
+            if (!lastRan) {
+                func(...args);
+                lastRan = Date.now();
+            } else {
+                clearTimeout(lastFunc);
+                lastFunc = setTimeout(() => {
+                    if ((Date.now() - lastRan) >= limit) {
+                        func(...args);
+                        lastRan = Date.now();
+                    }
+                }, limit - (Date.now() - lastRan));
+            }
+        };
+    },
+
+    fetchIPAddress: async (apiKey) => {
+        try {
+            const data = await Utils.fetchData(`https://ipinfo.io/json?token=${apiKey}`);
+            console.log('User IP Information:', data);
+            alert(`Your IP address is: ${data.ip}`);
+        } catch (error) {
+            console.error('Error fetching IP address:', error);
+        }
+    }
+};
+
+// App Initialization
+document.addEventListener('DOMContentLoaded', () => {
+    const app = new App();
+    app.init();
+});
+
+// App Class
+class App {
+    constructor() {
+        this.contentDiv = document.getElementById('content');
+        this.loadingDiv = this.createLoadingIndicator();
+        document.body.appendChild(this.loadingDiv);
+        this.navLinks = document.querySelectorAll('.nav-link');
+        this.pageCache = JSON.parse(localStorage.getItem('pageCache')) || {};
+        this.apiKey = 'YOUR_IPINFO_API_KEY'; // Replace with your actual IPinfo API key
+        this.pages = [
+            '/',
+            '/about',
+            '/contact',
+            '/search',
+            '/policies',
+            '/services',
+            '/careers'
+        ];
+    }
+
+    init() {
+        this.setupRouting();
+        this.initialPageLoad();
+        Utils.fetchIPAddress(this.apiKey);
+        this.setupServiceWorker();
+        this.setupAccessibility();
+        this.setupAnalytics();
+        this.monitorPerformance();
+        this.setSecurityHeaders();
+        this.setupLiveChat();
+    }
+
+    setupRouting() {
+        this.navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const page = link.getAttribute('href');
+                this.loadPage(page);
+                history.pushState({page: page}, '', page);
+                this.trackPageView();
+            });
+        });
+
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.page) {
+                this.loadPage(event.state.page);
+            } else {
+                this.loadPage('/');
+            }
+            this.trackPageView();
+        });
+    }
+
+    createLoadingIndicator() {
+        const loadingDiv = document.createElement('div');
+        loadingDiv.id = 'loading';
+        loadingDiv.style.display = 'none';
+        loadingDiv.style.position = 'fixed';
+        loadingDiv.style.top = '0';
+        loadingDiv.style.left = '0';
+        loadingDiv.style.width = '100%';
+        loadingDiv.style.height = '100%';
+        loadingDiv.style.background = 'rgba(255, 255, 255, 0.8)';
+        loadingDiv.style.zIndex = '1000';
+        loadingDiv.style.display = 'flex';
+        loadingDiv.style.justifyContent = 'center';
+        loadingDiv.style.alignItems = 'center';
+        loadingDiv.innerHTML = '<div class="spinner" style="border: 0.4rem solid #f3f3f3; border-top: 0.4rem solid #3498db; border-radius: 50%; width: 2rem; height: 2rem; animation: spin 1s linear infinite;"></div>';
+        const style = document.createElement('style');
+        style.innerHTML = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
+        document.head.appendChild(style);
+        return loadingDiv;
+    }
+
+    showLoading() {
+        this.loadingDiv.style.display = 'flex';
+    }
+
+    hideLoading() {
+        this.loadingDiv.style.display = 'none';
+    }
+
+    async loadPage(page) {
+        if (this.pageCache[page]) {
+            this.displayContent(this.pageCache[page]);
+        } else {
+            this.showLoading();
+            try {
+                const data = await Utils.fetchText(`${page}.html`);
+                this.pageCache[page] = data;
+                localStorage.setItem('pageCache', JSON.stringify(this.pageCache));
+                this.displayContent(data);
+            } catch (error) {
+                console.error('Error loading page:', error);
+                this.contentDiv.innerHTML = '<p>Page not found.</p>';
+            } finally {
+                this.hideLoading();
+            }
+        }
+    }
+
+    displayContent(content) {
+        this.contentDiv.classList.remove('fade-in');
+        void this.contentDiv.offsetWidth;  // Trigger reflow to restart animation
+        this.contentDiv.innerHTML = Utils.sanitizeHTML(content);
+        this.contentDiv.classList.add('fade-in');
+        this.updateTitle(window.location.pathname);
+    }
+
+    updateTitle(page) {
+        let title;
+        switch (page) {
+            case '/about':
+                title = 'About Us';
+                break;
+            case '/contact':
+                title = 'Contact Us';
+                break;
+            case '/search':
+                title = 'Search';
+                break;
+            case '/policies':
+                title = 'Policies';
+                break;
+            case '/services':
+                title = 'Services';
+                break;
+            case '/careers':
+                title = 'Careers';
+                break;
+            default:
+                title = 'Home';
+        }
+        document.title = title;
+    }
+
+    initialPageLoad() {
+        const initialPage = window.location.pathname === '/' ? '/' : window.location.pathname;
+        this.loadPage(initialPage);
+    }
+
+    setupServiceWorker() {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+    }
+
+    setupAccessibility() {
+        const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+        const firstFocusableElement = document.querySelectorAll(focusableElements)[0]; 
+        const focusableContent = document.querySelectorAll(focusableElements);
+        const lastFocusableElement = focusableContent[focusableContent.length - 1];
+
+        document.addEventListener('keydown', function(e) {
+            let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+            if (!isTabPressed) return;
+
+            if (e.shiftKey) { // if shift key pressed for shift + tab combination
+                if (document.activeElement === firstFocusableElement) {
+                    lastFocusableElement.focus(); // add focus for the last focusable element
+                    e.preventDefault();
+                }
+            } else { // if tab key is pressed
+                if (document.activeElement === lastFocusableElement) {
+                    firstFocusableElement.focus(); // add focus for the first focusable element
+                    e.preventDefault();
+                }
+            }
+        });
+    }
+
+    setupAnalytics() {
+        document.addEventListener('click', (event) => {
+            if (event.target.matches('.trackable')) {
+                this.trackEvent('Navigation', 'click', event.target.textContent);
+            }
+        });
+
+        window.addEventListener('popstate', () => {
+            this.trackPageView();
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                this.trackPageView();
+            });
+        });
+    }
+
+    trackPageView() {
+        // Placeholder for page view tracking logic
+        console.log('Page view tracked:', window.location.pathname);
+    }
+
+    trackEvent(category, action, label) {
+        // Placeholder for event tracking logic
+        console.log(`Event tracked: ${category} - ${action} - ${label}`);
+    }
+
+    monitorPerformance() {
+        const performanceEntries = performance.getEntriesByType('navigation');
+        performanceEntries.forEach(entry => {
+            console.log('Navigation Performance:', entry);
+        });
+
+        window.addEventListener('load', () => this.logPerformance());
+        window.addEventListener('popstate', () => this.logPerformance());
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => this.logPerformance());
+        });
+    }
+
+    logPerformance() {
+        const entries = performance.getEntriesByType('navigation');
+        entries.forEach(entry => {
+            console.log('Performance entry:', entry);
+        });
+    }
+
+    setSecurityHeaders() {
+        const meta = document.createElement('meta');
+        meta.httpEquiv = "Content-Security-Policy";
+        meta.content = "default-src 'self'; script-src 'self' https://apis.google.com";
+        document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+
+    setupLiveChat() {
+        const chatWidget = new ChatWidget();
+    }
+}
+
+// Service Worker for caching and offline support
+// /service-worker.js
+const CACHE_NAME = 'site-cache-v1';
+const urlsToCache = [
+    '/',
+    '/styles.css',
+    '/script.js',
+    '/about.html',
+    '/contact.html',
+    '/search.html',
+    '/policies.html',
+    '/services.html',
+    '/careers.html'
+];
+
+self.addEventListener('install', event => {
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(cache => {
+                return cache.addAll(urlsToCache);
+            })
+    );
+});
+
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request)
+            .then(response => {
+                if (response) {
+                    return response;
+                }
+                return fetch(event.request);
+            })
+    );
+});
+
+self.addEventListener('activate', event => {
+    const cacheWhitelist = [CACHE_NAME];
+    event.waitUntil(
+        caches.keys().then(keyList => {
+            return Promise.all(keyList.map(key => {
+                if (cacheWhitelist.indexOf(key) === -1) {
+                    return caches.delete(key);
+                }
+            }));
+        })
+    );
+});
+
+// Notifications
+if ("Notification" in window && navigator.serviceWorker) {
+    Notification.requestPermission().then(permission => {
+        if (permission === "granted") {
+            navigator.serviceWorker.ready.then(registration => {
+                registration.showNotification("Welcome to Jackal Tech", {
+                    body: "Thank you for visiting our site!",
+                    icon: "/icon.png"
+                });
+            });
+        }
+    });
+}
+
+// Live Chat Widget
+class ChatWidget {
+    constructor() {
+        this.chatbox = this.createChatBox();
+        document.body.appendChild(this.chatbox);
+    }
+
+    createChatBox() {
+        const chatbox = document.createElement('div');
+        chatbox.id = 'chatbox';
+        chatbox.style.position = 'fixed';
+        chatbox.style.bottom = '20px';
+        chatbox.style.right = '20px';
+        chatbox.style.width = '300px';
+        chatbox.style.height = '400px';
+        chatbox.style.border = '1px solid #ccc';
+        chatbox.style.backgroundColor = '#fff';
+        chatbox.style.boxShadow = '0 0 10px rgba(0,0,0,0.1)';
+        chatbox.style.display = 'none';
+
+        const header = document.createElement('div');
+        header.style.backgroundColor = '#333';
+        header.style.color = '#fff';
+        header.style.padding = '10px';
+        header.style.cursor = 'pointer';
+        header.textContent = 'Live Chat';
+
+        const content = document.createElement('div');
+        content.style.padding = '10px';
+        content.style.height = 'calc(100% - 40px)';
+        content.style.overflowY = 'auto';
+        content.innerHTML = '<p>Hello! How can we help you?</p>';
+
+        const inputBox = document.createElement('input');
+        inputBox.type = 'text';
+        inputBox.style.width = '100%';
+        inputBox.style.padding = '10px';
+        inputBox.style.boxSizing = 'border-box';
+
+        chatbox.appendChild(header);
+        chatbox.appendChild(content);
+        chatbox.appendChild(inputBox);
+
+        header.addEventListener('click', () => {
+            chatbox.style.display = chatbox.style.display === 'none' ? 'block' : 'none';
+        });
+
+        inputBox.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const userMessage = document.createElement('p');
+                userMessage.textContent = inputBox.value;
+                content.appendChild(userMessage);
+                inputBox.value = '';
+
+                // Simulate a response from a support agent
+                setTimeout(() => {
+                    const response = document.createElement('p');
+                    response.textContent = 'Thank you for your message. We will get back to you shortly.';
+                    content.appendChild(response);
+                    content.scrollTop = content.scrollHeight;
+                }, 1000);
+            }
+        });
+
+        return chatbox;
+    }
+}
+
+// Instantiate the live chat widget
+document.addEventListener('DOMContentLoaded', () => {
+    const chatWidget = new ChatWidget();
+});
