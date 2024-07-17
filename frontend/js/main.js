@@ -2883,7 +2883,7 @@ function closeAlert(id) {
     }
 }
 
-// Event delegation for close buttons and continue alert buttons
+//Event delegation for close buttons and continue alert buttons
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('close-btn')) {
         const alertBox = event.target.closest('.custom-alert');
