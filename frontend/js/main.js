@@ -3081,3 +3081,36 @@ const styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
 styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);
+
+
+
+
+
+
+
+
+
+
+//For header scroll up and down
+
+document.addEventListener("DOMContentLoaded", function () {
+    var lastScrollTop = 0;
+    var header = document.querySelector(".header");
+    var subnav = document.querySelector(".subnav");
+
+    window.addEventListener("scroll", function () {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            // Scroll down
+            header.style.top = "-150px"; // Adjust based on the height of your header
+            subnav.style.top = "-100px"; // Adjust based on the height of your header
+        } else {
+            // Scroll up
+            header.style.top = "0";
+            subnav.style.top = "50px"; // Adjust based on the height of your header
+        }
+
+        lastScrollTop = scrollTop;
+    });
+});

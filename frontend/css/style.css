@@ -1,7 +1,7 @@
 /* General styles */
 body {
     font-family: 'Product Sans', 'San Francisco', 'Roboto', Arial, sans-serif;
-    margin-top: 50px; /* Adjusted for fixed header space */
+    margin-top: 80px; /* Adjusted for fixed header space */
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
@@ -32,11 +32,12 @@ a:hover {
 button {
     cursor: pointer;
 }
+
 /* Header styles */
 header {
     background: #1a1a1a;
     color: #fff;
-    padding: 0px 0; /* Reduced padding for a slimmer header */
+    padding: 5px 0; /* Adjusted padding for a slimmer header */
     position: fixed;
     width: 100%;
     top: 0;
@@ -45,47 +46,42 @@ header {
     transition: all 0.3s ease; /* Smooth transition for changes */
 }
 
-/* Navbar styles */
 .navbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 !important; /* Further reduced padding for a slimmer navbar */
-    transition: all 0.3s ease; /* Smooth transition for changes */
-}
-
-.navbar-brand {
-    display: flex;
     align-items: center;
+    width: 95%; /* Adjusted width */
+    margin: 0 auto; /* Center align */
+    padding: 0 20px;
 }
 
 .navbar-brand img {
-    margin: 5px;
-    height: 65px; /* Set the height of the logo */
-    width: 65px; /* Set width to match height for a perfect circle */
-    border-radius: 50%; /* Circular shape for the image */
-    transition: height 0.3s ease, width 0.3s ease;
+    height: 70px; 
+    border-radius: 50%;
+    width:auto;
+    transition: height 0.3s ease; 
 }
 
 .navbar-toggler {
+    display: none; 
     background: transparent;
     border: none;
     color: #fff;
-    font-size: 1.5em;
+    font-size: 2em;
     cursor: pointer;
 }
 
 .navbar-toggler span {
     display: block;
-    width: 25px;
-    height: 3px;
-    margin: 4px auto;
+    width: 30px;
+    height: 4px;
+    margin: 5px auto;
     background-color: #fff;
     transition: all 0.3s;
 }
 
 .navbar-toggler.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(7px, 7px);
 }
 
 .navbar-toggler.active span:nth-child(2) {
@@ -93,7 +89,7 @@ header {
 }
 
 .navbar-toggler.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .navbar-collapse {
@@ -108,14 +104,14 @@ header {
 }
 
 .nav-item {
-    margin-left: 20px; /* Increased margin for better spacing */
+    margin-left: 20px;
 }
 
 .nav-link {
     color: #fff;
-    padding: 10px; /* Increased padding for larger clickable area */
+    padding: 10px;
     border-radius: 5px;
-    font-size: 1.2em; /* Increased font size for better readability */
+    font-size: 1.15em; 
     transition: background 0.3s, color 0.3s;
 }
 
@@ -130,8 +126,8 @@ header {
 }
 
 .btn {
-    padding: 5px 20px; /* Increased padding for a larger button */
-    font-size: 1em; /* Increased font size */
+    padding: 10px 20px;
+    font-size: 1em;
     border: none;
     border-radius: 5px;
     transition: background 0.3s, color 0.3s;
@@ -154,6 +150,7 @@ header {
 .btn-secondary:hover {
     background: #565e64;
 }
+
 
 /* Subnav styles */
 .subnav {
@@ -243,6 +240,7 @@ header {
         max-width: 100%;
     }
 }
+
 
 /* Footer styles */
 footer {
@@ -990,71 +988,65 @@ main {
     margin-left: auto;
     margin-right: auto;
 }
+
 .learn-more-content {
-            margin-top: 20px;
-            display: none;
-            text-align: left;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0;
-            transition: opacity 0.5s ease, max-height 0.5s ease;
-            max-height: 0;
-            overflow: hidden;
-        }
-        .learn-more-content.show {
-            opacity: 1;
-            max-height: 2000px; /* Arbitrary high value to allow expansion */
-        }
-        .learn-more-toggle {
-            display: inline-block !important;
-            margin: 20px auto !important;
-            font-size: 1.1rem !important;
-            color: #fff !important;
-            background-color: #28a745 !important; 
-            padding: 10px 20px !important;
-            border: none !important;
-            border-radius: 5px !important;
-            cursor: pointer !important;
-            text-decoration: none !important;
-            transition: all 0.3s ease !important; 
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; 
-            position: relative !important;
-            overflow: hidden !important; 
-        }
+    margin-top: 20px;
+    display: none;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.learn-more-toggle {
+    display: inline-block !important;
+    margin: 20px auto !important;
+    font-size: 1.1rem !important;
+    color: #fff !important;
+    background-color: #28a745 !important; 
+    padding: 10px 20px !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; 
+    position: relative !important;
+    overflow: hidden !important; 
+}
 
-        .learn-more-toggle::before, 
-        .learn-more-toggle::after {
-            content: '' !important;
-            position: absolute !important;
-            width: 200% !important;
-            height: 200% !important;
-            background-color: rgba(0, 0, 0, 0.1) !important; 
-            top: 50% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%) scale(0) !important;
-            transition: transform 0.5s ease !important;
-            border-radius: 50% !important;
-            pointer-events: none !important;
-        }
+.learn-more-toggle::before, 
+.learn-more-toggle::after {
+    content: '' !important;
+    position: absolute !important;
+    width: 200% !important;
+    height: 200% !important;
+    background-color: rgba(0, 0, 0, 0.1) !important; 
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0) !important;
+    transition: transform 0.5s ease !important;
+    border-radius: 50% !important;
+    pointer-events: none !important;
+}
 
-        .learn-more-toggle:hover::before, 
-        .learn-more-toggle::after {
-            transform: translate(-50%, -50%) scale(1) !important;
-        }
+.learn-more-toggle:hover::before, 
+.learn-more-toggle::after {
+    transform: translate(-50%, -50%) scale(1) !important;
+}
 
-        .learn-more-toggle:hover {
-            color: #fff !important;
-            background-color: #155724 !important; 
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15) !important;
-            transform: translateY(-2px) !important; 
-        }
+.learn-more-toggle:hover {
+    color: #fff !important;
+    background-color: #155724 !important; 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px) !important; 
+}
 
-        /* Active state for button press */
-        .learn-more-toggle:active {
-            transform: translateY(1px) !important; 
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-        }
+/* Active state for button press */
+.learn-more-toggle:active {
+    transform: translateY(1px) !important; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
 
 .values-section {
     display: flex;
@@ -4893,4 +4885,361 @@ body::-webkit-scrollbar-thumb:hover {
         line-height: 1.2 !important; /* Adjust line height for better readability */
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Adjustments for Very Big Screens */
+
+/* Adjustments for Very Big Screens (1500px and above) */
+@media (min-width: 1900px) {
+    body {
+        font-size: 1.2em;
+    }
+
+    .container {
+        max-width: 1500px;
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    .navbar-brand img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.4em;
+        padding: 15px 20px;
+    }
+
+    .auth-buttons .btn {
+        font-size: 1.2em;
+        padding: 10px 30px;
+    }
+
+    footer {
+        padding: 60px 40px;
+    }
+
+    .footer-top, .footer-bottom {
+        max-width: 1500px;
+    }
+
+    .footer-column {
+        flex: 1 1 33%;
+        text-align: center;
+    }
+
+    .footer-column h5 {
+        font-size: 1.4em;
+    }
+
+    .footer-column ul li {
+        font-size: 1.2em;
+    }
+
+    .footer-bottom .footer-links {
+        font-size: 1.2em;
+    }
+
+    .about-section, .contact-page, .career-page, .services-section, .education-section, .manufacturing-section, .technology-solutions-section, .healthcare-section, .finance-section, .retail-section, .consulting-section {
+        padding: 80px 40px;
+    }
+
+    .about-section h2, .contact-page h2, .career-page h2, .services-section h2, .education-section h2, .manufacturing-section h2, .technology-solutions-section h2, .healthcare-section h2, .finance-section h2, .retail-section h2, .consulting-section h2 {
+        font-size: 3em;
+    }
+
+    .about-section p, .contact-page p, .career-page p, .services-section p, .education-section p, .manufacturing-section p, .technology-solutions-section p, .healthcare-section p, .finance-section p, .retail-section p, .consulting-section p {
+        font-size: 1.4em;
+    }
+
+    .contact-page form .form-control {
+        font-size: 1.4em;
+        padding: 15px;
+    }
+
+    .contact-page form .btn, .career-page .apply-button {
+        font-size: 1.4em;
+        padding: 15px 30px;
+    }
+
+    .smart-solutions img {
+        width: 140%;
+        height: auto;
+    }
+}
+
+/* Adjustments for Very Very Big Screens (2000px and above) */
+@media (min-width: 2000px) {
+    body {
+        font-size: 1.4em;
+    }
+
+    .container {
+        max-width: 1800px;
+    }
+
+    header {
+        padding: 30px 0;
+    }
+
+    .navbar-brand img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.6em;
+        padding: 20px 30px;
+    }
+
+    .auth-buttons .btn {
+        font-size: 1.4em;
+        padding: 15px 40px;
+    }
+
+    footer {
+        padding: 80px 60px;
+    }
+
+    .footer-top, .footer-bottom {
+        max-width: 1800px;
+    }
+
+    .footer-column {
+        flex: 1 1 25%;
+        text-align: center;
+    }
+
+    .footer-column h5 {
+        font-size: 1.6em;
+    }
+
+    .footer-column ul li {
+        font-size: 1.4em;
+    }
+
+    .footer-bottom .footer-links {
+        font-size: 1.4em;
+    }
+
+    .about-section, .contact-page, .career-page, .services-section, .education-section, .manufacturing-section, .technology-solutions-section, .healthcare-section, .finance-section, .retail-section, .consulting-section {
+        padding: 100px 60px;
+    }
+
+    .about-section h2, .contact-page h2, .career-page h2, .services-section h2, .education-section h2, .manufacturing-section h2, .technology-solutions-section h2, .healthcare-section h2, .finance-section h2, .retail-section h2, .consulting-section h2 {
+        font-size: 3.5em;
+    }
+
+    .about-section p, .contact-page p, .career-page p, .services-section p, .education-section p, .manufacturing-section p, .technology-solutions-section p, .healthcare-section p, .finance-section p, .retail-section p, .consulting-section p {
+        font-size: 1.6em;
+    }
+
+    .contact-page form .form-control {
+        font-size: 1.6em;
+        padding: 20px;
+    }
+
+    .contact-page form .btn, .career-page .apply-button {
+        font-size: 1.6em;
+        padding: 20px 40px;
+    }
+
+    .smart-solutions-container .smart-solutions-box img {
+        width: auto;
+        height: 600%;
+    }
+}
+
+/* Adjustments for Very Very Very Big Screens (2500px and above) */
+@media (min-width: 2500px) {
+    body {
+        font-size: 1.6em;
+    }
+
+    .container {
+        max-width: 2000px;
+    }
+
+    header {
+        padding: 40px 0;
+    }
+
+    .navbar-brand img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.8em;
+        padding: 25px 35px;
+    }
+
+    .auth-buttons .btn {
+        font-size: 1.6em;
+        padding: 20px 50px;
+    }
+
+    footer {
+        padding: 100px 80px;
+    }
+
+    .footer-top, .footer-bottom {
+        max-width: 2000px;
+    }
+
+    .footer-column {
+        flex: 1 1 20%;
+        text-align: center;
+    }
+
+    .footer-column h5 {
+        font-size: 1.8em;
+    }
+
+    .footer-column ul li {
+        font-size: 1.4em;
+    }
+
+    .footer-bottom .footer-links {
+        font-size: 1.4em;
+    }
+
+    .about-section, .contact-page, .career-page, .services-section, .education-section, .manufacturing-section, .technology-solutions-section, .healthcare-section, .finance-section, .retail-section, .consulting-section {
+        padding: 120px 80px;
+    }
+
+    .about-section h2, .contact-page h2, .career-page h2, .services-section h2, .education-section h2, .manufacturing-section h2, .technology-solutions-section h2, .healthcare-section h2, .finance-section h2, .retail-section h2, .consulting-section h2 {
+        font-size: 4em;
+    }
+
+    .about-section p, .contact-page p, .career-page p, .services-section p, .education-section p, .manufacturing-section p, .technology-solutions-section p, .healthcare-section p, .finance-section p, .retail-section p, .consulting-section p {
+        font-size: 1.8em;
+    }
+
+    .contact-page form .form-control {
+        font-size: 1.8em;
+        padding: 25px;
+    }
+
+    .contact-page form .btn, .career-page .apply-button {
+        font-size: 1.8em;
+        padding: 25px 50px;
+    }
+
+    .smart-solutions img {
+        width: 180%;
+        height: auto;
+    }
+}
+
+
+
+
+
+
+/*moving heading when you scroll
+
+
+/* Add CSS media query for small screens */
+@media (max-width: 768px) {
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: top 0.3s;
+    }
+
+    .header-placeholder {
+        height: 100px; /* Adjust based on the height of your header */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
