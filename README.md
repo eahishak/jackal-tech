@@ -8,6 +8,8 @@ Welcome to the Jackal Tech Ltd. website repository! This document provides an ov
 The Jackal Tech Ltd. website serves as the digital face of our company, providing information about our services, team, events, and contact details. The website is built with modern web technologies to ensure a responsive, fast, and secure user experience.
 ## Features
 
+
+
 - **Dynamic Content**: Real-time updates of services, events, and team information.
 - **Chatbot**: An AI-powered chatbot to assist visitors with queries.
 - **Responsive Design**: Fully optimized for various devices and screen sizes.
