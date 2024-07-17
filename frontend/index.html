@@ -363,49 +363,47 @@
 
 
     <section id="about" class="about-section">
-            <h2>About Us</h2>
-            <p>At Jackal Tech, our mission is to drive technological innovation that addresses global challenges. We are dedicated to creating solutions that not only meet the immediate needs of our clients but also have a lasting positive impact on the world. Our approach involves leveraging cutting-edge technologies to develop innovative products and services that solve complex problems in various sectors, including <b>healthcare, education, finance, manufacturing, agriculture, and retail</b>. By fostering a culture of continuous improvement and excellence, we aim to stay ahead of the technological curve and deliver exceptional value to our clients and communities. Our commitment to sustainability and social responsibility ensures that our innovations contribute to a better, more equitable future for all.</p>
-            <div class="learn-more-content">
-                <p>We are dedicated to creating impactful innovations that shape the future.</p>
-                <div class="additional-info">
-                    <p>Founded in late 2019 and rebranded in 2021 in Kigali, Rwanda, Jackal Tech has grown into a leader in technology solutions, with a focus on healthcare, education, finance, manufacturing, agriculture, and retail sectors.</p>
-                    <p>Our dedicated team of experts works tirelessly to deliver cutting-edge solutions that empower businesses and communities to thrive in the digital age.</p>
-                    <h3>Our Vision</h3>
-                    <p>To be a global leader in technological innovation, driving sustainable growth and improving lives worldwide.</p>
-                    <h3>Our Mission</h3>
-                    <ul>
-                        <li>To develop and implement innovative solutions that meet the evolving needs of our clients.</li>
-                        <li>To foster a culture of continuous improvement and excellence.</li>
-                        <li>To promote sustainable practices and social responsibility in all our endeavors.</li>
-                    </ul>
-                    <h3>Our Values</h3>
-                    <div class="values-section">
-                        <div class="value-item">
-                            <h4>Integrity</h4>
-                            <p>We adhere to the highest standards of ethical conduct in all our actions.</p>
-                        </div>
-                        <div class="value-item">
-                            <h4>Innovation</h4>
-                            <p>We embrace change and encourage creativity to deliver top-notch solutions.</p>
-                        </div>
-                        <div class="value-item">
-                            <h4>Excellence</h4>
-                            <p>We strive for excellence in everything we do, ensuring high quality and continuous improvement.</p>
-                        </div>
-                        <div class="value-item">
-                            <h4>Customer Focus</h4>
-                            <p>We prioritize our customers' needs and work to exceed their expectations.</p>
-                        </div>
-                        <div class="value-item">
-                            <h4>Social Responsibility</h4>
-                            <p>We are committed to making a positive impact on society and the environment.</p>
-                        </div>
+        <h2>About Us</h2>
+        <p>At Jackal Tech, our mission is to drive technological innovation that addresses global challenges...</p>
+        <div class="learn-more-content">
+            <p>We are dedicated to creating impactful innovations that shape the future.</p>
+            <div class="additional-info">
+                <p>Founded in late 2019 and rebranded in 2021 in Kigali, Rwanda...</p>
+                <h3>Our Vision</h3>
+                <p>To be a global leader in technological innovation, driving sustainable growth and improving lives worldwide.</p>
+                <h3>Our Mission</h3>
+                <ul>
+                    <li>To develop and implement innovative solutions that meet the evolving needs of our clients.</li>
+                    <li>To foster a culture of continuous improvement and excellence.</li>
+                    <li>To promote sustainable practices and social responsibility in all our endeavors.</li>
+                </ul>
+                <h3>Our Values</h3>
+                <div class="values-section">
+                    <div class="value-item">
+                        <h4>Integrity</h4>
+                        <p>We adhere to the highest standards of ethical conduct in all our actions.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Innovation</h4>
+                        <p>We embrace change and encourage creativity to deliver top-notch solutions.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Excellence</h4>
+                        <p>We strive for excellence in everything we do, ensuring high quality and continuous improvement.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Customer Focus</h4>
+                        <p>We prioritize our customers' needs and work to exceed their expectations.</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>Social Responsibility</h4>
+                        <p>We are committed to making a positive impact on society and the environment.</p>
                     </div>
                 </div>
             </div>
-            <button class="btn btn-link learn-more-toggle" onclick="toggleLearnMore()">Learn More</button>
+        </div>
+        <button class="btn btn-link learn-more-toggle" onclick="toggleLearnMore()">Learn More</button>
     </section>
-    
 <!--
     <section id="videos" class="videos-section">
         <div class="container">
@@ -1039,18 +1037,37 @@
 
     
     <script>
-        //learn-more-content
-        function toggleLearnMore() {
-            var content = document.querySelector('.learn-more-content');
-            var button = document.querySelector('.learn-more-toggle');
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-                button.textContent = "Show Less";
-            } else {
-                content.style.display = "none";
-                button.textContent = "Learn More";
+        document.addEventListener('DOMContentLoaded', function () {
+            const content = document.querySelector('.learn-more-content');
+            const button = document.querySelector('.learn-more-toggle');
+
+            if (!content || !button) {
+                console.error("Required elements not found");
+                return;
             }
-        }
+
+            content.style.display = "none";
+            content.style.maxHeight = "0";
+            content.style.opacity = "0";
+
+            button.addEventListener('click', function () {
+                if (content.style.display === "none" || content.style.display === "") {
+                    content.style.display = "block";
+                    setTimeout(() => {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        content.style.opacity = "1";
+                    }, 10); // Ensure display:block is set before animation starts
+                    button.textContent = "Show Less";
+                } else {
+                    content.style.maxHeight = "0";
+                    content.style.opacity = "0";
+                    setTimeout(() => {
+                        content.style.display = "none";
+                        button.textContent = "Learn More";
+                    }, 500); // Match the CSS transition duration
+                }
+            });
+        });
     </script>
 
     <script>

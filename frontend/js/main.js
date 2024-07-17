@@ -1739,7 +1739,6 @@ loadChatHistory();
 
 //Part 2: Advanced Features
 
-
 // External NLP API integration for contextual understanding and sentiment analysis
 async function analyzeMessage(message) {
     const apiKey = 'YOUR_NLP_API_KEY';
@@ -2409,6 +2408,8 @@ function stopRecording() {
 
 
 
+
+
 //manage routing, caching, service workers, dynamic content loading, accessibility, performance monitoring, security headers, notifications, and a live chat widget.
 
 // Utility Functions
@@ -2536,27 +2537,6 @@ class App {
             }
             this.trackPageView();
         });
-    }
-
-    createLoadingIndicator() {
-        const loadingDiv = document.createElement('div');
-        loadingDiv.id = 'loading';
-        loadingDiv.style.display = 'none';
-        loadingDiv.style.position = 'fixed';
-        loadingDiv.style.top = '0';
-        loadingDiv.style.left = '0';
-        loadingDiv.style.width = '100%';
-        loadingDiv.style.height = '100%';
-        loadingDiv.style.background = 'rgba(255, 255, 255, 0.8)';
-        loadingDiv.style.zIndex = '1000';
-        loadingDiv.style.display = 'flex';
-        loadingDiv.style.justifyContent = 'center';
-        loadingDiv.style.alignItems = 'center';
-        loadingDiv.innerHTML = '<div class="spinner" style="border: 0.4rem solid #f3f3f3; border-top: 0.4rem solid #3498db; border-radius: 50%; width: 2rem; height: 2rem; animation: spin 1s linear infinite;"></div>';
-        const style = document.createElement('style');
-        style.innerHTML = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
-        document.head.appendChild(style);
-        return loadingDiv;
     }
 
     showLoading() {
@@ -2783,41 +2763,6 @@ if ("Notification" in window && navigator.serviceWorker) {
         }
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
