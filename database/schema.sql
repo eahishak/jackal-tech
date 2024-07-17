@@ -136,7 +136,7 @@ CALL GiveRaise(1, 10);
 
 
 
--- Create a function to calculate the total sales for a given customer
+-- Create a function to calculate the total sales for  given customers
 CREATE FUNCTION TotalSales(customer_id INT) RETURNS DECIMAL(10, 2)
 BEGIN
     DECLARE total DECIMAL(10, 2);
@@ -146,7 +146,13 @@ BEGIN
     RETURN total;
 END;
 
+
+
+
+
+
 -- Use the function
 SELECT customer_id, TotalSales(customer_id) AS total_sales
 FROM customers;
+
 
