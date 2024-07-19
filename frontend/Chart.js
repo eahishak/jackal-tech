@@ -50,7 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-
+    
+    
     // Interns Country Pie Chart
     var internsCountryChartCtx = document.getElementById('internsCountryChart').getContext('2d');
     new Chart(internsCountryChartCtx, {

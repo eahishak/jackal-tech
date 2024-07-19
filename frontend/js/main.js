@@ -3040,6 +3040,8 @@ const styles = `
     .custom-alert .close-btn:hover {
         text-decoration: underline;
     }
+    
+    
     .custom-alert .yes-btn,
     .custom-alert .no-btn {
         background: #03dac6;
