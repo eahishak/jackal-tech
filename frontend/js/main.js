@@ -562,8 +562,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
 //For subscription thank you message
 document.addEventListener('DOMContentLoaded', function () {
     // Handle newsletter subscription form submission
