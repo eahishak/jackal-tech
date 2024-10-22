@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About-Jackal Tech Ltd</title>
-    <!-- Favicon -->
+     <title>About-Jackal Tech Ltd</title>
+   <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
 
     <!-- Bootstrap CSS -->
@@ -20,6 +20,68 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="At Jackal Tech Ltd, we drive technological innovation to solve global challenges. Learn about our mission, vision, and the dedicated team behind our groundbreaking solutions.">
+    <meta name="keywords" content="about Jackal Tech, Jackal Tech mission, technology innovation, Jackal Tech team, Rwanda Tech, Emmanuel Ahishakiye, Afribot Robotics">
+    <meta name="author" content="Jackal Tech Ltd">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Jackal Tech Ltd | Innovating for a Better Future">
+    <meta property="og:description" content="Discover innovative solutions at Jackal Tech Ltd, where technology meets excellence in healthcare, education, finance, manufacturing, agriculture, and retail sectors.">
+    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:url" content="https://www.jackaltechltd.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jackal Tech Ltd | Leading Technological Innovations">
+    <meta name="twitter:description" content="Explore advanced technology solutions at Jackal Tech Ltd, dedicated to innovation in healthcare, education, finance, manufacturing, agriculture, and retail sectors.">
+    <meta name="twitter:image" content="images/logo.png">
+    
+    <!-- Structured Data Markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Jackal Tech Ltd",
+      "url": "https://www.jackaltechltd.com",
+      "logo": "https://www.jackaltechltd.com/images/favicon.ico",
+      "sameAs": [
+        "https://www.instagram.com/jackal_tech",
+        "https://www.linkedin.com/company/100128722/admin/feed/posts/",
+        "https://www.youtube.com/channel/jackal-tech",
+        "https://twitter.com/jackaltechltd"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-800-555-5555",
+        "contactType": "Customer Service",
+        "areaServed": "US",
+        "availableLanguage": ["en"]
+      }
+    }
+    </script>
+
+    <!-- Additional Enhancements -->
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Service Worker for PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(function(error) {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
+    </script>
+    <!-- Modernizr for feature detection -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/3.11.2/modernizr.min.js"></script>
 
     <!-- Google Maps API -->
     <!--<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>-->
@@ -362,11 +424,11 @@
 
                 <!-- Executive Team -->
                 <div class="team-category">
-                    <h3>Executive Team</h3>
+                    <h3>Executive Board</h3>
                     <div class="row">
                         <div class="col-md-3">
                             <div class="team-member">
-                                <img src="images/Ignace.jpg" alt="Ignace Kwizera">
+                                <img src="images/ignace.jpg" alt="Ignace Kwizera">
                                 <h4>Ignace Kwizera</h4>
                                 <p> Founder & CEO</p>
                             </div>
@@ -395,98 +457,119 @@
                     </div>
                 </div>
 
-                <!-- Advisory Board -->
                 <div class="team-category">
-                    <h3>Advisory Board</h3>
-                    <div class="row">
-                        <!-- Add 12 members here, example with 3 members -->
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/ian.jpeg" alt="Ian Mukasa">
-                                <h4>Ian Mukasa</h4>
-                                <p>Technology Advisor</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/lise.jpeg" alt="Tuyisenge-Lise-Eugenie">
-                                <h4>Tuyisenge Lise Eugenie</h4>
-                                <p>Financial Advisor</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/josiane.jpeg" alt="Josiane Ishimwe">
-                                <h4>Josiane Ishimwe</h4>
-                                <p>Strategic Partnerships Associate</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/schadrack.jpg" alt="Schadrack NIYONZIMA">
-                                <h4>Schadrack NIYONZIMA</h4>
-                                <p>Operations Advisor</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/beth.jpg" alt="Beth SCHOLZ">
-                                <h4>Beth SCHOLZ</h4>
-                                <p>Recruitment Associate</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/chris.png" alt="GIRANEZA UWANTEGE">
-                                <h4>Dr. Christelle GIRANEZA UWANTEGE</h4>
-                                <p>Customer Experience Advisor</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/Deo.png" alt="Deo Kabirigi">
-                                <h4>Deo Kabirigi</h4>
-                                <p>Corporate Governance Advisor</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/francis.jpeg" alt="Francis-Pellegrino">
-                                <h4>Francis Pellegrino</h4>
-                                <p>Sustainability Advisor</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/allan.jpeg" alt="Allan SHYAKA">
-                                <h4>Allan SHYAKA</h4>
-                                <p>Human Resources Advisor</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/lily.jpg" alt="Lily Conroy">
-                                <h4>Lily Conroy</h4>
-                                <p>Recruitment Associate</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/bosco.png" alt="Bosco-Rutikanga">
-                                <h4>Bosco Rutikanga</h4>
-                                <p>Product Development Advisor</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/Graham.jpg" alt="Graham Dilworth">
-                                <h4>Graham Dilworth</h4>
-                                <p>Recruitment Associate</p>
-                            </div>
+                <h3>Strategic Consultative Board</h3>
+                <div class="row">
+                    <!-- Add 12 members here, example with 3 members -->
+                    <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/ian.jpeg" alt="Ian Mukasa">
+                            <h4>Ian Mukasa</h4>
+                            <p>Strategic Partnerships Director</p>
                         </div>
                     </div>
+                    <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/lise.jpeg" alt="Tuyisenge-Lise-Eugenie">
+                            <h4>Tuyisenge Lise Eugenie</h4>
+                            <p>Strategic Advisory Director</p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/josiane.jpeg" alt="Josiane Ishimwe">
+                            <h4>Josiane Ishimwe</h4>
+                            <p>Science and Technology Advisory Director</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/schadrack.jpg" alt="Schadrack NIYONZIMA">
+                            <h4>Schadrack NIYONZIMA</h4>
+                            <p>Company Operations Director</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/beth.jpg" alt="Beth  SCHOLZ">
+                            <h4>Beth  SCHOLZ</h4>
+                            <p>Recruitment Associate</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/chris.png" alt="GIRANEZA UWANTEGE">
+                            <h4>Dr. Christelle GIRANEZA UWANTEGE</h4>
+                            <p>Customer Experience and Senior Technical Director</p>
+                        </div>
+                    </div>
+       
+                
+                    <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/deo.jpg" alt="Deo Kabirigi">
+                            <h4>Deo Kabirigi</h4>
+                            <p>Corporate Development Advisor</p>
+                        </div>
+                    </div>
+                     <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/francis.jpeg" alt="Francis-Pellegrino">
+                            <h4>Francis Pellegrino</h4>
+                            <p>Corporate Sustainability Associate</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/Platini.jpg" alt="Platini-Nkurunziza">
+                            <h4>Platini Nkurunziza</h4>
+                            <p>Project Management Associate</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/allan.jpeg" alt="Allan SHYAKA">
+                            <h4>Allan SHYAKA</h4>
+                            <p>Growth Strategy Associate</p>
+                        </div>
+                    </div>
+                    <!--
+                     <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/ernest.png" alt="Ernest-NSekanabanga">
+                            <h4>Ernest NSekanabanga</h4>
+                            <p>Corporate Affairs Associate</p>
+                        </div>
+                    </div>
+                    -->
+                    
+                    <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/lily.jpg" alt="Lily Conroy">
+                            <h4>Lily Conroy</h4>
+                            <p>Recruitment Associate</p>
+                        </div>
+                    </div>
+                  
+                    <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/bosco.png" alt="Bosco-Rutikanga">
+                            <h4>Bosco Rutikanga</h4>
+                            <p>Product Development Advisor</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="team-member">
+                            <img src="images/Graham.jpg" alt="Graham Dilworth">
+                            <h4>Graham Dilworth</h4>
+                            <p>Recruitment Associate</p>
+                        </div>
+                    </div>
+                  
                 </div>
-        </section>
+            </div>
+    </section>
 
         <section id="jackal-story" class="jackal-story-section">
             <div class="jackal-container">
@@ -556,7 +639,7 @@
                     <input type="text" id="chatbotInput" placeholder="Aa" />
                     <button class="emoji-btn" onclick="toggleEmojiPicker()">😊</button>
                     <button class="voice-btn">🎤</button>
-                    <button class="send-btn">⬆️</button>
+                    <button class="send-btn">➥</button>
                     <button class="typing-toggle-btn" style="display: none;">🔍</button>
                 </div>
                 <div class="recording-controls" style="display: none;">
@@ -602,7 +685,7 @@
                     <div class="col-md-3 footer-column">
                         <h5>Contact Information</h5>
                         <p>Address: KG 11 Ave, Kigali, Rwanda</p>
-                        <p>Phone: +250 782323272</p>
+                        <p>Phone: +250 78 232 3272</p>
                         <p>Email: info@jackaltechltd.com</p>
                     </div>
                     <div class="col-md-3 footer-column">
@@ -704,6 +787,7 @@
             </div>
         </div>
     </div>
+
     <!-- Sign-In Modal -->
     <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

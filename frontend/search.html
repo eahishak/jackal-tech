@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jackal Tech Ltd</title>
-    <!-- Favicon -->
+     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
 
     <!-- Bootstrap CSS -->
@@ -20,12 +20,74 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Jackal Tech Ltd, founded in 2019, is at the forefront of technological innovation, delivering advanced solutions across healthcare, education, finance, manufacturing, agriculture, and retail. Our mission is to harness cutting-edge technology to solve complex problems and drive global progress.">
+    <meta name="keywords" content="Jackal Tech Ltd, Jackal Tech, Jackal, Jackal Technologies, Jackal Dev, Emmanuel Ahishakiye, technology solutions, healthcare technology, education technology, finance technology, manufacturing technology, agriculture technology, retail technology">
+    <meta name="author" content="Jackal Tech Ltd">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Jackal Tech Ltd | Innovating for a Better Future">
+    <meta property="og:description" content="Discover innovative solutions at Jackal Tech Ltd, where technology meets excellence in healthcare, education, finance, manufacturing, agriculture, and retail sectors.">
+    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:url" content="https://www.jackaltechltd.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jackal Tech Ltd | Leading Technological Innovations">
+    <meta name="twitter:description" content="Explore advanced technology solutions at Jackal Tech Ltd, dedicated to innovation in healthcare, education, finance, manufacturing, agriculture, and retail sectors.">
+    <meta name="twitter:image" content="images/logo.png">
+    
+    <!-- Structured Data Markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Jackal Tech Ltd",
+      "url": "https://www.jackaltechltd.com",
+      "logo": "https://www.jackaltechltd.com/images/favicon.ico",
+      "sameAs": [
+        "https://www.instagram.com/jackal_tech",
+        "https://www.linkedin.com/company/100128722/admin/feed/posts/",
+        "https://www.youtube.com/channel/jackal-tech",
+        "https://twitter.com/jackaltechltd"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-800-555-5555",
+        "contactType": "Customer Service",
+        "areaServed": "US",
+        "availableLanguage": ["en"]
+      }
+    }
+    </script>
+
+    <!-- Additional Enhancements -->
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Service Worker for PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(function(error) {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
+    </script>
+    <!-- Modernizr for feature detection -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/3.11.2/modernizr.min.js"></script>
+
     <!-- Google Maps API -->
     <!--<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>-->
-
+    
      <!-- Jackal Tech Logo Favicon-->
 
-     <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAD9/f0AAAAAAAICAgD///8AMjIyAAQEBAD6+voA8/PzAPX19QABAQEAAwMDAEFBQQAFBQUAJSUlAAAAAAAAAAAAEREREREREREREXkBvEEREREREREREREREREwEzURERERERMRExERERERExMSMRERERETExExERERERMTETERERERExMRMRERERETExExERERETMTETERERERGDMxoREREREZER0RERERERERGRERERERERFhEREREREREREREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAD9/f0AAAAAAAICAgD///8AMjIyAAQEBAD6+voA8/PzAPX19QABAQEAAwMDAEFBQQAFBQUAJSUlAAAAAAAAAAAAEREREREREREREXkBvEEREREREREREREREREwEzURERERERMRExERERERExMSMRERERETExExERERERMTETERERERExMRMRERERETExExERERETMTETERERERGDMxoREREREZER0RERERERERGRERERERERFhEREREREREREREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon">
 
     <style>
         .search-container {
@@ -466,25 +528,27 @@
             </div>
         </div>
    
+ <!--  
         <section id="partners" class="partners-section">
             <div class="container">
                 <h2>Our Partners</h2>
                 <div class="partner-logos">
                     <div class="logo"><img src="images/afribot.png" alt="Partner 1"></div>
                     <!--<div class="logo"><img src="images/street-bridge.webp" alt="Partner 2"></div>-->
-                    <div class="logo"><img src="images/agahozo.png" alt="Partner 3"></div>
-                    <div class="logo"><img src="images/dhpp.jpeg" alt="Partner 1"></div>
+                   <!-- <div class="logo"><img src="images/agahozo.png" alt="Partner 3"></div>
+                   <!-- <div class="logo"><img src="images/dhpp.jpeg" alt="Partner 1"></div>
                     <!--<div class="logo"><img src="images/im-bank.png" alt="Partner 4"></div>-->
                     <!--<div class="logo"><img src="images/mastercard.svg" alt="Partner 5"></div>-->
                     <!--<div class="logo"><img src="images/bridge2rwanda.jpeg" alt="Partner 3"></div>-->
                     <!--<div class="logo"><img src="images/stem-inspires.jpeg" alt="Partner 4"></div>-->
                     <!--<div class="logo"><img src="images/gashora.jpeg" alt="Partner 5"></div>-->
                    
-                </div>
+             <!--   </div>
             </div>
         </section>
+        -->
         
-        <div class="chatbot-section">
+ <div class="chatbot-section">
             <div class="chatbot-toggle">Chat with us!</div>
             <div class="chatbot-window">
                 <div class="chatbot-header">
@@ -502,7 +566,7 @@
                     <input type="text" id="chatbotInput" placeholder="Aa" />
                     <button class="emoji-btn" onclick="toggleEmojiPicker()">😊</button>
                     <button class="voice-btn">🎤</button>
-                    <button class="send-btn">⬆️</button>
+                      <button class="send-btn">➥</button>
                     <button class="typing-toggle-btn" style="display: none;">🔍</button>
                 </div>
                 <div class="recording-controls" style="display: none;">
@@ -530,7 +594,8 @@
         </div>
 
     </main>
-     <footer>
+
+    <footer>
         <div class="footer-top">
             <div class="container">
                 <div class="row">
@@ -590,14 +655,14 @@
                     <div class="col-md-3 footer-column">
                         <h5>Newsletter</h5>
                         <form action="https://formspree.io/f/mnnanqvz" method="POST">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="full_name" placeholder="Enter your full name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Subscribe</button>
-                        </form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="full_name" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
                     </div>
                 </div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5160918255415!2d30.12565187616407!3d-1.9465078980358401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca71759b7aa45%3A0x2cde50a29ad17c85!2sKG%2011%20Ave%2C%20Kigali%2C%20Rwanda!5e0!3m2!1sen!2sus!4v1721028689521!5m2!1sen!2sus"  id="map"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

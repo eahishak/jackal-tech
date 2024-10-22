@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jackal Tech Ltd | Innovating For a Better Future</title>
     <!-- Favicon -->
@@ -22,45 +22,69 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Meta Tags for SEO -->
-    <meta name="description" content="Jackal Tech Ltd, founded in 2019, is at the forefront of technological innovation, delivering advanced solutions across healthcare, education, finance, manufacturing, agriculture, and retail. Our mission is to harness cutting-edge technology to solve complex problems and drive global progress.">
-    <meta name="keywords" content="Jackal Tech Ltd, Jackal Tech, Jackal, Jackal Technologies, Jackal Dev, Emmanuel Ahishakiye, technology solutions, healthcare technology, education technology, finance technology, manufacturing technology, agriculture technology, retail technology, Rwanda Tech, Africa Tech, Afribot Robotics, Kigali, Rwanda, Rwanda ICT Chamber, Leading Tech Company">
-    <meta name="author" content="Jackal Tech Ltd">
-    <meta name="robots" content="index, follow">
 
-    <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="Jackal Tech Ltd | Innovating for a Better Future">
-    <meta property="og:description" content="Discover innovative solutions at Jackal Tech Ltd, where technology meets excellence in healthcare, education, finance, manufacturing, agriculture, and retail sectors.">
-    <meta property="og:image" content="images/logo.jpg">
-    <meta property="og:url" content="https://www.jackaltechltd.com">
-    <meta property="og:type" content="website">
+<!-- Meta Tags for SEO -->
+<meta name="description" content="Join Jackal Tech Ltd’s leading tech events and workshops in Rwanda and across Africa. Our events focus on AI, software development, fintech, healthcare, and digital transformation. Collaborate with innovators and learn cutting-edge tech skills.">
+<meta name="keywords" content="Jackal Tech Ltd events, tech workshops Rwanda, African tech conferences, AI workshops, software development training, fintech events Africa, healthcare technology events, tech innovation Africa, coding bootcamps Rwanda, Jackal Tech workshops, tech conferences in Kigali">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph Meta Tags for Social Media -->
+<meta property="og:title" content="Jackal Tech Ltd | Events & Workshops | Empowering Tech Innovation">
+<meta property="og:description" content="Explore our cutting-edge events and workshops at Jackal Tech Ltd, featuring the latest advancements in AI, fintech, software development, and more. Collaborate with top minds in the African tech industry.">
+<meta property="og:image" content="images/event-promo.jpg">
+<meta property="og:url" content="https://www.jackaltechltd.com/events">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jackal Tech Ltd | Events & Workshops | Learn, Innovate, and Grow">
+<meta name="twitter:description" content="Join Jackal Tech’s exclusive events and workshops in Africa, where we empower tech leaders with knowledge in AI, software development, healthcare, and fintech.">
+<meta name="twitter:image" content="images/logo.jpg">
     
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Jackal Tech Ltd | Leading Technological Innovations">
-    <meta name="twitter:description" content="Explore advanced technology solutions at Jackal Tech Ltd, dedicated to innovation in healthcare, education, finance, manufacturing, agriculture, and retail sectors.">
-    <meta name="twitter:image" content="images/logo.png">
-    
-    <!-- Structured Data Markup for Google -->
-    <script type="application/ld+json">
+   
+<!-- Structured Data Markup for Google -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Jackal Tech Ltd",
-      "url": "https://www.jackaltechltd.com",
-      "logo": "https://www.jackaltechltd.com/images/favicon.ico",
-      "sameAs": [
-        "https://www.instagram.com/jackal_tech",
-        "https://www.linkedin.com/company/100128722/admin/feed/posts/",
-        "https://www.youtube.com/channel/jackal-tech",
-        "https://twitter.com/jackaltechltd"
+      "@type": "Event",
+      "name": "Jackal Tech Events & Workshops",
+      "url": "https://www.jackaltechltd.com/events",
+      "description": "Participate in Jackal Tech Ltd’s tech-driven workshops and events across Rwanda and Africa, focusing on emerging technologies like AI, fintech, software development, and healthcare innovation.",
+      "startDate": "2024-11-01T09:00",
+      "endDate": "2024-11-03T17:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "Jackal Tech Headquarters",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Kigali Innovation Center",
+          "addressLocality": "Kigali",
+          "addressRegion": "Kigali",
+          "postalCode": "250",
+          "addressCountry": "RW"
+        }
+      },
+      "image": [
+        "https://www.jackaltechltd.com/images/event-promo.jpg"
       ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-800-555-5555",
-        "contactType": "Customer Service",
-        "areaServed": "US",
-        "availableLanguage": ["en"]
+      "organizer": {
+        "@type": "Organization",
+        "name": "Jackal Tech Ltd",
+        "url": "https://www.jackaltechltd.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.jackaltechltd.com/events/register",
+        "price": "Free",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-10-01T12:00"
+      },
+      "performer": {
+        "@type": "Organization",
+        "name": "Jackal Tech Ltd"
       }
     }
     </script>
@@ -384,8 +408,9 @@
                         <a class="nav-link dropdown-toggle" href="#" id="latestDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The Latest</a>
                         <div class="dropdown-menu" aria-labelledby="latestDropdown">
+                            <a class="dropdown-item" href="latest.html" onclick="showContent('news')">News</a>
                             <a class="dropdown-item" href="latest.html" onclick="showContent('updates')">Updates</a>
-                            <a class="dropdown-item" href="events.html" onclick="showContent('events')">Events</a>
+                            <a class="dropdown-item" href="latest.html" onclick="showContent('events')">Events</a>
                         </div>
                     </li>
                     
@@ -424,155 +449,21 @@
 
  <main>
     <section class="banner">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div id="eventsCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/banner1.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/banner-career1.webp" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/banner2.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/contact-banner1.jpg" class="d-block w-100" alt="...">
+                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.indeed.com%2Fcareer-advice%2Fcareer-development%2Ftypes-of-networking-events&psig=AOvVaw0LVk_XVTeiFpGhUJibcKoN&ust=1729647184690000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICwlI_soIkDFQAAAAAdAAAAABAE" class="d-block w-100" alt="Tech Event">
                 </div>
             </div>
         </div>
-        <div class="banner-content">
-            <h1>Welcome to Jackal Tech Ltd</h1>
-            <p>Innovating for a Better Future, Together to make it a reality</p>
-            <a href="#about" class="btn btn-primary">Learn More</a>
-            <a href="contact.html#contact-name" class="btn btn-secondary">Get in Touch</a>
+        <div class="banner-content text-center">
+            <h1 class="display-4">Events & Workshops</h1>
+            <h2 class="lead">Inspiring the Future of Technology</h2>
+            <div id="countdown" class="btn btn-lg btn-success"></div>
         </div>
     </section>
-
-
-    <section id="about" class="about-section">
-            <h2>About Us</h2>
-            <p>At Jackal Tech, our mission is to drive technological innovation that addresses global challenges. We are dedicated to creating solutions that not only meet the immediate needs of our clients but also have a lasting positive impact on the world. Our approach involves leveraging cutting-edge technologies to develop innovative products and services that solve complex problems in various sectors, including <b>healthcare, education, finance, manufacturing, agriculture, and retail</b></p>
-            <div class="learn-more-content">
-                <p>We are dedicated to creating impactful innovations that shape the future.</p>
-                <div class="additional-info">
-                    <p>Founded in late 2019 and rebranded in 2021 in Kigali, Rwanda, Jackal Tech has grown into a leader in technology solutions, with a focus on healthcare, education, finance, manufacturing, agriculture, and retail sectors.</p>
-                    <p>Our dedicated team of experts works tirelessly to deliver cutting-edge solutions that empower businesses and communities to thrive in the digital age.</p>
-                    <h3>Our Vision</h3>
-                    <p>To be a global leader in technological innovation, driving sustainable growth and improving lives worldwide.</p>
-                    <h3>Our Mission</h3>
-                    <ul>
-                        <li>To develop and implement innovative solutions that meet the evolving needs of our clients.</li>
-                        <li>To foster a culture of continuous improvement and excellence.</li>
-                        <li>To promote sustainable practices and social responsibility in all our endeavors.</li>
-                    </ul>
-                    <h3>Our Values</h3>
-                    <div class="values-section">
-                        <div class="value-item">
-                            <h4>Integrity</h4>
-                            <p>We adhere to the highest standards of ethical conduct in all our actions.</p>
-                        </div>
-                        <div class="value-item">
-                            <h4>Innovation</h4>
-                            <p>We embrace change and encourage creativity to deliver top-notch solutions.</p>
-                        </div>
-                        <div class="value-item">
-                            <h4>Excellence</h4>
-                            <p>We strive for excellence in everything we do, ensuring high quality and continuous improvement.</p>
-                        </div>
-                        <div class="value-item">
-                            <h4>Customer Focus</h4>
-                            <p>We prioritize our customers' needs and work to exceed their expectations.</p>
-                        </div>
-                        <div class="value-item">
-                            <h4>Social Responsibility</h4>
-                            <p>We are committed to making a positive impact on society and the environment.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="btn btn-link learn-more-toggle" onclick="toggleLearnMore()">Learn More</button>
-    </section>
+        
     
-<!--
-    <section id="videos" class="videos-section">
-        <div class="container">
-            <h2>Latest Videos</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="video-card">
-                        <video controls>
-                            <source src="videos/video1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <h3>Project Highlight</h3>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="video-card">
-                        <video controls>
-                            <source src="videos/video2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <h3>Innovation in Action</h3>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="video-card">
-                        <video controls>
-                            <source src="videos/video3.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <h3>Team Insights</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
--->
-    <section id="impacts" class="impacts-section">
-        <div class="container">
-            <h2>Our Impact</h2>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="impact-box">
-                        <div class="impact-number" id="students">0</div>
-                        <h4>Students</h4>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="impact-box">
-                        <div class="impact-number" id="businesses">0</div>
-                        <h4>Businesses</h4>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="impact-box">
-                        <div class="impact-number" id="countries">0</div>
-                        <h4>Countries</h4>
-                    </div>
-                </div>
-             <div class="col-md-3">
-                    <div class="impact-box">
-                        <div class="impact-number" id="partners">0</div>
-                        <h4>Partners</h4>
-                    </div>
-            </div>
-        </div>
-    </section>
-    <section class="services-section">
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="smart-solutions-container">
-                    <div class="smart-solutions-box">
-                        <img src="images/smart-solution.jpg" alt="Smart Solutions" class="service-image img-fluid">
-                        <h2>Smart Solutions</h2>
-                        <p>Implementing smart solutions for urban development, environmental monitoring, and more. Our smart solutions aim to enhance the quality of life and promote sustainable development.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <section id="events" class="events-section">
             <h2 style="font-weight: bold">Events</h2>
             <div class="row">
@@ -676,296 +567,6 @@
             <div id="countdown" class="btn btn-lg btn-success"></div>
     </section>
     
-    
-
-    <section id="team" class="team-section">
-            <h2>Our Team</h2>
-    
-            <!-- Executive Team -->
-            <div class="team-category">
-                    <h3>Executive Board</h3>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/ignace.jpg" alt="Ignace Kwizera">
-                                <h4>Ignace Kwizera</h4>
-                                <p> Founder & CEO</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/Emmanuel.jpg" alt="Emmanuel Ahishakiye">
-                                <h4>Emmanuel Ahishakiye</h4>
-                                <p>Founder, Spokesperson & CTO</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/Placide.jpg" alt="Placide Shema">
-                                <h4>Placide Shema</h4>
-                                <p>Founder & General Manager</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="team-member">
-                                <img src="images/Fifi.jpg" alt="Team Member">
-                                <h4>Fifi Gisele Nyampinga</h4>
-                                <p>CFO</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            <div class="team-category">
-                <h3>Strategic Consultative Board</h3>
-                <div class="row">
-                    <!-- Add 12 members here, example with 3 members -->
-                    <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/ian.jpeg" alt="Ian Mukasa">
-                            <h4>Ian Mukasa</h4>
-                            <p>Strategic Partnerships Director</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/lise.jpeg" alt="Tuyisenge-Lise-Eugenie">
-                            <h4>Tuyisenge Lise Eugenie</h4>
-                            <p>Strategic Advisory Director</p>
-                        </div>
-
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/josiane.jpeg" alt="Josiane Ishimwe">
-                            <h4>Josiane Ishimwe</h4>
-                            <p>Science and Technology Advisory Director</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/schadrack.jpg" alt="Schadrack NIYONZIMA">
-                            <h4>Schadrack NIYONZIMA</h4>
-                            <p>Company Operations Director</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/beth.jpg" alt="Beth  SCHOLZ">
-                            <h4>Beth  SCHOLZ</h4>
-                            <p>Recruitment Associate</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/chris.png" alt="GIRANEZA UWANTEGE">
-                            <h4>Dr. Christelle GIRANEZA UWANTEGE</h4>
-                            <p>Customer Experience and Senior Technical Director</p>
-                        </div>
-                    </div>
-       
-                
-                    <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/deo.jpg" alt="Deo Kabirigi">
-                            <h4>Deo Kabirigi</h4>
-                            <p>Corporate Development Advisor</p>
-                        </div>
-                    </div>
-                     <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/francis.jpeg" alt="Francis-Pellegrino">
-                            <h4>Francis Pellegrino</h4>
-                            <p>Corporate Sustainability Associate</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/Platini.jpg" alt="Platini-Nkurunziza">
-                            <h4>Platini Nkurunziza</h4>
-                            <p>Project Management Associate</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/allan.jpeg" alt="Allan SHYAKA">
-                            <h4>Allan SHYAKA</h4>
-                            <p>Growth Strategy Associate</p>
-                        </div>
-                    </div>
-                    <!--
-                     <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/ernest.png" alt="Ernest-NSekanabanga">
-                            <h4>Ernest NSekanabanga</h4>
-                            <p>Corporate Affairs Associate</p>
-                        </div>
-                    </div>
-                    -->
-                    <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/lily.jpg" alt="Lily Conroy">
-                            <h4>Lily Conroy</h4>
-                            <p>Recruitment Associate</p>
-                        </div>
-                    </div>
-                  
-                    <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/bosco.png" alt="Bosco-Rutikanga">
-                            <h4>Bosco Rutikanga</h4>
-                            <p>Product Development Advisor</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="team-member">
-                            <img src="images/Graham.jpg" alt="Graham Dilworth">
-                            <h4>Graham Dilworth</h4>
-                            <p>Recruitment Associate</p>
-                        </div>
-                    </div>
-                  
-                </div>
-            </div>
-    </section>
-    <section id="statistics" class="statistics-section">
-
-            <h2>Our Statistics</h2>
-            <p class="statistics-description">At Jackal Tech, we believe in transparency and continuous improvement. Here are some key statistics that showcase our growth and impact.</p>
-            <div class="statistics-grid">
-                <div class="chart-container">
-                    <h3>Interns Gender Distribution</h3>
-                    <div class="chart-box">
-                        <canvas id="internsGenderChart"></canvas>
-                    </div>
-                </div>
-                <div class="chart-container">
-                    <h3>Staff Growth Over the Years</h3>
-                    <div class="chart-box">
-                        <canvas id="staffGrowthChart"></canvas>
-                    </div>
-                </div>
-                <div class="chart-container">
-                    <h3>Interns by Country</h3>
-                    <div class="chart-box">
-                        <canvas id="internsCountryChart"></canvas>
-                    </div>
-                </div>
-            </div>
-    </section>
-    
-    
-    
-
-    <section id="interns" class="interns-section">
-            <h2 style="font-size: 2.2em;font-weight: bold;">Software Engineering Intern Spotlight- Summer 2024</h2>
-            <div class="row">
-                <div class="col-md-4">  
-                    <div class="intern-profile">
-                        <img src="images/favor.jpg" alt="Intern">
-                        <h3>God'sfavor Chukwudi</h3>
-                        <p>Kigali, Rwanda</p>
-                        <p>SWE Senior at The African Leadership University</p>
-                            <p>"Eager to enhance web development skills and contribute to Jackal Tech's projects. Looking forward to learning from industry experts and growing within a dynamic team."</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="intern-profile">
-                        <img src="images/divin.jpg" alt="Intern">
-                        <h3>Divin Byiringiro</h3>
-                        <p>Kigali, Rwanda</p>
-                       
-                        <p>IT Senior at University of Kigali</p>
-                        <p>"Aiming to gain practical experience in UI/UX design, software development tools, and professional software engineering."</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="intern-profile">
-                        <img src="images/Jeff.jpg" alt="Jeff Njoroge">
-                        <h3>Jeff Njoroge</h3>
-                        <p>Nairobi, Kenya</p>
-                        <p>Architecture Graduate at The Technical University of Kenya</p>
-                        <p>"Excited to refine my skills in remote team collaboration and contribute to innovative projects."</p>
-                       
-                    </div>
-                </div>
-        
-                <div class="col-md-4">
-                    <div class="intern-profile">
-                        <img src="images/mystica.jpeg" alt="Marie Rose Mystica Dukuzeyezu">
-                        <h3>Marie Rose Mystica Dukuzeyezu</h3>
-                        <p>Kigali, Rwanda</p>
-                        <p>CS Graduate at The African Leadership University</p>
-                        <p>"Eager to learn through hands-on projects and enhance my teamwork skills."</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="intern-profile">
-                        <img src="images/soha.jpg" alt="Soha Pine">
-                        <h3>Soha Pine</h3>
-                        <p>Dhaka, Bangladesh</p>
-                        <p>ACE Sophomore at University of Rochester </p>
-                        <p>"Eager to tackle tech projects within a dynamic team, grow through learning, and push myself to new heights."</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="intern-profile">
-                        <img src="images/aquila.jpg" alt="Aquila Muriuki">
-                        <h3>Aquila Muriuki</h3>
-                        <p>Kisii, Kenya</p>
-                        <p>CS & Math Senior at Kisii University </p>
-                        <p>"Aiming to gain practical experience in software development, enhance problem-solving skills, and build a strong professional network."</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="intern-profile">
-                        <img src="images/darys.jpg" alt="Darys Sandi">
-                        <h3>Darys Sandi</h3>
-                        <p>Nairobi, Kenya</p>
-                        <p>APT Senior at United States International University - Africa</p>
-                        <p>"Eager to gain hands-on experience with real-world problem-solving projects."</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="intern-profile">
-                        <img src="images/edmond.jpeg" alt="Edmond Nzivugira">
-                        <h3>Edmond Nzivugira</h3>
-                        <p>New York, United States</p>
-                        <p>Sophomore at Colgate University</p>
-                        <p>"Excited to gain real coding and leadership experience by applying CS theories and learning from peers with diverse skills."</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="intern-profile">
-                        <img src="images/cosmas.jpg" alt="Cosmas Mandikonza">
-                        <h3>Cosmas Mandikonza</h3>
-                        <p>Mutare, Zimbabwe</p>
-                        <p>CS & Math Student at The College of St Scholastica</p>
-                        <p>"Excited to leverage my programming skills on real-time projects, creating impactful solutions while collaborating with a dynamic team."</p>
-                    </div>
-                </div>
-            </div>
-    </section>
- <!--  
-        <section id="partners" class="partners-section">
-            <div class="container">
-                <h2>Our Partners</h2>
-                <div class="partner-logos">
-                    <div class="logo"><img src="images/afribot.png" alt="Partner 1"></div>
-                    <!--<div class="logo"><img src="images/street-bridge.webp" alt="Partner 2"></div>-->
-                   <!-- <div class="logo"><img src="images/agahozo.png" alt="Partner 3"></div>
-                   <!-- <div class="logo"><img src="images/dhpp.jpeg" alt="Partner 1"></div>
-                    <!--<div class="logo"><img src="images/im-bank.png" alt="Partner 4"></div>-->
-                    <!--<div class="logo"><img src="images/mastercard.svg" alt="Partner 5"></div>-->
-                    <!--<div class="logo"><img src="images/bridge2rwanda.jpeg" alt="Partner 3"></div>-->
-                    <!--<div class="logo"><img src="images/stem-inspires.jpeg" alt="Partner 4"></div>-->
-                    <!--<div class="logo"><img src="images/gashora.jpeg" alt="Partner 5"></div>-->
-                   
-             <!--   </div>
-            </div>
-        </section>
-        -->
-
    <div class="chatbot-section">
             <div class="chatbot-toggle">Chat with us!</div>
             <div class="chatbot-window">

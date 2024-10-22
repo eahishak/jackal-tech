@@ -1,5 +1,4 @@
 
-
 //for smaller screen responsiveness
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -81,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listener for window resize
     window.addEventListener('resize', applyResponsiveStyles);
 });
+
 
 
 
@@ -562,6 +562,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+
 //For subscription thank you message
 document.addEventListener('DOMContentLoaded', function () {
     // Handle newsletter subscription form submission
@@ -934,6 +936,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const responses = {
             'hello': 'Hi there! How can I help you?',
             'are you sure':"Yes, I'm sure. How can I assist you today?",
+            'how are you': "I'm doing great, thanks for asking! How about you?",
+            'thank you': "You're welcome! Let me know if there's anything you'd like to chat about.",
+            'are you sure':"Yes, I'm sure. How can I assist you today?",
             'hi' :'Hello! How can I assist you today? If you have any questions about Jackal Tech Ltd or need help, feel free to ask!',
             'hey' :'Hello! How can I assist you today? If you have any questions about Jackal Tech Ltd or need help, feel free to ask!',
             "what's up" :"What's up! How can I assist you today? If you have any questions about Jackal Tech Ltd or need help, feel free to ask!",
@@ -953,7 +958,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'mission': 'Our mission is to drive technological innovation that addresses global challenges.',
             'vision': 'Our vision is to be a leader in technology, consistently creating impactful innovations that elevate scientific understanding, transform societies, and improve lives worldwide.',
             'values': 'Our core values are Innovation, Collaboration, Integrity, Empowerment, and Inclusivity.',
-            'phone number': 'You can call us at +250 123 456 789.',
+            'phone number': 'You can call us at +250 78 232 3272.',
             'linkedin': 'Follow us on LinkedIn at [Jackal Tech Ltd](https://www.linkedin.com/company/100128722/admin/feed/posts/).',
             'instagram': 'Follow us on Instagram at [@jackal_tech](https://www.instagram.com/jackal_tech/).',
             'x': 'Follow us on X (formerly Twitter) at [@jackaltechltd](https://twitter.com/jackaltechltd).',
@@ -967,7 +972,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'general manager': 'The General Manager of Jackal Tech Ltd is Placide Shema.',
             'cfo': 'The CFO of Jackal Tech Ltd is Fifi Gisele Nyampinga.',
             'where is jackal tech located': 'Jackal Tech is located in Kigali, Rwanda.',
-            'what is jackal tech': 'Jackal Tech Ltd is a technology company focused on innovative solutions in various sectors including healthcare, education, finance, manufacturing, agriculture, retail, transportation, and energy.',
+            'what is jackal tech': 'Jackal Tech Ltd is a technology company focused on innovative solutions in various sectors including healthcare, education, finance, manufacturing, agriculture, and retail',
             'how to apply for a job at jackal tech': 'You can apply for a job at Jackal Tech by visiting our Careers page and submitting an online application.',
             'current job openings': 'You can view our current job openings on the Careers page of our website.',
             'how to contact support': 'You can contact support by emailing support@jackaltechltd.com or calling +250 123 456 789.',
@@ -1001,6 +1006,8 @@ document.addEventListener('DOMContentLoaded', function () {
             'what is your cancellation policy': 'Customers can cancel for an automatic full refund of their booking fee 24 hours prior to the start of the appointment. In the event of an emergency or the business not delivering the service at the set time, a refund request will require a review and approval process which could take a couple of days.',
             'how do i receive my booking fee refund': 'Refunds are rewarded as a balance in the customer’s account and can be used by the customer at the next appointment. We do not offer a cash refund at the moment.',
             'how long does it take to get booking fee refund': 'Instant refund is provided if cancellation happens 24 hours prior to the appointment time. In any other case, it could take a few days to review the refund request and approve it.',
+            'You know Emmanuel, right?': 'Yes, I’m familiar with Emmanuel Ahishakiye. How can I help you regarding him?',
+            'Emmanuel Ahishakiye works at jackal tech, right?': 'Yes, sure!',
             'Estimate Emmanuel Ahishakiye net worth': "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
             'Estimate the Emmanuel Ahishakiye net worth': "Estimating Emmanuel Ahishakiye's net worth is challenging due to limited publicly available information. While Emmanuel's achievements are impressive, there is no specific data on his net worth. Given his current roles and ongoing education, it is likely that his primary focus is on building his career and gaining experience, rather than accumulating significant wealth at this stage.",
             
@@ -1192,7 +1199,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'do you offer global mobility programs': 'Yes, we offer global mobility programs. For more information, please visit the Global Mobility Programs page on our website.',
             'how to request global mobility': 'To request global mobility, please contact us at globalmobility',
             
-        'what does jackal tech do': 'Jackal Tech Ltd focuses on innovative technology solutions across various sectors, including healthcare, education, finance, manufacturing, agriculture, retail, transportation, and energy.',
+        'what does jackal tech do': 'Jackal Tech Ltd focuses on innovative technology solutions across various sectors, including healthcare, education, finance, manufacturing, agriculture, and retail',
         'how to apply for a job at jackal tech': 'You can apply for a job at Jackal Tech by visiting our Careers page and submitting an online application.',
         'what is jackal tech': 'Jackal Tech Ltd is a technology company known for its innovative solutions and impactful projects.',
         'where is jackal tech located': 'Jackal Tech is located in Kigali, Rwanda.',
@@ -1201,7 +1208,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'what is the vision of jackal tech': 'Our vision is to be a leader in technology, consistently creating impactful innovations that elevate scientific understanding, transform societies, and improve lives worldwide.',
         'what are the values of jackal tech': 'Our core values are Innovation, Collaboration, Integrity, Empowerment, and Inclusivity.',
         'how to contact jackal tech': 'You can contact us via email at info@jackaltechltd.com or call us at +250 123 456 789.',
-        'what services does jackal tech offer': 'We offer services in healthcare, education, finance, manufacturing, agriculture, retail, transportation, and energy sectors.',
+        'what services does jackal tech offer': 'We offer technological services in healthcare, education, finance, manufacturing, agriculture, and retail sectors.',
         'how to request a quote from jackal tech': 'To request a quote, please email us at quotes@jackaltechltd.com with your requirements.',
         'how to get a demo of jackal tech products': 'To request a demo, please email us at demo@jackaltechltd.com.',
         'how to partner with jackal tech': 'For partnership inquiries, please email us at partnerships@jackaltechltd.com.',
@@ -1345,7 +1352,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'how to request jackal tech career coaching': 'To request career coaching, please contact us at careercoaching@jackaltechltd.com with your requirements.',
         'does jackal tech offer financial assistance': 'Yes, we offer financial assistance to our employees. For more information, please visit the Financial Assistance page on our website.',
         'how to request jackal tech financial assistance': 'To request financial assistance, please contact us at financialassistance@jackaltechltd.com with your requirements.',
-        'what does jackal tech do': 'Jackal Tech Ltd focuses on innovative technology solutions across various sectors, including healthcare, education, finance, manufacturing, agriculture, retail, transportation, and energy.',
+        'what does jackal tech do': 'Jackal Tech Ltd focuses on innovative technology solutions across various sectors, including healthcare, education, finance, manufacturing, agriculture, and retail.',
         'how to apply for a job at jackal tech': 'You can apply for a job at Jackal Tech by visiting our Careers page and submitting an online application.',
         'what is jackal tech': 'Jackal Tech Ltd is a technology company known for its innovative solutions and impactful projects.',
         'where is jackal tech located': 'Jackal Tech is located in Kigali, Rwanda.',
@@ -1354,7 +1361,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'what is the vision of jackal tech': 'Our vision is to be a leader in technology, consistently creating impactful innovations that elevate scientific understanding, transform societies, and improve lives worldwide.',
         'what are the values of jackal tech': 'Our core values are Innovation, Collaboration, Integrity, Empowerment, and Inclusivity.',
         'how to contact jackal tech': 'You can contact us via email at info@jackaltechltd.com or call us at +250 123 456 789.',
-        'what services does jackal tech offer': 'We offer services in healthcare, education, finance, manufacturing, agriculture, retail, transportation, and energy sectors.',
+        'what services does jackal tech offer': 'We offer services in healthcare, education, finance, manufacturing, agriculture,  and retail sectors.',
         'how to request a quote from jackal tech': 'To request a quote, please email us at quotes@jackaltechltd.com with your requirements.',
         'how to get a demo of jackal tech products': 'To request a demo, please email us at demo@jackaltechltd.com.',
         'how to partner with jackal tech': 'For partnership inquiries, please email us at partnerships@jackaltechltd.com.',
@@ -1736,6 +1743,7 @@ loadChatHistory();
 
 
 //Part 2: Advanced Features
+
 
 // External NLP API integration for contextual understanding and sentiment analysis
 async function analyzeMessage(message) {
@@ -2406,8 +2414,6 @@ function stopRecording() {
 
 
 
-
-
 //manage routing, caching, service workers, dynamic content loading, accessibility, performance monitoring, security headers, notifications, and a live chat widget.
 
 // Utility Functions
@@ -2789,12 +2795,46 @@ if ("Notification" in window && navigator.serviceWorker) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Alerts and Updates
+
+
+
 //for updates
 
 
 
 let showAlertsEnabled = true;
-let askInterval = 30000; // Initial interval for asking if the user wants to continue seeing updates
+let askInterval = 40000; // Initial interval for asking if the user wants to continue seeing updates
 let alertTimeouts = []; // Store timeout IDs to clear them if needed
 
 // Utility function to create an alert box
@@ -2821,10 +2861,10 @@ function createAlert(id, message, arrow = false, link = null, position = 'bottom
 
     setTimeout(() => {
         alertBox.classList.add('show');
-    }, 100);
+    }, 1000);
     setTimeout(() => {
         closeAlert(id);
-    }, 20000); // Auto close after 20 seconds
+    }, 25000); // Auto close after 25 seconds
 }
 
 // Utility function to set alert position
@@ -2855,7 +2895,7 @@ function animateAlert(alertBox) {
     setTimeout(() => {
         alertBox.style.transform = 'translateX(0)';
         alertBox.style.backgroundColor = getRandomColor();
-    }, 1000);
+    }, 3000);
 }
 
 // Utility function to get a random color
@@ -2877,11 +2917,11 @@ function closeAlert(id) {
             if (alertBox.parentNode) {
                 alertBox.parentNode.removeChild(alertBox);
             }
-        }, 1000);
+        }, 10000);
     }
 }
 
-//Event delegation for close buttons and continue alert buttons
+// Event delegation for close buttons and continue alert buttons
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('close-btn')) {
         const alertBox = event.target.closest('.custom-alert');
@@ -2899,15 +2939,15 @@ document.addEventListener('click', function (event) {
 function showAlerts() {
     if (showAlertsEnabled) {
         alertTimeouts.push(setTimeout(() => createAlert('alert1', 'Remember to use our chatbot for assistance!', true, 'https://www.jackaltechltd.com/services.html', 'bottom-left', '#333', '#fff'), 0));
-        alertTimeouts.push(setTimeout(() => createAlert('alert2', 'Check out our latest blog post on AI advancements!', false, 'https://www.jackaltechltd.com/about.html', 'bottom-right', '#444', '#fff'), 20000));
+       // alertTimeouts.push(setTimeout(() => createAlert('alert2', 'Check out our latest blog post on AI advancements!', false, 'https://www.jackaltechltd.com/about.html', 'bottom-right', '#444', '#fff'), 20000));
         alertTimeouts.push(setTimeout(() => createAlert('alert3', 'Sign up for our newsletter to stay updated!', false, 'https://www.jackaltechltd.com/contact.html', 'bottom-center', '#555', '#fff'), 40000));
-        alertTimeouts.push(setTimeout(() => createAlert('alert4', 'Exclusive offer: 20% off on all services!', false, 'https://www.jackaltechltd.com/careers.html', 'bottom-left', '#666', '#fff'), 60000));
-        alertTimeouts.push(setTimeout(() => createAlert('alert5', 'Join our upcoming webinar on tech trends!', false, 'https://www.jackaltechltd.com/index.html/#events', 'bottom-right', '#777', '#fff'), 80000));
+       // alertTimeouts.push(setTimeout(() => createAlert('alert4', 'Exclusive offer: 20% off on all services!', false, 'https://www.jackaltechltd.com/careers.html', 'bottom-left', '#666', '#fff'), 60000));
+        //alertTimeouts.push(setTimeout(() => createAlert('alert5', 'Join our upcoming webinar on tech trends!', false, 'https://www.jackaltechltd.com/index.html/#events', 'bottom-right', '#777', '#fff'), 80000));
         alertTimeouts.push(setTimeout(() => createAlert('alert6', 'Follow us on social media for more updates!', false, 'https://www.jackaltechltd.com/contact.html', 'bottom-center', '#888', '#fff'), 100000));
         alertTimeouts.push(setTimeout(() => createAlert('alert7', 'New feature: Real-time data analytics available now!', false, 'https://www.jackaltechltd.com/search', 'bottom-left', '#999', '#000'), 120000));
-        alertTimeouts.push(setTimeout(() => createAlert('alert8', 'Read our latest case study on successful projects!', false, 'https://www.jackaltechltd.com/services.html', 'bottom-right', '#aaa', '#000'), 140000));
+        //alertTimeouts.push(setTimeout(() => createAlert('alert8', 'Read our latest case study on successful projects!', false, 'https://www.jackaltechltd.com/services.html', 'bottom-right', '#aaa', '#000'), 140000));
         alertTimeouts.push(setTimeout(() => createAlert('alert9', 'Get in touch with our support team for help!', false, 'https://www.jackaltechltd.com/contact.html', 'bottom-center', '#bbb', '#000'), 160000));
-        alertTimeouts.push(setTimeout(() => createAlert('alert10', 'Explore our portfolio of innovative solutions!', false, 'https://www.jackaltechltd.com/about.html', 'bottom-left', '#ccc', '#000'), 180000));
+       // alertTimeouts.push(setTimeout(() => createAlert('alert10', 'Explore our portfolio of innovative solutions!', false, 'https://www.jackaltechltd.com/about.html', 'bottom-left', '#ccc', '#000'), 180000));
         alertTimeouts.push(setTimeout(() => askToContinue(), askInterval)); // Ask the user after all alerts
     }
 }
@@ -2936,7 +2976,7 @@ function askToContinue() {
 
     setTimeout(() => {
         continueAlert.classList.add('show');
-    }, 900);
+    }, 2500);
 }
 
 // Handle user response for continuing alerts
@@ -2948,7 +2988,7 @@ function continueAlerts(continueShowing) {
             if (continueAlert.parentNode) {
                 continueAlert.parentNode.removeChild(continueAlert);
             }
-        }, 700);
+        }, 2000);
     }
 
     if (continueShowing) {
@@ -3038,8 +3078,6 @@ const styles = `
     .custom-alert .close-btn:hover {
         text-decoration: underline;
     }
-    
-    
     .custom-alert .yes-btn,
     .custom-alert .no-btn {
         background: #03dac6;
@@ -3062,7 +3100,7 @@ const styles = `
     .custom-alert a.alert-link:hover {
         color: #e0e0e0;
     }
-    /* Different styles for each alert */
+   // Different styles for each alert 
     #alert1 { background-color: #333; }
     #alert2 { background-color: #444; }
     #alert3 { background-color: #555; }
@@ -3081,6 +3119,7 @@ const styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
 styleSheet.innerText = styles;
 document.head.appendChild(styleSheet);
+*/
 
 
 
@@ -3089,6 +3128,258 @@ document.head.appendChild(styleSheet);
 
 
 
+
+
+
+
+
+
+
+
+
+// addional codes for security
+// 1. Structured Data Markup for SEO
+const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Jackal Tech Ltd",
+    "url": "https://www.jackaltechltd.com",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.jackaltechltd.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+};
+document.head.insertAdjacentHTML('beforeend', `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`);
+
+// 2. Loading Animation
+const loadingAnimation = document.createElement('div');
+loadingAnimation.id = 'loading-animation';
+loadingAnimation.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8) url('loading-spinner.gif') center center no-repeat;
+    z-index: 9999;
+    display: none;
+`;
+document.body.appendChild(loadingAnimation);
+window.addEventListener('load', () => loadingAnimation.style.display = 'none');
+
+// 3. Optimize for Faster Load Times on Mobile
+document.addEventListener('DOMContentLoaded', () => {
+    if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+        const scripts = document.querySelectorAll('script[defer], script[async]');
+        scripts.forEach(script => {
+            script.type = 'text/javascript';
+            script.async = true;
+        });
+    }
+});
+
+
+// 5. Improve Font Pairing
+const fontLink = document.createElement('link');
+fontLink.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap';
+fontLink.rel = 'stylesheet';
+document.head.appendChild(fontLink);
+document.body.style.fontFamily = 'Roboto, Arial, sans-serif';
+
+// 4. Micro-Interactions
+document.querySelectorAll('.button').forEach(button => {
+    button.addEventListener('mouseenter', () => button.classList.add('hovered'));
+    button.addEventListener('mouseleave', () => button.classList.remove('hovered'));
+    button.addEventListener('click', () => {
+        button.classList.add('clicked');
+        setTimeout(() => button.classList.remove('clicked'), 200);
+    });
+});
+
+
+// 6. Improve User Flow
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 8. Consistent Iconography
+const icons = document.querySelectorAll('i.icon');
+icons.forEach(icon => icon.classList.add('consistent-icon'));
+
+// 9. Optimize Images and Use CDN with Fallback
+document.querySelectorAll('img').forEach(img => {
+    const src = img.getAttribute('src');
+    if (!src.includes('cdn')) {
+        const cdnUrl = `https://cdn.example.com/${src}`;
+        img.onerror = () => {
+            img.setAttribute('src', src); // Fallback to original source if CDN fails
+        };
+        img.setAttribute('src', cdnUrl);
+    }
+});
+
+
+// 10. Site-wide SSL Certificate
+if (location.protocol !== 'https:') {
+    location.replace(`https:${location.href.substring(location.protocol.length)}`);
+}
+
+
+// 11. Loading Spinner for AJAX Requests
+document.addEventListener('ajaxStart', () => loadingAnimation.style.display = 'block');
+document.addEventListener('ajaxStop', () => loadingAnimation.style.display = 'none');
+
+// 12. Improve SEO with Meta Descriptions
+const metaDescription = document.createElement('meta');
+metaDescription.name = 'description';
+metaDescription.content = 'Jackal Tech Ltd offers innovative technology solutions for various industries including healthcare, education, and finance.';
+document.head.appendChild(metaDescription);
+
+
+
+
+
+
+// 7. Improve Accessibility with ARIA Labels
+document.querySelectorAll('nav a').forEach(link => {
+    link.setAttribute('aria-label', `Navigate to ${link.textContent}`);
+});
+document.querySelector('header').setAttribute('role', 'banner');
+document.querySelector('main').setAttribute('role', 'main');
+document.querySelector('footer').setAttribute('role', 'contentinfo');
+
+
+// 14. Breadcrumb Navigation
+const breadcrumbNav = document.createElement('nav');
+breadcrumbNav.setAttribute('aria-label', 'breadcrumb');
+breadcrumbNav.innerHTML = `
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/services">Services</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Current Page</li>
+    </ol>
+`;
+document.querySelector('main').prepend(breadcrumbNav);
+
+
+// 16. Progress Indicator for Long-Loading Pages
+const progressIndicator = document.createElement('div');
+progressIndicator.id = 'progress-indicator';
+progressIndicator.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #03a9f4, #03dac6);
+    transition: width 0.5s;
+    z-index: 10000;
+`;
+document.body.appendChild(progressIndicator);
+document.addEventListener('DOMContentLoaded', () => {
+    progressIndicator.style.width = '100%';
+    setTimeout(() => progressIndicator.style.display = 'none', 1000);
+});
+
+/*
+
+
+// 15. Usability of Dropdown Menus
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+    dropdown.addEventListener('mouseenter', () => dropdown.classList.add('show'));
+    dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('show'));
+});
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+// 13. Fix Contact Form Validation
+document.querySelector('#contactForm').addEventListener('submit', function(e) {
+    const email = this.querySelector('input[type="email"]');
+    if (!email.value.includes('@')) {
+        e.preventDefault();
+        alert('Please enter a valid email address.');
+    }
+});
+
+
+
+// 17. Fix Broken Link to Sitemap
+document.querySelector('a[href="sitemap.html"]').setAttribute('href', '/sitemap.xml');
+
+
+*/
+
+
+
+
+
+
+
+
+//
+// Ensure the map is never blocked
+const mapContainer = document.getElementById('map');
+if (mapContainer) {
+    mapContainer.style.position = 'relative';
+    const unblockMapOverlay = document.createElement('div');
+    unblockMapOverlay.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        z-index: 1;
+        pointer-events: none;
+    `;
+    mapContainer.appendChild(unblockMapOverlay);
+
+    mapContainer.addEventListener('mouseenter', () => {
+        unblockMapOverlay.style.pointerEvents = 'none';
+    });
+
+    mapContainer.addEventListener('mouseleave', () => {
+        unblockMapOverlay.style.pointerEvents = 'auto';
+    });
+}
+
+
+
+
+
+
+//For enabling .header scroll up
 
 
 //For header scroll up and down
@@ -3114,3 +3405,10 @@ document.addEventListener("DOMContentLoaded", function () {
         lastScrollTop = scrollTop;
     });
 });
+
+
+
+
+
+
+

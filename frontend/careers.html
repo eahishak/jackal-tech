@@ -4,31 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers - Jackal Tech Ltd.</title>
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico">
+    <title>Careers - Jackal Tech Ltd</title>
+<!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  
-  <!-- FontAwesome CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Google Maps API -->
-  <!--<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>-->
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Apply now to join Jackal Tech Ltd. Be a part of a leading tech company and work on transformative projects in HealthTech, EdTech, FinTech, Industry 4.0, AgriTech, and RetailTech sectors.">
+    <meta name="keywords" content="Jackal Tech jobs, technology careers, tech job application, HealthTech jobs, EdTech careers, FinTech opportunities, Industry 4.0 jobs, AgriTech positions, RetailTech careers">
+    <meta name="author" content="Jackal Tech Ltd">
+    <meta name="robots" content="index, follow">
 
-   <!-- Jackal Tech Logo Favicon-->
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Join Jackal Tech Ltd | Apply Now for Exciting Tech Careers">
+    <meta property="og:description" content="Apply now to work with Jackal Tech Ltd on groundbreaking technology projects in various sectors including healthcare, education, finance, manufacturing, agriculture, and retail.">
+    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:url" content="https://www.jackaltechltd.com/apply">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Join Jackal Tech Ltd | Apply Now for Leading Tech Roles">
+    <meta name="twitter:description" content="Explore career opportunities at Jackal Tech Ltd. Apply now to work on innovative technology solutions in various sectors including HealthTech, EdTech, FinTech, and more.">
+    <meta name="twitter:image" content="images/logo.png">
+    
+    <!-- Structured Data Markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Jackal Tech Ltd",
+      "url": "https://www.jackaltechltd.com",
+      "logo": "https://www.jackaltechltd.com/images/favicon.ico",
+      "sameAs": [
+        "https://www.instagram.com/jackal_tech",
+        "https://www.linkedin.com/company/jackal-tech",
+        "https://www.youtube.com/channel/UCJackalTech",
+        "https://twitter.com/jackaltechltd"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+250-782323272",
+        "contactType": "Customer Service",
+        "areaServed": "RW",
+        "availableLanguage": ["en"]
+      }
+    }
+    </script>
 
-   <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAD9/f0AAAAAAAICAgD///8AMjIyAAQEBAD6+voA8/PzAPX19QABAQEAAwMDAEFBQQAFBQUAJSUlAAAAAAAAAAAAEREREREREREREXkBvEEREREREREREREREREwEzURERERERMRExERERERExMSMRERERETExExERERERMTETERERERExMRMRERERETExExERERETMTETERERERGDMxoREREREZER0RERERERERGRERERERERFhEREREREREREREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon">
+    <!-- Additional Enhancements -->
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Service Worker for PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(function(error) {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
+    </script>
+    <!-- Modernizr for feature detection -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/3.11.2/modernizr.min.js"></script>
 
+    <!-- Google Maps API -->
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>-->
 
-    <style>
+    <!-- Jackal Tech Logo Favicon -->
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAD9/f0AAAAAAAICAgD///8AMjIyAAQEBAD6+voA8/PzAPX19QABAQEAAwMDAEFBQQAFBQUAJSUlAAAAAAAAAAAAEREREREREREREXkBvEEREREREREREREREREwEzURERERERMRExERERERExMSMRERERETExExERERERMTETERERERExMRMRERERETExExERERETMTETERERERGDMxoREREREZER0RERERERERGRERERERERFhEREREREREREREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon">
+<style>
 
 /* Careers Section */
 .careers-section {
@@ -1276,7 +1335,7 @@
                                     <li>Experience with front-end technologies like HTML, CSS, and JavaScript</li>
                                     <li>Strong problem-solving and communication skills</li>
                                 </ul>
-                                <a href="https://form.jotform.com/241946429135158" targe="_blank" class="apply-button">Apply Now</a>
+                                <a href="https://jackaltechltd.com/apply.html" targe="_blank" class="apply-button">Apply Now</a>
                             </div>
                 
                             <div class="job">
@@ -1288,7 +1347,7 @@
                                     <li>Excellent organizational and leadership skills</li>
                                     <li>Strong knowledge of project management tools and software</li>
                                 </ul>
-                                <a href="https://form.jotform.com/241946800650153" target="_blank" class="apply-button">Apply Now</a>
+                                <a href="https://jackaltechltd.com/apply.html" target="_blank" class="apply-button">Apply Now</a>
                             </div>
                 
                             <div class="job">
@@ -1300,7 +1359,7 @@
                                     <li>Experience with data visualization tools like Tableau or Power BI</li>
                                     <li>Strong analytical and critical thinking skills</li>
                                 </ul>
-                                <a href="https://www.jotform.com/build/241946135700150/publish?s=templates" target="_blank" class="apply-button">Apply Now</a>
+                                <a href="https://jackaltechltd.com/apply.html" target="_blank" class="apply-button">Apply Now</a>
                             </div>
                 
                             <div class="job">
@@ -1312,7 +1371,7 @@
                                     <li>Strong portfolio showcasing design projects</li>
                                     <li>Excellent visual design skills with a keen eye for detail</li>
                                 </ul>
-                                <a href="https://www.jotform.com/build/241946739957174/publish?s=templates" target="_blank" class="apply-button">Apply Now</a>
+                                <a href="https://jackaltechltd.com/apply.html" target="_blank" class="apply-button">Apply Now</a>
                             </div>
                 
                             <div class="job">
@@ -1324,7 +1383,7 @@
                                     <li>Excellent problem-solving and communication skills</li>
                                     <li>Ability to provide technical support and training to end-users</li>
                                 </ul>
-                                <a href="https://form.jotform.com/241946900064153" target="_blank" class="apply-button">Apply Now</a>
+                                <a href="https://jackaltechltd.com/apply.html" target="_blank" class="apply-button">Apply Now</a>
                             </div>
                         </div>
                 
@@ -1477,7 +1536,7 @@
                         <p>If you have any specific questions or need further assistance, you can contact our HR department directly:</p>
                         <ul>
                             <li>Email: hr@jackaltechltd.com</li>
-                            <p>Phone: +250 782323272</p>
+                            <p>Phone: +250 78 232 3272</p>
                             <li>Address: Kigali, Rwanda</li>
                         </ul>
                 
@@ -1486,6 +1545,7 @@
                         <a href="#" id="explore-job-openings" class="btn btn-primary">Explore Job Openings</a>
                     </div>
                 </section>
+                
                 
             <section class="contact-us fade-in">
                 <div class="container">
@@ -1496,7 +1556,7 @@
                             <div class="contact-box">
                                 <h3>Get in Touch</h3>
                                 <ul class="contact-info">
-                                    <li><i class="fas fa-phone-alt"></i> +250 782323272</li>
+                                    <li><i class="fas fa-phone-alt"></i> +250 78 232 3272</li>
                                     <li><i class="fas fa-envelope"></i> careers@jackaltechltd.com</li>
                                     <li><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</li>
                                 </ul>
@@ -1524,71 +1584,72 @@
             </section>
 </section>        
 
-         
-<section id="partners" class="partners-section">
-    <div class="container">
-        <h2>Our Partners</h2>
-        <div class="partner-logos">
-            <div class="logo"><img src="images/afribot.png" alt="Partner 1"></div>
-            <!--<div class="logo"><img src="images/street-bridge.webp" alt="Partner 2"></div>-->
-            <div class="logo"><img src="images/agahozo.png" alt="Partner 3"></div>
-            <div class="logo"><img src="images/dhpp.jpeg" alt="Partner 1"></div>
-            <!--<div class="logo"><img src="images/im-bank.png" alt="Partner 4"></div>-->
-            <!--<div class="logo"><img src="images/mastercard.svg" alt="Partner 5"></div>-->
-            <!--<div class="logo"><img src="images/bridge2rwanda.jpeg" alt="Partner 3"></div>-->
-            <!--<div class="logo"><img src="images/stem-inspires.jpeg" alt="Partner 4"></div>-->
-            <!--<div class="logo"><img src="images/gashora.jpeg" alt="Partner 5"></div>-->
-           
-        </div>
-    </div>
-</section>
-
+ <!--  
+        <section id="partners" class="partners-section">
+            <div class="container">
+                <h2>Our Partners</h2>
+                <div class="partner-logos">
+                    <div class="logo"><img src="images/afribot.png" alt="Partner 1"></div>
+                    <!--<div class="logo"><img src="images/street-bridge.webp" alt="Partner 2"></div>-->
+                   <!-- <div class="logo"><img src="images/agahozo.png" alt="Partner 3"></div>
+                   <!-- <div class="logo"><img src="images/dhpp.jpeg" alt="Partner 1"></div>
+                    <!--<div class="logo"><img src="images/im-bank.png" alt="Partner 4"></div>-->
+                    <!--<div class="logo"><img src="images/mastercard.svg" alt="Partner 5"></div>-->
+                    <!--<div class="logo"><img src="images/bridge2rwanda.jpeg" alt="Partner 3"></div>-->
+                    <!--<div class="logo"><img src="images/stem-inspires.jpeg" alt="Partner 4"></div>-->
+                    <!--<div class="logo"><img src="images/gashora.jpeg" alt="Partner 5"></div>-->
+                   
+             <!--   </div>
+            </div>
+        </section>
+        -->
 
         
 <div class="chatbot-section">
-    <div class="chatbot-toggle">Chat with us!</div>
-    <div class="chatbot-window">
-        <div class="chatbot-header">
-            <div>Chatbot</div>
-            <button class="close-btn">&times;</button>
-        </div>
-        <div class="chatbot-messages" id="chatbotMessages"></div>
-        <div class="chatbot-input">
-            <div class="upload-buttons" id="uploadButtons">
-                <button class="take-picture-btn">📷</button>
-                <button class="upload-picture-btn">🖼️</button>
-                <button class="upload-file-btn">📁</button>
-                <input type="file" id="fileInput" style="display: none;" accept="image/*, .pdf, .doc, .docx, .xlsx, .ppt, .pptx, .txt"/>
+            <div class="chatbot-toggle">Chat with us!</div>
+            <div class="chatbot-window">
+                <div class="chatbot-header">
+                    <div>Chatbot</div>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="chatbot-messages" id="chatbotMessages"></div>
+                <div class="chatbot-input">
+                    <div class="upload-buttons" id="uploadButtons">
+                        <button class="take-picture-btn">📷</button>
+                        <button class="upload-picture-btn">🖼️</button>
+                        <button class="upload-file-btn">📁</button>
+                        <input type="file" id="fileInput" style="display: none;" accept="image/*, .pdf, .doc, .docx, .xlsx, .ppt, .pptx, .txt"/>
+                    </div>
+                    <input type="text" id="chatbotInput" placeholder="Aa" />
+                    <button class="emoji-btn" onclick="toggleEmojiPicker()">😊</button>
+                    <button class="voice-btn">🎤</button>
+                     <button class="send-btn">➥</button>
+
+                    <button class="typing-toggle-btn" style="display: none;">🔍</button>
+                </div>
+                <div class="recording-controls" style="display: none;">
+                    <span id="recording-time">00:00</span>
+                    <div id="recording-indicator" style="width: 10px; height: 10px; background: red; border-radius: 50%; margin-left: 10px;"></div>
+                    <button class="stop-record-btn">Stop</button>
+                    <audio controls style="display: none;"></audio>
+                    <button class="send-recording-btn" style="display: none;">Send</button>
+                </div>
+                <div class="emoji-picker" id="emojiPicker" style="display: none;">
+                    <!-- Emojis will be added here -->
+                    <div class="emoji-grid">
+                        <span>😀</span><span>😁</span><span>😂</span><span>🤣</span><span>😃</span><span>😄</span><span>😅</span><span>😆</span><span>😉</span><span>😊</span>
+                        <span>😋</span><span>😎</span><span>😍</span><span>😘</span><span>😗</span><span>😙</span><span>😚</span><span>☺️</span><span>🙂</span><span>🤗</span>
+                        <span>🤩</span><span>🤔</span><span>🤨</span><span>😐</span><span>😑</span><span>😶</span><span>🙄</span><span>😏</span><span>😣</span><span>😥</span>
+                        <span>😮</span><span>🤐</span><span>😯</span><span>😪</span><span>😫</span><span>😴</span><span>😌</span><span>😛</span><span>😜</span><span>😝</span>
+                        <span>🤤</span><span>😒</span><span>😓</span><span>😔</span><span>😕</span><span>🙃</span><span>🤑</span><span>😲</span><span>☹️</span><span>🙁</span>
+                        <span>😖</span><span>😞</span><span>😟</span><span>😤</span><span>😢</span><span>😭</span><span>😦</span><span>😧</span><span>😨</span><span>😩</span>
+                        <span>🤯</span><span>😬</span><span>😰</span><span>😱</span><span>😳</span><span>🤪</span><span>😵</span><span>😡</span><span>😠</span><span>🤬</span>
+                        <span>😷</span><span>🤒</span><span>🤕</span><span>🤢</span><span>🤮</span><span>🤧</span><span>😇</span><span>🤠</span><span>🤡</span><span>🤥</span>
+                        <span>🤫</span><span>🤭</span><span>🧐</span><span>🤓</span><span>😈</span><span>👿</span><span>👹</span><span>👺</span><span>💀</span><span>👻</span>
+                    </div>
+                </div>
             </div>
-            <input type="text" id="chatbotInput" placeholder="Aa" />
-            <button class="emoji-btn" onclick="toggleEmojiPicker()">😊</button>
-            <button class="voice-btn">🎤</button>
-            <button class="send-btn">⬆️</button>
-            <button class="typing-toggle-btn" style="display: none;">🔍</button>
         </div>
-        <div class="recording-controls" style="display: none;">
-            <span id="recording-time">00:00</span>
-            <div id="recording-indicator" style="width: 10px; height: 10px; background: red; border-radius: 50%; margin-left: 10px;"></div>
-            <button class="stop-record-btn">Stop</button>
-            <audio controls style="display: none;"></audio>
-            <button class="send-recording-btn" style="display: none;">Send</button>
-        </div>
-        <div class="emoji-picker" id="emojiPicker" style="display: none;">
-            <!-- Emojis will be added here -->
-            <div class="emoji-grid">
-                <span>😀</span><span>😁</span><span>😂</span><span>🤣</span><span>😃</span><span>😄</span><span>😅</span><span>😆</span><span>😉</span><span>😊</span>
-                <span>😋</span><span>😎</span><span>😍</span><span>😘</span><span>😗</span><span>😙</span><span>😚</span><span>☺️</span><span>🙂</span><span>🤗</span>
-                <span>🤩</span><span>🤔</span><span>🤨</span><span>😐</span><span>😑</span><span>😶</span><span>🙄</span><span>😏</span><span>😣</span><span>😥</span>
-                <span>😮</span><span>🤐</span><span>😯</span><span>😪</span><span>😫</span><span>😴</span><span>😌</span><span>😛</span><span>😜</span><span>😝</span>
-                <span>🤤</span><span>😒</span><span>😓</span><span>😔</span><span>😕</span><span>🙃</span><span>🤑</span><span>😲</span><span>☹️</span><span>🙁</span>
-                <span>😖</span><span>😞</span><span>😟</span><span>😤</span><span>😢</span><span>😭</span><span>😦</span><span>😧</span><span>😨</span><span>😩</span>
-                <span>🤯</span><span>😬</span><span>😰</span><span>😱</span><span>😳</span><span>🤪</span><span>😵</span><span>😡</span><span>😠</span><span>🤬</span>
-                <span>😷</span><span>🤒</span><span>🤕</span><span>🤢</span><span>🤮</span><span>🤧</span><span>😇</span><span>🤠</span><span>🤡</span><span>🤥</span>
-                <span>🤫</span><span>🤭</span><span>🧐</span><span>🤓</span><span>😈</span><span>👿</span><span>👹</span><span>👺</span><span>💀</span><span>👻</span>
-            </div>
-        </div>
-    </div>
-</div>
 <script>
 
 // Career page functionality
@@ -1630,7 +1691,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Experience with front-end technologies like HTML, CSS, and JavaScript</li>
                     <li>Strong problem-solving and communication skills</li>
                 </ul>
-                <a href="https://form.jotform.com/241946429135158" target="_blank" class="btn btn-primary">Apply</a>
+                <a href="https://jackaltechltd.com/apply.html" target="_blank" class="btn btn-primary">Apply</a>
             `,
             'Project Manager': `
                 <h3>Project Manager</h3>
@@ -1641,7 +1702,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Excellent organizational and leadership skills</li>
                     <li>Strong knowledge of project management tools and software</li>
                 </ul>
-                <a href="https://form.jotform.com/241946800650153" target="_blank" class="btn btn-primary">Apply</a>
+                <a href="https://jackaltechltd.com/apply.html" target="_blank" class="btn btn-primary">Apply</a>
             `,
             'Data Analyst': `
                 <h3>Data Analyst</h3>
@@ -1652,7 +1713,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Experience with data visualization tools like Tableau or Power BI</li>
                     <li>Strong analytical and critical thinking skills</li>
                 </ul>
-                <a href="https://www.jotform.com/build/241946135700150/publish?s=templates" target="_blank" class="btn btn-primary">Apply</a>
+                <a href="https://jackaltechltd.com/apply.html" target="_blank" class="btn btn-primary">Apply</a>
             `,
             'UX/UI Designer': `
                 <h3>UX/UI Designer</h3>
@@ -1663,7 +1724,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Strong portfolio showcasing design projects</li>
                     <li>Excellent visual design skills with a keen eye for detail</li>
                 </ul>
-                <a href="https://www.jotform.com/build/241946739957174/publish?s=templates" target="_blank" class="btn btn-primary">Apply</a>
+                <a href="https://jackaltechltd.com/apply.html" target="_blank" class="btn btn-primary">Apply</a>
             `,
             'Technical Support Specialist': `
                 <h3>Technical Support Specialist</h3>
@@ -1674,7 +1735,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Excellent problem-solving and communication skills</li>
                     <li>Ability to provide technical support and training to end-users</li>
                 </ul>
-                <a href="https://form.jotform.com/241946900064153" target="_blank"  class="btn btn-primary">Apply</a>
+                <a href="https://jackaltechltd.com/apply.html" target="_blank"  class="btn btn-primary">Apply</a>
             `
         };
         return jobData[title] || '<p>No job requirements found for this position.</p>';
@@ -1702,7 +1763,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="col-md-3 footer-column">
                         <h5>Contact Information</h5>
                         <p>Address: KG 11 Ave, Kigali, Rwanda</p>
-                        <p>Phone: +250 782323272</p>
+                        <p>Phone: +250 78 232 3272</p>
                         <p>Email: info@jackaltechltd.com</p>
                     </div>
                     <div class="col-md-3 footer-column">
@@ -1745,14 +1806,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="col-md-3 footer-column">
                         <h5>Newsletter</h5>
                         <form action="https://formspree.io/f/mnnanqvz" method="POST">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="full_name" placeholder="Enter your full name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Subscribe</button>
-                        </form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="full_name" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
                     </div>
                 </div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5160918255415!2d30.12565187616407!3d-1.9465078980358401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca71759b7aa45%3A0x2cde50a29ad17c85!2sKG%2011%20Ave%2C%20Kigali%2C%20Rwanda!5e0!3m2!1sen!2sus!4v1721028689521!5m2!1sen!2sus"  id="map"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

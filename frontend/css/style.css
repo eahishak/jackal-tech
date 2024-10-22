@@ -1663,7 +1663,6 @@ main {
 
 
 
-
 /* Chatbot Section */
 .chatbot-section {
     position: fixed;
@@ -1675,7 +1674,7 @@ main {
 
 /* Chatbot Toggle Button */
 .chatbot-toggle {
-    background: linear-gradient(135deg, #06362c, #244e01);
+    background: linear-gradient(135deg, rgba(36, 78, 1, 0.9), rgba(6, 54, 44, 0.8));
     color: #fff;
     padding: 12px 24px;
     border-radius: 30px;
@@ -1690,12 +1689,12 @@ main {
 
 .chatbot-toggle:hover {
     transform: scale(1.1);
-    background: linear-gradient(135deg, #0056b3, #003b80);
+    background: linear-gradient(135deg, rgba(24, 48, 22, 1), rgba(16, 67, 48, 1));
 }
 
 /* Chatbot Window */
 .chatbot-window {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95);
     width: 100%;
     max-width: 350px;
     height: 500px;
@@ -1718,13 +1717,13 @@ main {
 
 /* Chatbot Header */
 .chatbot-header {
-    background: linear-gradient(135deg, #007bff, #0056b3);
+    background: linear-gradient(135deg, rgba(36, 78, 1, 0.8), rgba(6, 54, 44, 1));
     color: #fff;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #004494;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 15px 15px 0 0;
 }
 
@@ -1746,7 +1745,7 @@ main {
     flex: 1;
     padding: 15px;
     overflow-y: auto;
-    background: #f9f9f9;
+    background: rgba(240, 240, 240, 0.9);
     position: relative;
     font-size: 1rem;
     display: flex;
@@ -1765,7 +1764,7 @@ main {
 }
 
 .bot-message .message-content {
-    background: linear-gradient(135deg, #e2e3e5, #c9cacc);
+    background: linear-gradient(135deg, rgba(98, 117, 115, 0.8), rgba(193, 206, 204, 0.8));
     padding: 10px;
     border-radius: 10px;
     font-size: 0.9rem;
@@ -1773,7 +1772,7 @@ main {
 }
 
 .user-message .message-content {
-    background: linear-gradient(135deg, #007bff, #0056b3);
+    background: linear-gradient(135deg, rgba(6, 54, 44, 1), rgba(24, 48, 22, 0.9));
     color: #fff;
     padding: 10px;
     border-radius: 10px;
@@ -1788,7 +1787,7 @@ main {
     }
     to {
         transform: translateY(0);
-        opacity: 1);
+        opacity: 1;
     }
 }
 
@@ -1833,9 +1832,9 @@ main {
 .chatbot-input {
     display: flex;
     align-items: center;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding: 8px;
-    background: #f1f1f1;
+    background: rgba(240, 240, 240, 0.9);
     border-radius: 0 0 15px 15px;
 }
 
@@ -1849,18 +1848,8 @@ main {
     outline: none;
 }
 
-.chatbot-input input:focus + .upload-buttons,
-.chatbot-input input:focus + .upload-buttons + .emoji-btn,
-.chatbot-input input:focus + .upload-buttons + .emoji-btn + .voice-btn {
-    display: none;
-}
-
-.chatbot-input input:focus + .upload-buttons + .emoji-btn + .voice-btn + .typing-toggle-btn {
-    display: block;
-}
-
 .send-btn {
-    background: linear-gradient(135deg, #007bff, #0056b3);
+    background: linear-gradient(135deg, rgba(6, 54, 44, 1), rgba(24, 48, 22, 0.9));
     color: #fff;
     border: none;
     padding: 10px;
@@ -1872,7 +1861,7 @@ main {
 }
 
 .send-btn:hover {
-    background: linear-gradient(135deg, #0056b3, #003b80);
+    background: linear-gradient(135deg, rgba(24, 48, 22, 1), rgba(36, 78, 1, 1));
 }
 
 .upload-buttons {
@@ -1885,7 +1874,7 @@ main {
 .emoji-btn {
     background: none;
     border: none;
-    color: #000;
+    color: rgba(0, 0, 0, 0.6);
     padding: 5px;
     border-radius: 50%;
     cursor: pointer;
@@ -1906,13 +1895,13 @@ main {
     justify-content: center;
     align-items: center;
     padding: 8px;
-    background: #f1f1f1;
+    background: rgba(240, 240, 240, 0.9);
     border-radius: 0 0 15px 15px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .recording-controls button {
-    background: linear-gradient(135deg, #dc3545, #c82333);
+    background: linear-gradient(135deg, rgba(36, 78, 1, 1), rgba(6, 54, 44, 0.9));
     color: #fff;
     border: none;
     padding: 5px;
@@ -1924,7 +1913,7 @@ main {
 }
 
 .recording-controls button:hover {
-    background: linear-gradient(135deg, #c82333, #bd2130);
+    background: linear-gradient(135deg, rgba(24, 48, 22, 1), rgba(36, 78, 1, 1));
 }
 
 .recording-controls audio {
@@ -1937,7 +1926,7 @@ main {
     max-height: 200px;
     overflow-y: auto;
     background: #fff;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
@@ -1987,7 +1976,7 @@ main {
 .chatbot-message {
     display: flex;
     flex-direction: column;
-    align-self: flex-end; /* All messages on the same side */
+    align-self: flex-end;
 }
 
 /* Flexbox for Upload Buttons */
@@ -2066,9 +2055,6 @@ main {
         height: 34px;
     }
 }
-
-
-
 
 
 
@@ -5199,7 +5185,14 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
-/*moving heading when you scroll
+
+
+
+
+
+
+
+/*Enabling header scroll
 
 
 /* Add CSS media query for small screens */
@@ -5216,14 +5209,6 @@ body::-webkit-scrollbar-thumb:hover {
         height: 100px; /* Adjust based on the height of your header */
     }
 }
-
-
-
-
-
-
-
-
 
 
 
