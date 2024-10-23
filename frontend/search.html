@@ -456,37 +456,65 @@
 </head>
 
 <body>
-    <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="images/logo.jpg" alt="Jackal Tech Ltd."></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Policies</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="policies.html" onclick="showContent('faqs')">FAQs</a>
-                                <a class="dropdown-item" href="policies.html" onclick="showContent('terms-of-use')">Privacy Policy</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="auth-buttons ml-auto">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#signinModal">Sign In</button>
-                        <button class="btn btn-secondary" data-toggle="modal" data-target="#signupModal">Join</button>
-                    </div>
+     <!-- header-->
+   <div class="header-placeholder"></div>
+   <header class="header" id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="images/logo.jpg" alt="Jackal Tech Ltd."></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    
+                    <!-- Careers Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="careersDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Careers</a>
+                        <div class="dropdown-menu" aria-labelledby="careersDropdown">
+                            <a class="dropdown-item" href="careers.html" onclick="showContent('senior-roles')">Early Career & Senior Roles</a>
+                            <a class="dropdown-item" href="careers.html" onclick="showContent('internship')">Internship Program</a>
+                            <a class="dropdown-item" href="apply.html" onclick="showContent('apprenticeship')">Apprenticeship Program</a>
+                            <a class="dropdown-item" href="careers.html" onclick="showContent('fellowship')">Fellowship</a>
+                            <a class="dropdown-item" href="careers.html" onclick="showContent('externship')">Externship</a>
+        
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    
+                    <!-- The Latest Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="latestDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The Latest</a>
+                        <div class="dropdown-menu" aria-labelledby="latestDropdown">
+                            <a class="dropdown-item" href="latest.html" onclick="showContent('updates')">Updates</a>
+                            <a class="dropdown-item" href="events.html" onclick="showContent('events')">Workshops & Events</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Policies</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="policies.html" onclick="showContent('faqs')">FAQs</a>
+                            <a class="dropdown-item" href="policies.html" onclick="showContent('terms-of-use')">Privacy Policy</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="auth-buttons ml-auto">
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#signinModal">Sign In</button>
+                    <button class="btn btn-secondary" data-toggle="modal" data-target="#signupModal">Join</button>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
+    
         <div class="subnav bg-light d-flex justify-content-between align-items-center">
             <div class="container d-flex justify-content-between align-items-center">
                 <form class="search-form form-inline my-2 my-lg-0" action="search.html">
