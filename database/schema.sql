@@ -1,158 +1,243 @@
--- Create jackaltech database
+-- Create the jackaltech database
 CREATE DATABASE jackaltech;
 
 -- Connect to the jackaltech database
 \c jackaltech;
 
--- Create users table
+-- Create users table with advanced constraints and triggers
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    password TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    email VARCHAR(255) UNIQUE NOT NULL CHECK (email ~* '^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$'),
+    password TEXT NOT NULL CHECK (LENGTH(password) > 6),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create videos table
+-- Trigger to update timestamp when a row is modified
+CREATE OR REPLACE FUNCTION update_timestamp() RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = CURRENT_TIMESTAMP;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Attach the trigger to the users table
+CREATE TRIGGER update_users_mod_time
+BEFORE UPDATE ON users
+FOR EACH ROW
+EXECUTE FUNCTION update_timestamp();
+
+-- Create roles table for user permissions
+CREATE TABLE roles (
+    id SERIAL PRIMARY KEY,
+    role_name VARCHAR(100) UNIQUE NOT NULL
+);
+
+-- Insert default roles
+INSERT INTO roles (role_name) VALUES ('admin'), ('editor'), ('viewer');
+
+-- Create table for user roles (many-to-many relationship)
+CREATE TABLE user_roles (
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    role_id INT REFERENCES roles(id) ON DELETE CASCADE,
+    PRIMARY KEY (user_id, role_id)
+);
+
+-- Create videos table with foreign keys and triggers
 CREATE TABLE videos (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
-    url TEXT NOT NULL,
+    url TEXT NOT NULL CHECK (url ~* '^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$'),
     user_id INT REFERENCES users(id) ON DELETE CASCADE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create events table
+-- Add views table to track video views
+CREATE TABLE video_views (
+    id SERIAL PRIMARY KEY,
+    video_id INT REFERENCES videos(id) ON DELETE CASCADE,
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    view_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create events table with partitioning on event_date
 CREATE TABLE events (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     event_date DATE NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) PARTITION BY RANGE (event_date);
+
+-- Create partitions for different years
+CREATE TABLE events_2023 PARTITION OF events
+FOR VALUES FROM ('2023-01-01') TO ('2024-01-01');
+
+CREATE TABLE events_2024 PARTITION OF events
+FOR VALUES FROM ('2024-01-01') TO ('2025-01-01');
+
+-- Create users_logs table for auditing
+CREATE TABLE users_logs (
+    log_id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id),
+    action VARCHAR(255) NOT NULL,
+    log_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Indexes for performance optimization
+-- Log changes to users
+CREATE OR REPLACE FUNCTION log_user_action() RETURNS TRIGGER AS $$
+BEGIN
+    INSERT INTO users_logs (user_id, action, log_time) 
+    VALUES (NEW.id, TG_OP, CURRENT_TIMESTAMP);
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER log_user_activity
+AFTER INSERT OR UPDATE OR DELETE ON users
+FOR EACH ROW EXECUTE FUNCTION log_user_action();
+
+-- Create payments table for storing transactions
+CREATE TABLE payments (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    amount DECIMAL(10, 2) NOT NULL CHECK (amount > 0),
+    payment_method VARCHAR(50) NOT NULL CHECK (payment_method IN ('credit_card', 'paypal', 'bank_transfer')),
+    payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Indexes for optimizing query performance
 CREATE INDEX idx_users_email ON users(email);
 CREATE INDEX idx_videos_user_id ON videos(user_id);
-CREATE INDEX idx_events_event_date ON events(event_date);
+CREATE INDEX idx_video_views_video_user ON video_views(video_id, user_id);
+CREATE INDEX idx_payments_user ON payments(user_id);
 
-
-
-
--- Find employees who earn more than the average salary
-SELECT name
-FROM employees
-WHERE salary > (SELECT AVG(salary) FROM employees);
-
-
-
--- Retrieve customer orders with customer details
-SELECT c.customer_id, c.name, o.order_id, o.order_date
-FROM customers c
-JOIN orders o ON c.customer_id = o.customer_id;
-
-
-
--- Calculate the cumulative sales for each day
-WITH daily_sales AS (
-    SELECT order_date, SUM(total_amount) AS sales
-    FROM orders
-    GROUP BY order_date
-)
-SELECT order_date, sales, SUM(sales) OVER (ORDER BY order_date) AS cumulative_sales
-FROM daily_sales;
-
-
-
--- Rank employees by their salary within each department
-SELECT name, department_id, salary,
-       RANK() OVER (PARTITION BY department_id ORDER BY salary DESC) AS rank
-FROM employees;
-
-
-
--- Insert the highest salaries from each department into a new table
-INSERT INTO top_salaries (department_id, employee_id, salary)
-SELECT department_id, employee_id, salary
-FROM (
-    SELECT department_id, employee_id, salary,
-           ROW_NUMBER() OVER (PARTITION BY department_id ORDER BY salary DESC) AS rn
-    FROM employees
-) AS ranked
-WHERE rn = 1;
-
-
-
--- Update the salary of employees based on their performance score
-UPDATE employees e
-SET e.salary = e.salary * 1.1
-FROM performance p
-WHERE e.employee_id = p.employee_id AND p.score > 90;
-
-
-
--- Delete employees who have not made any sales
-DELETE FROM employees
-WHERE employee_id NOT IN (SELECT DISTINCT employee_id FROM sales);
-
-
--- Create an index on the order_date column to speed up queries
-CREATE INDEX idx_order_date ON orders(order_date);
-
-
--- Use EXPLAIN to analyze the performance of a query
-EXPLAIN ANALYZE
-SELECT c.customer_id, c.name, o.order_id, o.order_date
-FROM customers c
-JOIN orders o ON c.customer_id = o.customer_id
-WHERE o.order_date > '2023-01-01';
-
-
-
--- Concatenate first and last names with a space in between
-SELECT first_name || ' ' || last_name AS full_name
-FROM employees;
-
-
--- Calculate the number of days between order date and delivery date
-SELECT order_id, delivery_date - order_date AS delivery_time
-FROM orders;
-
-
--- Calculate the average, minimum, and maximum salary in each department
-SELECT department_id, AVG(salary) AS avg_salary, MIN(salary) AS min_salary, MAX(salary) AS max_salary
-FROM employees
-GROUP BY department_id;
-
-
--- Create a stored procedure to give a raise to employees in a specific department
-CREATE PROCEDURE GiveRaise(department_id INT, percentage FLOAT)
+-- Create procedures for handling bulk operations
+CREATE PROCEDURE BulkInsertUsers(user_list JSONB)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    user_data JSONB;
+    user_email VARCHAR(255);
+    user_password TEXT;
 BEGIN
-    UPDATE employees
-    SET salary = salary * (1 + percentage / 100)
-    WHERE department_id = department_id;
+    FOR user_data IN SELECT * FROM jsonb_array_elements(user_list)
+    LOOP
+        user_email := user_data->>'email';
+        user_password := user_data->>'password';
+        INSERT INTO users (email, password) 
+        VALUES (user_email, user_password)
+        ON CONFLICT (email) DO NOTHING;
+    END LOOP;
 END;
+$$;
 
--- Call the stored procedure
-CALL GiveRaise(1, 10);
+-- Call the procedure for bulk inserting users
+CALL BulkInsertUsers('[{"email": "test1@example.com", "password": "password1"}, {"email": "test2@example.com", "password": "password2"}]');
 
-
-
--- Create a function to calculate the total sales for  given customers
-CREATE FUNCTION TotalSales(customer_id INT) RETURNS DECIMAL(10, 2)
+-- Functions for complex queries
+CREATE OR REPLACE FUNCTION CalculateUserTotalPayments(user_id INT) RETURNS DECIMAL(10, 2) AS $$
+DECLARE
+    total DECIMAL(10, 2);
 BEGIN
-    DECLARE total DECIMAL(10, 2);
-    SELECT SUM(total_amount) INTO total
-    FROM orders
-    WHERE customer_id = customer_id;
+    SELECT COALESCE(SUM(amount), 0) INTO total 
+    FROM payments
+    WHERE user_id = user_id;
     RETURN total;
 END;
+$$ LANGUAGE plpgsql;
 
+-- Use the function to retrieve total payments for a user
+SELECT CalculateUserTotalPayments(1);
 
+-- Create a view to aggregate video statistics
+CREATE VIEW video_stats AS
+SELECT 
+    v.id AS video_id,
+    v.title,
+    COUNT(vv.id) AS view_count,
+    COALESCE(SUM(CASE WHEN vv.user_id IS NOT NULL THEN 1 ELSE 0 END), 0) AS registered_views
+FROM videos v
+LEFT JOIN video_views vv ON v.id = vv.video_id
+GROUP BY v.id, v.title;
 
+-- Query the view to get video stats
+SELECT * FROM video_stats;
 
+-- Advanced querying using window functions
+SELECT user_id, 
+       SUM(amount) OVER (PARTITION BY user_id ORDER BY payment_date) AS cumulative_payments
+FROM payments;
 
+-- Create an aggregate function to calculate the median
+CREATE OR REPLACE FUNCTION Median(values FLOAT8[]) RETURNS FLOAT8 AS $$
+BEGIN
+    RETURN (SELECT PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY val) FROM UNNEST(values) val);
+END;
+$$ LANGUAGE plpgsql;
 
--- Use the function
-SELECT customer_id, TotalSales(customer_id) AS total_sales
-FROM customers;
+-- Use the median function
+SELECT Median(ARRAY(SELECT amount FROM payments WHERE user_id = 1));
 
+-- Create a trigger to enforce business rules
+CREATE OR REPLACE FUNCTION check_event_date() RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.event_date < CURRENT_DATE THEN
+        RAISE EXCEPTION 'Event date cannot be in the past.';
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
 
+-- Attach the trigger to the events table
+CREATE TRIGGER check_event_date_before_insert
+BEFORE INSERT ON events
+FOR EACH ROW EXECUTE FUNCTION check_event_date();
+
+-- Transaction example: Insert multiple records and roll back on error
+BEGIN;
+
+-- Insert into users
+INSERT INTO users (email, password) VALUES ('john.doe@example.com', 'password123');
+
+-- Insert into payments
+INSERT INTO payments (user_id, amount, payment_method) 
+VALUES (1, 100.00, 'credit_card');
+
+-- Rollback if any error occurs
+ROLLBACK;
+
+-- Commit if no errors occur
+COMMIT;
+
+-- CTE (Common Table Expressions) for hierarchical data
+WITH RECURSIVE subordinates AS (
+    SELECT employee_id, manager_id, name
+    FROM employees
+    WHERE manager_id IS NULL
+    UNION ALL
+    SELECT e.employee_id, e.manager_id, e.name
+    FROM employees e
+    INNER JOIN subordinates s ON s.employee_id = e.manager_id
+)
+SELECT * FROM subordinates;
+
+-- Indexing strategies
+CREATE INDEX idx_payments_amount ON payments(amount);
+CREATE INDEX idx_users_created_at ON users(created_at);
+CREATE INDEX idx_video_views_view_time ON video_views(view_time);
+
+-- Table partitioning by range for better performance
+CREATE TABLE sales (
+    id SERIAL PRIMARY KEY,
+    product_id INT NOT NULL,
+    user_id INT NOT NULL,
+    sale_date DATE NOT NULL,
+    amount DECIMAL(10, 2) NOT NULL
+) PARTITION BY RANGE (sale_date);
+
+-- Partition tables by year
+CREATE TABLE sales_2023 PARTITION OF sales
+FOR VALUES FROM ('2023-01-01') TO ('2024-01-01');
+
+CREATE TABLE sales_2024 PARTITION OF sales
+FOR VALUES FROM ('2024-01-01') TO ('2025-01-01');
